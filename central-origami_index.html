@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Central Origami · Marketing e Eventos</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050505;
+  --panel:#111113;
+  --panel-2:#0B0B0D;
+  --accent:#EB6927;
+  --accent-soft:rgba(235,105,39,.12);
+  --text:#FFFFFF;
+  --muted:#AEAEAE;
+  --line:rgba(235,105,39,.22);
+  --line-soft:rgba(174,174,174,.14);
+  --ok:#4CC38A;
+  --warn:#F5B841;
+  --radius:14px;
+  --font-display:'Outfit',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.25}
+img{max-width:100%}
+button{font-family:inherit;cursor:pointer}
+
+/* ---------- Elemento assinatura: a Dobra (origami) ---------- */
+.dobra{display:inline-block;width:26px;height:26px;flex-shrink:0;position:relative}
+.dobra::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent) 0%,var(--accent) 49.5%,#B24A15 50%,#B24A15 100%);clip-path:polygon(0 100%,50% 0,100% 100%);border-radius:2px}
+.dobra--sm{width:18px;height:18px}
+
+/* ---------- Login ---------- */
+#login{position:fixed;inset:0;background:radial-gradient(1200px 700px at 70% -10%,rgba(235,105,39,.10),transparent 60%),var(--bg);display:flex;align-items:center;justify-content:center;z-index:100;padding:24px}
+.login-card{width:100%;max-width:420px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:44px 40px;text-align:center}
+.login-card img.lg{height:64px;margin-bottom:10px}
+.login-card .sub{color:var(--muted);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:32px}
+.login-card label{display:block;text-align:left;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+.login-card input{width:100%;background:var(--panel-2);border:1px solid var(--line-soft);border-radius:10px;padding:13px 15px;color:var(--text);font-size:1rem;font-family:var(--font-body);outline:none;transition:border-color .15s}
+.login-card input:focus{border-color:var(--accent)}
+.login-card .btn{width:100%;margin-top:26px;background:var(--accent);color:#000;border:none;border-radius:10px;padding:14px;font-weight:600;font-size:1rem;font-family:var(--font-display);letter-spacing:.02em;transition:filter .15s}
+.login-card .btn:hover{filter:brightness(1.08)}
+#loginErr{display:none;margin-top:16px;color:#E5655B;font-size:.86rem}
+.login-foot{margin-top:28px;color:var(--muted);font-size:.75rem}
+
+/* ---------- Shell ---------- */
+#app{display:none;min-height:100%}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-soft)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:22px}
+.topbar img.lg{height:34px;display:block}
+nav{display:flex;gap:4px;flex-wrap:wrap;flex:1;justify-content:center}
+nav a{color:var(--muted);font-size:.86rem;font-weight:500;padding:8px 12px;border-radius:8px;transition:color .12s,background .12s}
+nav a:hover{color:var(--text);text-decoration:none;background:rgba(255,255,255,.04)}
+nav a.on{color:var(--accent);background:var(--accent-soft)}
+.userchip{display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--muted);white-space:nowrap}
+.userchip .adm{background:var(--accent);color:#000;font-size:.62rem;font-weight:700;letter-spacing:.08em;border-radius:5px;padding:2px 7px}
+.userchip button{background:none;border:1px solid var(--line-soft);color:var(--muted);border-radius:8px;padding:6px 12px;font-size:.8rem;transition:border-color .12s,color .12s}
+.userchip button:hover{border-color:var(--accent);color:var(--text)}
+
+main{max-width:1180px;margin:0 auto;padding:48px 28px 80px}
+.eyebrow{display:flex;align-items:center;gap:12px;color:var(--accent);font-size:.76rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+.page-title{font-size:2rem;margin-bottom:8px}
+.page-desc{color:var(--muted);max-width:640px;margin-bottom:38px}
+
+/* ---------- Cards de documentos ---------- */
+.doclist{display:flex;flex-direction:column;gap:14px}
+.docitem{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);padding:20px 24px;display:flex;align-items:center;gap:18px;transition:border-color .15s;text-decoration:none;color:var(--text)}
+.docitem:hover{border-color:var(--accent);text-decoration:none}
+.docbody{flex:1;min-width:0}
+.docbody h3{font-size:1.02rem;margin-bottom:3px}
+.docbody p{color:var(--muted);font-size:.86rem}
+.dtag{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:4px 10px;white-space:nowrap}
+.darrow{color:var(--muted);font-size:1.1rem}
+
+.empty{background:var(--panel-2);border:1px dashed var(--line-soft);border-radius:var(--radius);padding:40px;text-align:center;color:var(--muted);font-size:.92rem}
+
+/* ---------- Home ---------- */
+.hero{background:linear-gradient(135deg,var(--panel) 0%,var(--panel-2) 100%);border:1px solid var(--line-soft);border-radius:18px;padding:44px 40px;margin-bottom:36px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-40px;top:-40px;width:220px;height:220px;background:radial-gradient(circle,rgba(235,105,39,.14),transparent 65%)}
+.hero h1{font-size:1.9rem;margin-bottom:10px}
+.hero p{color:var(--muted);max-width:560px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.navcard{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);padding:24px;transition:border-color .15s;text-decoration:none;color:var(--text);display:block}
+.navcard:hover{border-color:var(--accent);text-decoration:none}
+.navcard h3{font-size:1rem;margin:14px 0 4px}
+.navcard p{color:var(--muted);font-size:.84rem}
+.sect{margin-top:48px}
+.sect>h2{font-size:1.2rem;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+
+/* ---------- Links úteis ---------- */
+.linkcard{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);padding:22px 24px;display:flex;align-items:center;gap:18px;transition:border-color .15s;text-decoration:none;color:var(--text)}
+.linkcard:hover{border-color:var(--accent);text-decoration:none}
+.linkcard .lk{flex:1}
+.linkcard h3{font-size:.98rem;margin-bottom:3px}
+.linkcard p{color:var(--muted);font-size:.84rem;word-break:break-word}
+
+/* ---------- Performance (teaser) ---------- */
+.card--locked{background:var(--panel-2);border:1.5px dashed var(--line);border-radius:18px;padding:40px;max-width:640px}
+.card--locked h3{font-size:1.25rem;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.soon{background:var(--warn);color:#000;font-size:.62rem;font-weight:700;letter-spacing:.1em;border-radius:5px;padding:3px 9px}
+.card--locked p{color:var(--muted);margin-top:14px}
+.card--locked .unlock{font-size:.82rem;color:var(--accent);margin-top:18px;font-weight:600}
+.cta{display:inline-block;margin-top:22px;background:var(--accent);color:#000;font-weight:600;font-family:var(--font-display);border-radius:10px;padding:13px 24px;transition:filter .15s}
+.cta:hover{filter:brightness(1.08);text-decoration:none}
+
+/* ---------- Guia ---------- */
+.guide{max-width:760px}
+.guide h2{font-size:1.15rem;margin:34px 0 12px;color:var(--accent)}
+.guide p,.guide li{color:#D6D6D6;font-size:.94rem}
+.guide ul{padding-left:22px;margin:8px 0}
+.guide code{background:var(--panel);border:1px solid var(--line-soft);border-radius:6px;padding:2px 7px;font-size:.85rem;color:var(--accent)}
+.guide table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.88rem}
+.guide th,.guide td{border:1px solid var(--line-soft);padding:9px 12px;text-align:left}
+.guide th{background:var(--panel);color:var(--muted);font-weight:600;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase}
+
+/* ---------- Viewer ---------- */
+#viewer{display:none;position:fixed;inset:0;z-index:60;background:var(--bg);flex-direction:column}
+.vbar{display:flex;align-items:center;gap:16px;padding:12px 22px;background:var(--panel);border-bottom:1px solid var(--line-soft)}
+.vbar .vtag{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border-radius:5px;padding:3px 9px;white-space:nowrap}
+.vbar .vtitle{flex:1;font-size:.92rem;font-weight:600;font-family:var(--font-display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vbar button{background:none;border:1px solid var(--line-soft);color:var(--text);border-radius:8px;padding:7px 15px;font-size:.84rem;white-space:nowrap;transition:border-color .12s}
+.vbar button:hover{border-color:var(--accent)}
+#vframe{flex:1;border:none;width:100%;background:#fff}
+
+footer{border-top:1px solid var(--line-soft);padding:26px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1180px;margin:0 auto;color:var(--muted);font-size:.78rem}
+footer img{height:26px;opacity:.85}
+
+@media(max-width:900px){nav{justify-content:flex-start}}
+@media(max-width:760px){.userchip .uname{display:none}}
+@media(max-width:640px){
+  .topbar-in{flex-wrap:wrap;gap:12px;padding:12px 18px}
+  nav{order:3;width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;padding-bottom:4px}
+  main{padding:32px 18px 64px}
+  .hero{padding:30px 24px}
+  .page-title{font-size:1.55rem}
+  .grid{grid-template-columns:1fr}
+  .login-card{padding:34px 26px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div id="login">
+  <div class="login-card">
+    <img class="lg" src="assets/origami_symbol_orange.png" alt="Origami">
+    <h1 style="font-size:1.3rem;margin-bottom:4px">Central Origami</h1>
+    <div class="sub">Marketing e Eventos</div>
+    <form id="loginForm" onsubmit="return doLogin(event)">
+      <label for="fName">Nome e sobrenome</label>
+      <input id="fName" type="text" autocomplete="off" placeholder="Seu nome">
+      <label for="fPass">Senha de acesso</label>
+      <input id="fPass" type="password" autocomplete="off" placeholder="••••••••">
+      <button class="btn" type="submit">Entrar</button>
+    </form>
+    <div id="loginErr">Não foi possível entrar. Confira os dados e tente novamente.</div>
+    <div class="login-foot">Central do Cliente operada por Braper · Growth &amp; Performance</div>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app">
+  <div class="topbar">
+    <div class="topbar-in">
+      <a href="#/home"><img class="lg" src="assets/origami_logo_offwhite.png" alt="Origami Marketing e Eventos"></a>
+      <nav id="mainNav">
+        <a href="#/home" data-r="home">Início</a>
+        <a href="#/planejamentos" data-r="planejamentos">Planejamentos</a>
+        <a href="#/relatorios" data-r="relatorios">Relatórios</a>
+        <a href="#/status" data-r="status">Status Semanais</a>
+        <a href="#/analises" data-r="analises">Análises e Estudos</a>
+        <a href="#/performance" data-r="performance">Performance</a>
+        <a href="#/links" data-r="links">Links Úteis</a>
+        <a href="#/guia" data-r="guia">Guia da Central</a>
+      </nav>
+      <div class="userchip">
+        <span class="uname" id="chipName"></span>
+        <span class="adm" id="chipAdm" style="display:none">ADMIN</span>
+        <button onclick="doLogout()">Sair</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="view"></main>
+
+  <footer>
+    <span>Central Origami · Marketing e Eventos</span>
+    <span>Operada por <strong style="color:var(--text)">Braper</strong> · Growth &amp; Performance</span>
+  </footer>
+</div>
+
+<!-- ============ VIEWER ============ -->
+<div id="viewer">
+  <div class="vbar">
+    <span class="vtag" id="vTag"></span>
+    <span class="vtitle" id="vTitle"></span>
+    <button onclick="closeViewer()">← Voltar à Central</button>
+  </div>
+  <iframe id="vframe" title="Documento"></iframe>
+</div>
+
+<script>
+/* =====================================================
+   USUÁRIOS E GRUPOS
+   ===================================================== */
+const USERS = {
+  cliente: { nomes: ['bruno','evandro','guilherme','barreto'], senha: '0r1g@m1#2026#' },
+  admin:   { nomes: ['rafael','gabriel'],                       senha: 'Braper#2026#' }
+};
+
+/* =====================================================
+   DOCUMENTOS PUBLICADOS
+   Categorias: plan · report · status · analise
+   Mais recentes sempre no TOPO de cada array.
+   ===================================================== */
+const DOCS = {
+  plan: [
+    { id:'plan-midia-fda-2026',
+      titulo:'Plano de Mídia · Meta Ads · Festa de Fim de Ano',
+      tag:'JUL/2026',
+      desc:'Estratégia completa de mídia paga: funil em três campanhas, públicos, criativos e orçamento.',
+      arquivo:'docs/origami_planejamento_midia_20260723.html' },
+    { id:'plan-form-logica-2026',
+      titulo:'Formulário Meta Ads · Lógica Condicional',
+      tag:'JUL/2026',
+      desc:'Estrutura do formulário nativo com qualificação automática de leads e roteamento por perfil.',
+      arquivo:'docs/origami_planejamento_formulario-logica-condicional_20260723.pdf' },
+  ],
+  report: [],
+  status: [],
+  analise: [],
+};
+
+const CAT_META = {
+  plan:    { label:'Planejamento',      rota:'planejamentos' },
+  report:  { label:'Relatório',         rota:'relatorios' },
+  status:  { label:'Status Semanal',    rota:'status' },
+  analise: { label:'Análise e Estudo',  rota:'analises' },
+};
+
+const LINKS = [
+  { titulo:'TCI — Tráfego, Conversão e Investimento',
+    desc:'Planilha mestra de performance: investimento, resultados e evolução das campanhas.',
+    url:'https://docs.google.com/spreadsheets/d/1rvp4llPa1j6aigbvWWLCaKyrx21o14F9pe6_q3AbHRM/edit?usp=sharing' },
+  { titulo:'Controle de Assets',
+    desc:'Inventário de criativos, formatos e status de cada peça em veiculação.',
+    url:'https://docs.google.com/spreadsheets/d/1fT_Z9I481gF1az63XfohVF899tSTT4pH1PaEVsuaJd4/edit?usp=sharing' },
+  { titulo:'UTM e Taxonomia',
+    desc:'Padrão oficial de nomenclatura e parametrização de campanhas, conjuntos e anúncios.',
+    url:'https://docs.google.com/spreadsheets/d/1UN105qK0-KtbBUNvm70RbFynHO0oPn-D1b3fNJAO4sc/edit?usp=sharing' },
+];
+
+const WHATS = 'https://wa.me/5511995550735';
+const WHATS_DASH = WHATS + '?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Dashboard%20Integrado%20da%20Central%20Origami.';
+
+/* =====================================================
+   SESSÃO — apenas em memória (zero storage)
+   ===================================================== */
+let SESSION = null;
+let lastListRoute = 'home';
+
+function norm(s){
+  return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim().toLowerCase();
+}
+function matchUser(list, name){
+  return list.some(n => name === n || name.startsWith(n + ' '));
+}
+function doLogin(ev){
+  ev.preventDefault();
+  const name = norm(document.getElementById('fName').value || '');
+  const pass = (document.getElementById('fPass').value || '');
+  let grupo = null;
+  if (matchUser(USERS.cliente.nomes, name) && pass === USERS.cliente.senha) grupo = 'cliente';
+  else if (matchUser(USERS.admin.nomes, name) && pass === USERS.admin.senha) grupo = 'admin';
+  if (!grupo){
+    document.getElementById('loginErr').style.display = 'block';
+    return false;
+  }
+  const display = (document.getElementById('fName').value || '').trim().replace(/\s+/g,' ');
+  SESSION = { nome: display.charAt(0).toUpperCase() + display.slice(1), grupo };
+  document.getElementById('loginErr').style.display = 'none';
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  document.getElementById('chipName').textContent = SESSION.nome;
+  document.getElementById('chipAdm').style.display = grupo === 'admin' ? 'inline-block' : 'none';
+  if (!location.hash || location.hash === '#') location.hash = '#/home';
+  route();
+  return false;
+}
+function doLogout(){
+  SESSION = null;
+  closeViewer(true);
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('login').style.display = 'flex';
+  document.getElementById('fName').value = '';
+  document.getElementById('fPass').value = '';
+  location.hash = '';
+}
+
+/* =====================================================
+   ROTEADOR HASH
+   ===================================================== */
+window.addEventListener('hashchange', route);
+
+function route(){
+  if (!SESSION) return;
+  const h = location.hash.replace(/^#\/?/,'') || 'home';
+  if (h.startsWith('doc/')){ openDoc(h.slice(4)); return; }
+  closeViewer(true);
+  const view = document.getElementById('view');
+  const known = ['home','planejamentos','relatorios','status','analises','performance','links','guia'];
+  const r = known.includes(h) ? h : 'home';
+  lastListRoute = r;
+  document.querySelectorAll('#mainNav a').forEach(a=>a.classList.toggle('on', a.dataset.r === r));
+  view.innerHTML = PAGES[r]();
+  window.scrollTo(0,0);
+}
+
+/* =====================================================
+   PÁGINAS
+   ===================================================== */
+function docCard(d, catKey){
+  const m = CAT_META[catKey];
+  return `<a class="docitem" href="#/doc/${d.id}">
+    <span class="dobra dobra--sm" aria-hidden="true"></span>
+    <div class="docbody"><h3>${d.titulo}</h3><p>${d.desc}</p></div>
+    <span class="dtag">${d.tag}</span>
+    <span class="darrow">→</span>
+  </a>`;
+}
+function listPage(catKey, titulo, desc){
+  const arr = DOCS[catKey];
+  const body = arr.length
+    ? `<div class="doclist">${arr.map(d=>docCard(d,catKey)).join('')}</div>`
+    : `<div class="empty">As próximas publicações desta seção aparecerão aqui, sempre com aviso no grupo.</div>`;
+  return `<div class="eyebrow"><span class="dobra dobra--sm"></span>${CAT_META[catKey].label}s</div>
+    <h1 class="page-title">${titulo}</h1>
+    <p class="page-desc">${desc}</p>${body}`;
+}
+
+const PAGES = {
+  home(){
+    const latest = [];
+    for (const k of Object.keys(DOCS)) DOCS[k].forEach(d=>latest.push({...d, cat:k}));
+    const latestHtml = latest.length
+      ? `<div class="sect"><h2><span class="dobra dobra--sm"></span>Últimas publicações</h2>
+         <div class="doclist">${latest.slice(0,5).map(d=>docCard(d,d.cat)).join('')}</div></div>`
+      : '';
+    return `<div class="hero">
+      <div class="eyebrow"><span class="dobra dobra--sm"></span>Central do Cliente</div>
+      <h1>Olá, ${SESSION.nome.split(' ')[0]}.</h1>
+      <p>Aqui ficam reunidos os planejamentos, relatórios, análises e ferramentas do projeto de mídia e performance da Origami. Tudo em um só lugar, sempre atualizado.</p>
+    </div>
+    <div class="grid">
+      <a class="navcard" href="#/planejamentos"><span class="dobra"></span><h3>Planejamentos</h3><p>Estratégias de mídia, funil e campanhas.</p></a>
+      <a class="navcard" href="#/relatorios"><span class="dobra"></span><h3>Relatórios</h3><p>Resultados consolidados por período.</p></a>
+      <a class="navcard" href="#/status"><span class="dobra"></span><h3>Status Semanais</h3><p>O andamento da operação, semana a semana.</p></a>
+      <a class="navcard" href="#/analises"><span class="dobra"></span><h3>Análises e Estudos</h3><p>Diagnósticos e aprofundamentos técnicos.</p></a>
+      <a class="navcard" href="#/links"><span class="dobra"></span><h3>Links Úteis</h3><p>Planilhas operacionais e canais de contato.</p></a>
+      <a class="navcard" href="#/guia"><span class="dobra"></span><h3>Guia da Central</h3><p>Como navegar e aproveitar o portal.</p></a>
+    </div>${latestHtml}`;
+  },
+  planejamentos(){ return listPage('plan','Planejamentos','Estratégias e planos que orientam a operação de mídia da Origami — do funil aos criativos.'); },
+  relatorios(){ return listPage('report','Relatórios','Resultados consolidados das campanhas, com leitura executiva e detalhamento por canal.'); },
+  status(){ return listPage('status','Status Semanais','Acompanhamento contínuo: o que rodou, o que mudou e o que vem na próxima semana.'); },
+  analises(){ return listPage('analise','Análises e Estudos','Diagnósticos, testes e estudos técnicos que embasam as decisões do projeto.'); },
+  performance(){
+    return `<div class="eyebrow"><span class="dobra dobra--sm"></span>Performance</div>
+    <h1 class="page-title">Dashboard Integrado</h1>
+    <p class="page-desc">Visão consolidada da operação em tempo real.</p>
+    <div class="card--locked">
+      <h3><span class="dobra dobra--sm"></span>Dashboard Integrado Origami <span class="soon">EM BREVE</span></h3>
+      <p>Painel conectado diretamente às plataformas de mídia, com atualização automática: investimento, leads, custo por lead e evolução das campanhas — dados em tempo real, sem depender de relatórios manuais.</p>
+      <p class="unlock">Recurso disponível sob contratação.</p>
+      <a class="cta" href="${WHATS_DASH}" target="_blank" rel="noopener">Falar com a Braper →</a>
+    </div>`;
+  },
+  links(){
+    const cards = LINKS.map(l=>`<a class="linkcard" href="${l.url}" target="_blank" rel="noopener">
+      <span class="dobra dobra--sm"></span>
+      <div class="lk"><h3>${l.titulo}</h3><p>${l.desc}</p></div>
+      <span class="darrow">↗</span></a>`).join('');
+    return `<div class="eyebrow"><span class="dobra dobra--sm"></span>Links Úteis</div>
+    <h1 class="page-title">Ferramentas do projeto</h1>
+    <p class="page-desc">Planilhas operacionais compartilhadas e canal direto com o time Braper.</p>
+    <div class="doclist">${cards}
+      <a class="linkcard" href="${WHATS}" target="_blank" rel="noopener">
+        <span class="dobra dobra--sm"></span>
+        <div class="lk"><h3>WhatsApp de Suporte Braper</h3><p>+55 11 99555-0735 · dúvidas, solicitações e suporte do portal.</p></div>
+        <span class="darrow">↗</span></a>
+    </div>`;
+  },
+  guia(){
+    return `<div class="eyebrow"><span class="dobra dobra--sm"></span>Guia da Central</div>
+    <h1 class="page-title">Como usar a Central Origami</h1>
+    <div class="guide">
+      <h2>O que é a Central</h2>
+      <p>A Central Origami é o hub oficial do projeto de mídia e performance conduzido pela Braper. Todos os materiais — planejamentos, relatórios, status semanais e análises — são publicados aqui, organizados por categoria e sempre com as versões mais recentes no topo.</p>
+      <h2>Seções</h2>
+      <table>
+        <tr><th>Seção</th><th>O que você encontra</th></tr>
+        <tr><td>Planejamentos</td><td>Estratégias de mídia, estrutura de campanhas e planos de ação.</td></tr>
+        <tr><td>Relatórios</td><td>Resultados consolidados por período, com leitura executiva.</td></tr>
+        <tr><td>Status Semanais</td><td>Andamento da operação semana a semana.</td></tr>
+        <tr><td>Análises e Estudos</td><td>Diagnósticos e aprofundamentos técnicos.</td></tr>
+        <tr><td>Performance</td><td>Dashboard integrado (recurso sob contratação).</td></tr>
+        <tr><td>Links Úteis</td><td>Planilhas operacionais e canais de contato.</td></tr>
+      </table>
+      <h2>Abrindo documentos</h2>
+      <p>Clique em qualquer card para abrir o documento no visualizador da própria Central. O botão <code>← Voltar à Central</code> retorna à lista de onde você veio.</p>
+      <h2>Padrão de nomes de arquivos</h2>
+      <p>Todos os materiais seguem a taxonomia oficial do projeto:</p>
+      <p><code>origami_[categoria]_[descrição]_[AAAAMMDD]</code></p>
+      <p>Exemplo: <code>origami_analise_antes-depois_20260730</code></p>
+      <h2>Acesso</h2>
+      <ul>
+        <li>Entre com seu nome e a senha de acesso do grupo. Maiúsculas e acentos não fazem diferença no nome.</li>
+        <li>Por segurança, a sessão não fica gravada no navegador — ao fechar a aba, basta entrar novamente.</li>
+      </ul>
+      <h2>Suporte</h2>
+      <p>Qualquer necessidade — acesso, documentos ou novas demandas — fale com o time Braper pelo <a href="${WHATS}" target="_blank" rel="noopener">WhatsApp de Suporte</a>: +55&nbsp;11&nbsp;99555-0735.</p>
+    </div>`;
+  },
+};
+
+/* =====================================================
+   VIEWER
+   ===================================================== */
+function findDoc(id){
+  for (const k of Object.keys(DOCS)){
+    const d = DOCS[k].find(x=>x.id===id);
+    if (d) return {...d, cat:k};
+  }
+  return null;
+}
+function openDoc(id){
+  const d = findDoc(id);
+  if (!d){ location.hash = '#/home'; return; }
+  document.getElementById('vTag').textContent = CAT_META[d.cat].label;
+  document.getElementById('vTitle').textContent = d.titulo;
+  const fr = document.getElementById('vframe');
+  fr.src = d.arquivo;
+  fr.onload = ()=>{ try{ fr.contentWindow.focus(); }catch(e){} };
+  document.getElementById('viewer').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeViewer(silent){
+  const v = document.getElementById('viewer');
+  if (v.style.display !== 'flex' && silent) return;
+  v.style.display = 'none';
+  document.getElementById('vframe').src = 'about:blank';
+  document.body.style.overflow = '';
+  if (!silent) location.hash = '#/' + (CAT_META_ROUTE() || 'home');
+}
+function CAT_META_ROUTE(){
+  const h = location.hash.replace(/^#\/?/,'');
+  if (h.startsWith('doc/')){
+    const d = findDoc(h.slice(4));
+    if (d) return CAT_META[d.cat].rota;
+  }
+  return lastListRoute;
+}
+</script>
+</body>
+</html>
