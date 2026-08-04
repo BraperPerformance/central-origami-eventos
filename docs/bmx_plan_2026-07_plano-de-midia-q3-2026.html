@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMX Serviços — Plano de Mídia · Crescimento e Expansão H2 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="vendor/chart.umd.min.js"></script>
+<script src="vendor/chartjs-plugin-datalabels.min.js"></script>
+<style>
+:root{
+  --bg:#1a1a1a; --surface:#222222; --card:#2a2a2a; --card-2:#303030;
+  --border:#3d3d3d; --border-soft:#333;
+  --txt:#ededed; --muted:#9c9c9c; --faint:#6f6f6f;
+  --yellow:#F1C232; --yellow-dim:#c79e26; --graphite:#434343;
+  --pos:#7fc97f; --neg:#e57373; --blue:#6fa8dc;
+  --disp:'Barlow Condensed',sans-serif; --mono:'IBM Plex Mono',monospace; --body:'Archivo',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+::selection{background:var(--yellow);color:#161616}
+
+/* ---------- NAV ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(26,26,26,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-soft)}
+.nav-inner{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:28px;height:58px}
+.nav-brand{font-family:var(--disp);font-weight:700;font-size:21px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.nav-brand b{color:var(--yellow)}
+.nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-decoration:none;padding:7px 11px;border-radius:6px;white-space:nowrap;transition:.18s}
+.nav-links a:hover{color:var(--txt);background:var(--card)}
+.nav-links a.active{color:#161616;background:var(--yellow);font-weight:500}
+
+/* ---------- HERO ---------- */
+.hero{max-width:1180px;margin:0 auto;padding:64px 24px 40px;position:relative}
+.hero-bar{width:64px;height:6px;background:var(--yellow);margin-bottom:22px}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(40px,6vw,64px);line-height:1;text-transform:uppercase;letter-spacing:.015em}
+.hero h1 span{color:var(--yellow)}
+.hero p.sub{margin-top:14px;color:var(--muted);max-width:640px;font-size:15.5px}
+.hero-meta{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.chip{font-family:var(--mono);font-size:11px;padding:5px 11px;border-radius:99px;border:1px solid var(--border);color:var(--muted)}
+.chip.warn{border-color:var(--yellow);color:var(--yellow)}
+
+/* ---------- SECTIONS ---------- */
+.section{max-width:1180px;margin:0 auto;padding:52px 24px 8px}
+.sec-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+.sec-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--yellow);text-transform:uppercase;margin-bottom:8px}
+.sec-title{font-family:var(--disp);font-weight:600;font-size:34px;line-height:1.05;text-transform:uppercase;letter-spacing:.01em}
+.sec-desc{color:var(--muted);margin-top:6px;font-size:14px;max-width:680px}
+.badge-wait{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--yellow);border:1px dashed var(--yellow-dim);padding:5px 10px;border-radius:6px;white-space:nowrap;align-self:center}
+.badge-ok{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--pos);border:1px solid #3d5a3d;padding:5px 10px;border-radius:6px;white-space:nowrap;align-self:center}
+.divider{max-width:1180px;margin:48px auto 0;padding:0 24px}
+.divider hr{border:0;border-top:1px solid var(--border-soft)}
+
+/* ---------- KPI GRID ---------- */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:12px;margin-top:22px}
+.kpi{background:var(--card);border:1px solid var(--border-soft);border-radius:10px;padding:16px 16px 14px;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--graphite)}
+.kpi.hl::before{background:var(--yellow)}
+.kpi .k-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.kpi .k-value{font-family:var(--disp);font-weight:700;font-size:34px;line-height:1.1;margin-top:6px}
+.kpi .k-note{font-family:var(--mono);font-size:10.5px;margin-top:4px;color:var(--faint)}
+.kpi .k-note.up{color:var(--pos)} .kpi .k-note.down{color:var(--neg)} .kpi .k-note.warn{color:var(--yellow)}
+
+/* ---------- CARDS / CHARTS ---------- */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+@media(max-width:880px){.grid-2,.grid-3{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border-soft);border-radius:12px;padding:20px}
+.card h3{font-family:var(--disp);font-weight:600;font-size:20px;text-transform:uppercase;letter-spacing:.02em}
+.card .c-sub{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:2px;margin-bottom:12px}
+.chart-wrap{position:relative;height:250px}
+.chart-wrap.tall{height:290px}
+
+/* ---------- TABLES ---------- */
+.tbl-wrap{overflow-x:auto;margin-top:14px;border:1px solid var(--border-soft);border-radius:12px;background:var(--card)}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-align:left;padding:12px 14px;border-bottom:1px solid var(--border);background:var(--card-2)}
+td{padding:11px 14px;border-bottom:1px solid var(--border-soft);font-size:13.5px}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-family:var(--mono);font-size:12.5px}
+tr.total td{background:var(--card-2);font-weight:600}
+tr.me td{background:rgba(241,194,50,.08)}
+.tag-you{font-family:var(--mono);font-size:9.5px;background:var(--yellow);color:#161616;padding:2px 7px;border-radius:4px;margin-left:8px;vertical-align:middle}
+
+/* ---------- FUNNEL ---------- */
+.funnel{margin-top:20px;display:flex;flex-direction:column;gap:8px}
+.f-row{display:flex;align-items:center;gap:14px}
+.f-bar{height:56px;background:linear-gradient(90deg,var(--yellow),var(--yellow-dim));border-radius:8px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;color:#161616;min-width:180px;transition:width .8s cubic-bezier(.2,.7,.3,1)}
+.f-bar .f-name{font-family:var(--disp);font-weight:700;font-size:19px;text-transform:uppercase}
+.f-bar .f-val{font-family:var(--disp);font-weight:700;font-size:26px}
+.f-meta{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap}
+.f-meta b{color:var(--txt)}
+.f-conv{font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-left:4px}
+
+/* ---------- TABS ---------- */
+.tabs{display:flex;gap:6px;margin-top:18px;flex-wrap:wrap}
+.tab{font-family:var(--mono);font-size:12px;padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:.15s}
+.tab:hover{color:var(--txt)}
+.tab.active{background:var(--yellow);border-color:var(--yellow);color:#161616;font-weight:500}
+.tab-pane{display:none}.tab-pane.show{display:block}
+
+/* ---------- HBARS (demografia) ---------- */
+.hbars{margin-top:8px;display:flex;flex-direction:column;gap:9px}
+.hb{display:grid;grid-template-columns:150px 1fr 62px;align-items:center;gap:10px}
+.hb .hb-l{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hb .hb-track{height:10px;background:var(--card-2);border-radius:5px;overflow:hidden}
+.hb .hb-fill{height:100%;background:var(--yellow);border-radius:5px;width:0;transition:width .9s ease}
+.hb .hb-v{font-family:var(--mono);font-size:11.5px;text-align:right;color:var(--txt)}
+
+/* ---------- POSTS / EMAIL CARDS ---------- */
+.post-card{background:var(--card);border:1px solid var(--border-soft);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.post-rank{font-family:var(--disp);font-weight:700;font-size:26px;color:var(--yellow)}
+.post-txt{font-size:13.5px;color:var(--txt);line-height:1.45}
+.post-meta{font-family:var(--mono);font-size:10.5px;color:var(--faint)}
+.post-stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:auto}
+.post-stats div{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.post-stats b{display:block;font-family:var(--disp);font-size:21px;color:var(--txt);font-weight:700}
+.mail-status{font-family:var(--mono);font-size:10.5px;padding:4px 9px;border-radius:5px;width:fit-content}
+.mail-status.good{background:rgba(127,201,127,.12);color:var(--pos)}
+.mail-status.mid{background:rgba(241,194,50,.12);color:var(--yellow)}
+
+/* ---------- PLACEHOLDER ---------- */
+.placeholder{border:1px dashed var(--border);border-radius:12px;padding:28px;text-align:center;color:var(--faint);margin-top:18px;background:rgba(255,255,255,.015)}
+.placeholder .ph-icon{font-family:var(--disp);font-size:30px;color:var(--yellow-dim);font-weight:700}
+.placeholder p{font-size:13.5px;max-width:520px;margin:8px auto 0}
+
+/* ---------- CENTRAL BMX ---------- */
+.central{margin-top:20px;background:linear-gradient(135deg,#262626,#2e2a1e);border:1px solid var(--border);border-radius:14px;padding:30px}
+.central-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:20px}
+.central-item{background:rgba(0,0,0,.25);border:1px solid var(--border-soft);border-radius:10px;padding:16px}
+.central-item h4{font-family:var(--disp);font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
+.central-item p{font-size:12.5px;color:var(--muted);margin-top:5px}
+.soon{font-family:var(--mono);font-size:9.5px;background:var(--yellow);color:#161616;padding:2px 7px;border-radius:4px;letter-spacing:.06em}
+
+/* ---------- INSIGHT ---------- */
+.insight{margin-top:18px;background:rgba(241,194,50,.06);border:1px solid rgba(241,194,50,.3);border-left:4px solid var(--yellow);border-radius:10px;padding:18px 20px}
+.insight .i-title{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--yellow);text-transform:uppercase;margin-bottom:6px}
+.insight p{font-size:14px;color:var(--txt)}
+.insight b{color:var(--yellow)}
+
+/* ---------- FOOTER ---------- */
+footer{margin-top:70px;border-top:1px solid var(--border-soft);padding:26px 24px;text-align:center}
+footer .f1{font-family:var(--disp);font-size:17px;font-weight:600;text-transform:uppercase}
+footer .f2{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:4px}
+
+.sec-num{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;background:var(--yellow);color:#161616;padding:3px 9px;border-radius:5px;margin-right:8px;vertical-align:1px}
+.ph-slot{border:1.5px dashed var(--border);border-radius:10px;background:rgba(255,255,255,.02);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;color:var(--faint);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-align:center;padding:10px}
+.ph-slot.r43{aspect-ratio:4/3}.ph-slot.r34{aspect-ratio:3/4;max-height:340px}.ph-slot.r45{aspect-ratio:4/5;max-height:300px}
+.ph-slot b{color:var(--yellow-dim);font-size:13px;letter-spacing:.12em}
+.braper{font-family:var(--disp);font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.cat-head{display:flex;align-items:center;gap:10px;margin:26px 0 4px}
+.cat-head .cat-bar{width:26px;height:4px;background:var(--yellow)}
+.cat-head h4{font-family:var(--disp);font-size:20px;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
+.cat-head span{font-family:var(--mono);font-size:10.5px;color:var(--faint)}
+.mail-embed{border:1px solid var(--border-soft);border-radius:10px;overflow:hidden;background:#f4f4f4;height:380px;position:relative}
+.mail-embed iframe{width:600px;height:1000px;border:0;position:absolute;top:0;left:0;transform-origin:0 0;pointer-events:none}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media(max-width:640px){.hero{padding-top:44px}.f-bar{min-width:120px;padding:0 12px}.f-bar .f-name{font-size:15px}.f-bar .f-val{font-size:20px}.hb{grid-template-columns:110px 1fr 56px}}
+
+/* ---------- PLANO DE MÍDIA ---------- */
+.strategy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+@media(max-width:900px){.strategy-grid{grid-template-columns:1fr}}
+.strategy-card{background:var(--card);border:1px solid var(--border-soft);border-radius:12px;padding:20px;position:relative;overflow:hidden}
+.strategy-card::before{content:'';position:absolute;left:0;right:0;top:0;height:4px;background:var(--graphite)}
+.strategy-card.primary::before{background:var(--yellow)}
+.strategy-card.test::before{background:var(--blue)}
+.strategy-card.hold::before{background:var(--faint)}
+.strategy-card h3{font-family:var(--disp);font-size:22px;text-transform:uppercase;letter-spacing:.02em}
+.strategy-card .budget{font-family:var(--disp);font-weight:700;font-size:38px;line-height:1.05;margin-top:10px}
+.strategy-card .role{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:3px}
+.strategy-card ul{margin:14px 0 0 18px;color:var(--muted);font-size:13px}
+.strategy-card li{margin:6px 0}
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;background:var(--yellow)}
+.status-dot.blue{background:var(--blue)}.status-dot.gray{background:var(--faint)}
+.plan-list{margin-top:14px;display:flex;flex-direction:column;gap:10px}
+.plan-step{display:grid;grid-template-columns:54px 1fr;gap:12px;align-items:flex-start;background:var(--card-2);border:1px solid var(--border-soft);border-radius:9px;padding:13px}
+.plan-step .n{font-family:var(--disp);font-weight:700;font-size:24px;color:var(--yellow)}
+.plan-step h4{font-family:var(--disp);font-size:17px;text-transform:uppercase}
+.plan-step p{font-size:12.5px;color:var(--muted);margin-top:3px}
+.metric-line{display:grid;grid-template-columns:170px 1fr 78px;align-items:center;gap:10px;margin-top:10px}
+.metric-line .label{font-size:12.5px;color:var(--muted)}
+.metric-line .track{height:10px;background:var(--card-2);border-radius:6px;overflow:hidden}
+.metric-line .fill{height:100%;background:var(--yellow);border-radius:6px}
+.metric-line .value{font-family:var(--mono);font-size:11px;text-align:right}
+.check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+@media(max-width:700px){.check-grid{grid-template-columns:1fr}}
+.check-item{border:1px solid var(--border-soft);background:var(--card-2);border-radius:9px;padding:13px}
+.check-item b{font-family:var(--disp);font-size:16px;text-transform:uppercase}
+.check-item p{font-size:12.5px;color:var(--muted);margin-top:4px}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+@media(max-width:880px){.timeline{grid-template-columns:1fr}}
+.month{background:var(--card);border:1px solid var(--border-soft);border-radius:12px;padding:20px}
+.month .m-num{font-family:var(--mono);font-size:11px;color:var(--yellow);letter-spacing:.1em}
+.month h3{font-family:var(--disp);font-size:23px;text-transform:uppercase;margin-top:5px}
+.month ul{margin:12px 0 0 18px;color:var(--muted);font-size:13px}
+.month li{margin:7px 0}
+.callout{background:linear-gradient(135deg,#2b291f,#242424);border:1px solid var(--yellow-dim);border-radius:12px;padding:20px;margin-top:18px}
+.callout h3{font-family:var(--disp);font-size:22px;text-transform:uppercase;color:var(--yellow)}
+.callout p{font-size:13.5px;color:var(--txt);margin-top:7px}
+.small-note{font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-top:10px}
+.decision{font-family:var(--mono);font-size:10px;padding:3px 8px;border-radius:5px;background:rgba(127,201,127,.13);color:var(--pos);white-space:nowrap}
+.decision.pause{background:rgba(229,115,115,.12);color:var(--neg)}
+.decision.test{background:rgba(111,168,220,.13);color:var(--blue)}
+@media print{.nav{display:none}.hero{padding-top:28px}.section{break-inside:avoid}.card,.strategy-card,.month{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <div class="nav-brand">BMX <b>Serviços</b></div>
+  <div class="nav-links">
+    <a href="#diretriz">Diretriz</a>
+    <a href="#google">Google Ads</a>
+    <a href="#instagram">Instagram</a>
+    <a href="#linkedin">LinkedIn</a>
+    <a href="#roadmap">Plano 90 Dias</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-bar"></div>
+  <h1>Plano de Mídia<br><span>Crescimento &amp; Expansão</span></h1>
+  <p class="sub">Direcionamento de investimento para o 2º semestre de 2026, priorizando os canais com maior capacidade de gerar demanda qualificada, receita e crescimento sustentável para a BMX Serviços.</p>
+  <div class="hero-meta">
+    <span class="chip warn">PROPOSTA DE INVESTIMENTO: R$ 4.000/MÊS</span>
+    <span class="chip">Google Ads: R$ 3.000</span>
+    <span class="chip">Instagram Ads: R$ 1.000</span>
+    <span class="chip">LinkedIn Ads: stand-by</span>
+    <span class="chip">Horizonte inicial: 90 dias</span>
+    <span class="chip" style="border-color:var(--yellow-dim)"><span class="braper" style="letter-spacing:.14em">Braper</span>&nbsp;· plano estratégico de mídia</span>
+  </div>
+</header>
+
+<section class="section" id="diretriz">
+  <div class="sec-head"><div>
+    <div class="sec-eyebrow"><span class="sec-num">01</span>Diretriz de Investimento</div>
+    <div class="sec-title">Concentrar verba onde há demanda comprovada</div>
+    <p class="sec-desc">O plano parte dos resultados do S1: Google com geração consistente de leads, MQLs, propostas e receita; Instagram com crescimento orgânico relevante e oportunidade de ampliar descoberta; LinkedIn pago ainda com custo elevado para captura direta.</p>
+  </div><span class="badge-ok">FOCO EM EFICIÊNCIA + ESCALA</span></div>
+
+  <div class="kpi-grid reveal">
+    <div class="kpi hl"><div class="k-label">Investimento mensal</div><div class="k-value">R$ 4 mil</div><div class="k-note">+R$ 1 mil vs mídia atual</div></div>
+    <div class="kpi hl"><div class="k-label">Google Ads</div><div class="k-value">75%</div><div class="k-note up">R$ 3.000 · motor de demanda</div></div>
+    <div class="kpi"><div class="k-label">Instagram Ads</div><div class="k-value">25%</div><div class="k-note warn">R$ 1.000 · teste de audiência</div></div>
+    <div class="kpi"><div class="k-label">LinkedIn Ads</div><div class="k-value">0%</div><div class="k-note">orgânico + construção de base</div></div>
+    <div class="kpi"><div class="k-label">Projeção Google</div><div class="k-value">45–55</div><div class="k-note">leads/mês · faixa inicial</div></div>
+    <div class="kpi"><div class="k-label">Projeção Instagram</div><div class="k-value">40–65</div><div class="k-note">seguidores incrementais/mês</div></div>
+  </div>
+
+  <div class="strategy-grid">
+    <div class="strategy-card primary reveal"><h3><span class="status-dot"></span>Google Ads</h3><div class="budget">R$ 3.000</div><div class="role">ESCALA CONTROLADA DE DEMANDA</div><ul><li>Priorizar Transporte Químico, Armazenagem e Container.</li><li>Escalar com limite de CPL e qualidade comercial.</li><li>Otimizar para MQL/SQL, não apenas formulário enviado.</li></ul></div>
+    <div class="strategy-card test reveal"><h3><span class="status-dot blue"></span>Instagram Ads</h3><div class="budget">R$ 1.000</div><div class="role">TESTE DE CRESCIMENTO DE BASE</div><ul><li>Impulsionar Reels com maior capacidade de descoberta.</li><li>Transformar visualização em visita ao perfil e follow.</li><li>Validar custo por seguidor antes de ampliar verba.</li></ul></div>
+    <div class="strategy-card hold reveal"><h3><span class="status-dot gray"></span>LinkedIn Ads</h3><div class="budget">Stand-by</div><div class="role">PRESENÇA ORGÂNICA + PREPARAÇÃO</div><ul><li>Manter conteúdo institucional e de autoridade.</li><li>Conservar Insight Tag e públicos de retargeting.</li><li>Retomar apenas com oferta, verba e objetivo dedicados.</li></ul></div>
+  </div>
+
+  <div class="insight reveal"><div class="i-title">Tese central</div><p><b>Google deve receber a expansão de verba porque já provou capacidade de gerar demanda em todas as etapas do funil.</b> O Instagram entra como experimento de construção de audiência própria. O LinkedIn permanece orgânico até existir uma condição de investimento mais adequada para ABM ou geração de leads enterprise.</p></div>
+</section>
+<div class="divider"><hr></div>
+
+<section class="section" id="google">
+  <div class="sec-head"><div>
+    <div class="sec-eyebrow"><span class="sec-num">02</span>Google Ads</div>
+    <div class="sec-title">Escala de R$ 2 mil para R$ 3 mil/mês</div>
+    <p class="sec-desc">Aumento de 50% com ramp-up, redistribuição por desempenho e controle por qualidade de lead.</p>
+  </div><span class="badge-ok">CANAL PRIORITÁRIO</span></div>
+
+  <div class="kpi-grid reveal">
+    <div class="kpi hl"><div class="k-label">CPL médio S1</div><div class="k-value">R$ 65,72</div><div class="k-note">Google Ads</div></div>
+    <div class="kpi"><div class="k-label">CPL Q2</div><div class="k-value">R$ 50,82</div><div class="k-note up">−44% vs Q1</div></div>
+    <div class="kpi"><div class="k-label">Melhor mês</div><div class="k-value">48 leads</div><div class="k-note up">Abril · CPL R$ 43,53</div></div>
+    <div class="kpi"><div class="k-label">CTR Junho</div><div class="k-value">9,1%</div><div class="k-note up">melhor do ano</div></div>
+    <div class="kpi"><div class="k-label">Lead → MQL</div><div class="k-value">82,3%</div><div class="k-note">qualidade elevada no S1</div></div>
+    <div class="kpi"><div class="k-label">ROAS S1</div><div class="k-value">2,67x</div><div class="k-note">receita atribuída à mídia</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card reveal"><h3>Distribuição recomendada</h3><div class="c-sub">Orçamento mensal · R$ 3.000</div>
+      <div class="metric-line"><div class="label">Transporte Químico</div><div class="track"><div class="fill" style="width:50%"></div></div><div class="value">R$ 1.500</div></div>
+      <div class="metric-line"><div class="label">Armazenagem</div><div class="track"><div class="fill" style="width:25%"></div></div><div class="value">R$ 750</div></div>
+      <div class="metric-line"><div class="label">Container</div><div class="track"><div class="fill" style="width:15%"></div></div><div class="value">R$ 450</div></div>
+      <div class="metric-line"><div class="label">Marca BMX</div><div class="track"><div class="fill" style="width:5%"></div></div><div class="value">R$ 150</div></div>
+      <div class="metric-line"><div class="label">Reserva de otimização</div><div class="track"><div class="fill" style="width:5%"></div></div><div class="value">R$ 150</div></div>
+      <div class="small-note">A reserva não deve virar uma campanha isolada. Ela será redistribuída semanalmente para o grupo com melhor relação entre CPL, MQL e oportunidade comercial.</div>
+    </div>
+    <div class="card reveal"><h3>Projeção mensal inicial</h3><div class="c-sub">Faixa de eficiência após estabilização</div><div class="chart-wrap"><canvas id="chGoogleProjection"></canvas></div><div class="small-note">Projeção baseada no histórico do Q2 com margem para inflação de CPL durante a escala. Não representa garantia de resultado.</div></div>
+  </div>
+
+  <div class="card reveal" style="margin-top:14px"><h3>Plano técnico de execução</h3><div class="c-sub">Estrutura, lances, termos de busca e mensuração</div>
+    <div class="plan-list">
+      <div class="plan-step"><div class="n">01</div><div><h4>Escala em duas etapas</h4><p>Subir o orçamento equivalente para R$ 2.500/mês nos primeiros 7–10 dias. Avançar para R$ 3.000 quando o CPL móvel de 7 dias permanecer até R$ 65 e não houver deterioração relevante na taxa Lead→MQL.</p></div></div>
+      <div class="plan-step"><div class="n">02</div><div><h4>Campanhas separadas por solução</h4><p>Manter Search dedicado para Químico, Armazenagem, Container e Marca. Não misturar serviços com intenção e CPL distintos no mesmo orçamento ou conjunto de anúncios.</p></div></div>
+      <div class="plan-step"><div class="n">03</div><div><h4>Correspondência controlada</h4><p>Priorizar palavras exatas e de frase nas intenções já comprovadas. Ampla somente em grupo experimental, com conversões qualificadas importadas e lista robusta de negativas.</p></div></div>
+      <div class="plan-step"><div class="n">04</div><div><h4>Lance orientado a conversão</h4><p>Usar Maximizar conversões durante o ramp-up. Aplicar CPA desejado por campanha apenas após volume estável e histórico suficiente; o alvo inicial deve respeitar o CPL máximo de cada serviço.</p></div></div>
+      <div class="plan-step"><div class="n">05</div><div><h4>Otimização por estágio comercial</h4><p>Capturar GCLID/GBRAID/WBRAID no formulário e importar MQL, SQL, proposta e venda do CRM. Formulário enviado permanece como sinal, mas o algoritmo deve aprender quais leads avançam.</p></div></div>
+      <div class="plan-step"><div class="n">06</div><div><h4>Landing pages por serviço</h4><p>Garantir mensagem compatível com a busca, prova operacional, áreas atendidas, formulário com campos qualificadores e confirmação inequívoca de envio. Evitar enviar todo tráfego para página genérica.</p></div></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card reveal"><h3>Metas por campanha</h3><div class="c-sub">Critérios para manter, escalar ou reduzir verba</div><div class="tbl-wrap" style="border:0"><table style="min-width:520px"><thead><tr><th>Campanha</th><th class="num">Verba</th><th class="num">CPL controle</th><th class="num">Leads esperados</th></tr></thead><tbody>
+      <tr><td>Transporte Químico</td><td class="num">R$ 1.500</td><td class="num">≤ R$ 50</td><td class="num">30–35</td></tr>
+      <tr><td>Armazenagem</td><td class="num">R$ 750</td><td class="num">≤ R$ 75</td><td class="num">8–12</td></tr>
+      <tr><td>Container</td><td class="num">R$ 450</td><td class="num">≤ R$ 100</td><td class="num">4–6</td></tr>
+      <tr><td>Marca BMX</td><td class="num">R$ 150</td><td class="num">monitorar</td><td class="num">2–4</td></tr>
+      <tr class="total"><td>Total</td><td class="num">R$ 2.850 + reserva</td><td class="num">R$ 55–65</td><td class="num">45–55</td></tr>
+    </tbody></table></div></div>
+    <div class="card reveal"><h3>Termos e exclusões</h3><div class="c-sub">Redução de desperdício e melhora de intenção</div>
+      <div class="check-grid">
+        <div class="check-item"><b>Priorizar</b><p>transportadora de produtos químicos; transporte de cargas perigosas; armazenagem e logística; transporte de container; operador logístico; armazenagem B2B.</p></div>
+        <div class="check-item"><b>Negativar</b><p>emprego, salário, curso, rastreamento, Correios, mudança residencial, frete pequeno, entrega para pessoa física, grátis, aluguel de caminhão.</p></div>
+        <div class="check-item"><b>Separar</b><p>Busca por problema/necessidade, busca por serviço e busca por marca. Cada grupo deve ter anúncio e página correspondentes.</p></div>
+        <div class="check-item"><b>Revisar semanalmente</b><p>Termos de busca, parcela de impressão perdida, dispositivo, região, horário, taxa de MQL e motivos de desqualificação.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout reveal"><h3>O que não recomendamos agora</h3><p>Não abrir Performance Max, Display ou expansão ampla de palavras-chave enquanto a verba mensal ainda é de R$ 3 mil e a conta não estiver importando conversões qualificadas. O ganho mais provável está em capturar melhor a demanda já existente e escalar os grupos comprovados.</p></div>
+</section>
+<div class="divider"><hr></div>
+
+<section class="section" id="instagram">
+  <div class="sec-head"><div>
+    <div class="sec-eyebrow"><span class="sec-num">03</span>Instagram Ads</div>
+    <div class="sec-title">Teste de crescimento de seguidores</div>
+    <p class="sec-desc">Campanha pequena e controlada para transformar a descoberta dos Reels em crescimento da base própria da BMX.</p>
+  </div><span class="badge-wait">TESTE: R$ 1.000/MÊS</span></div>
+
+  <div class="kpi-grid reveal">
+    <div class="kpi hl"><div class="k-label">Base atual</div><div class="k-value">3.258</div><div class="k-note">seguidores ao fim do S1</div></div>
+    <div class="kpi"><div class="k-label">Novos seguidores S1</div><div class="k-value">220</div><div class="k-note">média orgânica: ~37/mês</div></div>
+    <div class="kpi"><div class="k-label">Pico de alcance</div><div class="k-value">8.134</div><div class="k-note up">Junho · recorde do ano</div></div>
+    <div class="kpi"><div class="k-label">Não-seguidores</div><div class="k-value">52%</div><div class="k-note up">do consumo em Junho</div></div>
+    <div class="kpi"><div class="k-label">Meta inicial CPF</div><div class="k-value">R$ 15–25</div><div class="k-note">custo por seguidor incremental</div></div>
+    <div class="kpi"><div class="k-label">Meta incremental</div><div class="k-value">40–65</div><div class="k-note">seguidores/mês · cenário conservador</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card reveal"><h3>Estrutura da campanha</h3><div class="c-sub">Objetivo: visita ao perfil e crescimento de base</div><div class="tbl-wrap" style="border:0"><table style="min-width:520px"><thead><tr><th>Conjunto</th><th class="num">Verba</th><th>Público</th><th>Função</th></tr></thead><tbody>
+      <tr><td>Prospecção</td><td class="num">R$ 700</td><td>Amplo, regiões prioritárias e criativo contextual</td><td>Encontrar novos perfis interessados em logística</td></tr>
+      <tr><td>Retargeting</td><td class="num">R$ 300</td><td>Engajados, viewers de vídeo e visitantes do site</td><td>Converter familiaridade em follow</td></tr>
+    </tbody></table></div><div class="small-note">Configuração preferencial: objetivo Engajamento, destino Perfil do Instagram e otimização para visitas ao perfil. Caso a conta disponibilize otimização direta para seguidores, ela deve ser testada em experimento separado.</div></div>
+    <div class="card reveal"><h3>Funil esperado do teste</h3><div class="c-sub">Hipótese conservadora para os primeiros 30 dias</div><div class="chart-wrap"><canvas id="chIgFunnel"></canvas></div><div class="small-note">A atribuição de novos seguidores no Meta pode ser limitada. O indicador principal será o crescimento incremental versus a média orgânica móvel.</div></div>
+  </div>
+
+  <div class="card reveal" style="margin-top:14px"><h3>Direção criativa</h3><div class="c-sub">O Radar Logístico deve ser o principal motor do teste</div><div class="grid-3" style="margin-top:12px">
+    <div class="post-card"><div class="post-rank">01</div><div class="post-txt"><b>Radar Logístico</b><br>Reels curtos com dado, mudança regulatória ou impacto prático para empresas.</div><div class="post-meta">Gancho nos 2 primeiros segundos · legenda na tela · CTA “Siga a BMX”</div></div>
+    <div class="post-card"><div class="post-rank">02</div><div class="post-txt"><b>Operação em movimento</b><br>Frota, armazém, linha automotiva e bastidores com prova de capacidade real.</div><div class="post-meta">Cortes rápidos · pessoas e ativos reais · identidade visual consistente</div></div>
+    <div class="post-card"><div class="post-rank">03</div><div class="post-txt"><b>Autoridade humana</b><br>Especialistas da BMX explicando um desafio logístico de forma simples.</div><div class="post-meta">Rosto + contexto + solução · linguagem direta · sem excesso institucional</div></div>
+  </div></div>
+
+  <div class="grid-2">
+    <div class="card reveal"><h3>Perfil preparado para converter</h3><div class="c-sub">A mídia leva visitas; o perfil precisa gerar o follow</div><div class="check-grid">
+      <div class="check-item"><b>Bio</b><p>Deixar claro o que a BMX faz, para quem e em quais verticais atua.</p></div>
+      <div class="check-item"><b>Posts fixados</b><p>Fixar apresentação institucional, Radar Logístico forte e prova operacional.</p></div>
+      <div class="check-item"><b>Destaques</b><p>Organizar Soluções, Operações, Certificações, Cases e Contato.</p></div>
+      <div class="check-item"><b>Cadência</b><p>Manter ao menos 2 Reels semanais durante o teste para sustentar a proposta do perfil.</p></div>
+    </div></div>
+    <div class="card reveal"><h3>KPIs do teste</h3><div class="c-sub">Decisão após 30 dias</div><div class="tbl-wrap" style="border:0"><table style="min-width:500px"><thead><tr><th>KPI</th><th class="num">Meta inicial</th><th>Decisão</th></tr></thead><tbody>
+      <tr><td>Custo por visita ao perfil</td><td class="num">≤ R$ 1,50</td><td><span class="decision test">otimizar criativo</span></td></tr>
+      <tr><td>Taxa visita → follow</td><td class="num">5%–8%</td><td><span class="decision test">otimizar perfil</span></td></tr>
+      <tr><td>Custo por seguidor incremental</td><td class="num">≤ R$ 25</td><td><span class="decision">manter</span></td></tr>
+      <tr><td>CPF acima de R$ 30 por 14 dias</td><td class="num">—</td><td><span class="decision pause">pausar/reformular</span></td></tr>
+    </tbody></table></div></div>
+  </div>
+</section>
+<div class="divider"><hr></div>
+
+<section class="section" id="linkedin">
+  <div class="sec-head"><div>
+    <div class="sec-eyebrow"><span class="sec-num">04</span>LinkedIn</div>
+    <div class="sec-title">Mídia paga em stand-by</div>
+    <p class="sec-desc">Preservar presença orgânica e preparação de dados, sem nova verba de anúncios no ciclo inicial.</p>
+  </div><span class="badge-wait">SEM INVESTIMENTO PAGO</span></div>
+
+  <div class="kpi-grid reveal">
+    <div class="kpi"><div class="k-label">Investimento S1</div><div class="k-value">R$ 2.980</div><div class="k-note">Abr–Jun</div></div>
+    <div class="kpi"><div class="k-label">Leads</div><div class="k-value">4</div><div class="k-note down">CPL elevado</div></div>
+    <div class="kpi"><div class="k-label">Empresas alcançadas</div><div class="k-value">362</div><div class="k-note">valor de awareness/ABM</div></div>
+    <div class="kpi"><div class="k-label">Conta enterprise</div><div class="k-value">Ambev</div><div class="k-note up">1 lead estratégico</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card reveal"><h3>Plano orgânico</h3><div class="c-sub">6–8 publicações por mês</div>
+      <div class="plan-list">
+        <div class="plan-step"><div class="n">02</div><div><h4>Radar Logístico</h4><p>Dois conteúdos mensais com leitura de mercado, regulação ou impacto operacional.</p></div></div>
+        <div class="plan-step"><div class="n">02</div><div><h4>Prova operacional</h4><p>Dois conteúdos sobre estrutura, soluções, processos e capacidade da BMX.</p></div></div>
+        <div class="plan-step"><div class="n">01</div><div><h4>Case ou reconhecimento</h4><p>Premiações, clientes, resultados e evidências de confiança.</p></div></div>
+        <div class="plan-step"><div class="n">01</div><div><h4>Pessoas e cultura</h4><p>Equipe, segurança, bastidores e conhecimento técnico.</p></div></div>
+      </div>
+    </div>
+    <div class="card reveal"><h3>Preparação para futura retomada</h3><div class="c-sub">Manter o canal pronto sem consumir verba</div><div class="check-grid">
+      <div class="check-item"><b>Insight Tag</b><p>Manter ativa para acumular visitantes e criar públicos.</p></div>
+      <div class="check-item"><b>UTMs</b><p>Padronizar links orgânicos para medir tráfego e influência.</p></div>
+      <div class="check-item"><b>Contas-alvo</b><p>Consolidar lista de empresas estratégicas com o comercial.</p></div>
+      <div class="check-item"><b>Biblioteca criativa</b><p>Mapear posts com melhor alcance, clique e engajamento executivo.</p></div>
+    </div></div>
+  </div>
+
+  <div class="callout reveal"><h3>Critérios para reativar LinkedIn Ads</h3><p>Retomar apenas quando houver: oferta forte e específica; lista de contas ou cargos priorizados; integração com abordagem comercial; orçamento dedicado mínimo para 60–90 dias; e meta compatível com ABM, geração de reunião ou lead enterprise — não com CPL de Search.</p></div>
+</section>
+<div class="divider"><hr></div>
+
+<section class="section" id="roadmap">
+  <div class="sec-head"><div>
+    <div class="sec-eyebrow"><span class="sec-num">05</span>Plano 90 Dias</div>
+    <div class="sec-title">Implementar, validar e consolidar</div>
+    <p class="sec-desc">Ritmo sugerido para evitar aumento de verba sem ganho real de eficiência.</p>
+  </div><span class="badge-ok">CICLO INICIAL: R$ 12 MIL</span></div>
+
+  <div class="timeline">
+    <div class="month reveal"><div class="m-num">MÊS 01</div><h3>Fundação e ramp-up</h3><ul><li>Auditar conversões e ações primárias.</li><li>Organizar campanhas e palavras por serviço.</li><li>Subir Google de R$ 2 mil para R$ 2,5 mil e depois R$ 3 mil.</li><li>Lançar teste de Instagram com 4–6 Reels.</li><li>Definir dashboard semanal.</li></ul></div>
+    <div class="month reveal"><div class="m-num">MÊS 02</div><h3>Escala dos vencedores</h3><ul><li>Redistribuir verba por MQL e SQL.</li><li>Expandir termos de alta intenção.</li><li>Negativar padrões de lead fora do perfil.</li><li>Renovar criativos do Instagram.</li><li>Otimizar bio e posts fixados.</li></ul></div>
+    <div class="month reveal"><div class="m-num">MÊS 03</div><h3>Consolidação</h3><ul><li>Importar propostas e vendas como conversão.</li><li>Definir CPA por campanha madura.</li><li>Validar custo por seguidor incremental.</li><li>Projetar próximo degrau de Google.</li><li>Decidir continuidade do teste IG.</li></ul></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card reveal"><h3>Projeção do ciclo</h3><div class="c-sub">90 dias · hipótese inicial</div><div class="kpi-grid" style="margin-top:10px;grid-template-columns:repeat(2,1fr)">
+      <div class="kpi hl"><div class="k-label">Google</div><div class="k-value">R$ 9 mil</div><div class="k-note">135–165 leads</div></div>
+      <div class="kpi"><div class="k-label">Instagram</div><div class="k-value">R$ 3 mil</div><div class="k-note">120–195 seguidores</div></div>
+      <div class="kpi"><div class="k-label">LinkedIn Ads</div><div class="k-value">R$ 0</div><div class="k-note">conteúdo orgânico</div></div>
+      <div class="kpi hl"><div class="k-label">Total</div><div class="k-value">R$ 12 mil</div><div class="k-note">ciclo de validação</div></div>
+    </div></div>
+    <div class="card reveal"><h3>Governança</h3><div class="c-sub">Rotina mínima de gestão</div><div class="plan-list">
+      <div class="plan-step"><div class="n">7D</div><div><h4>Otimização semanal</h4><p>Budget, termos de busca, negativas, anúncios, CPL, MQL e motivos de perda.</p></div></div>
+      <div class="plan-step"><div class="n">30D</div><div><h4>Revisão mensal</h4><p>Leads, MQL, SQL, propostas, receita, CPF do Instagram e decisão de redistribuição.</p></div></div>
+      <div class="plan-step"><div class="n">90D</div><div><h4>Decisão de escala</h4><p>Próximo aumento somente se Google absorver verba com qualidade e o comercial sustentar o retorno.</p></div></div>
+    </div></div>
+  </div>
+</section>
+
+<footer><div class="f1">BMX Serviços · Plano de Mídia 2026</div><div class="f2">Estratégia de crescimento e expansão · Google Ads, Instagram e LinkedIn</div></footer>
+
+
+<script>
+Chart.register(ChartDataLabels);
+Chart.defaults.color='#9c9c9c';
+Chart.defaults.borderColor='#3d3d3d';
+Chart.defaults.font.family='Archivo, sans-serif';
+Chart.defaults.plugins.datalabels.display=false;
+const YEL='#F1C232', WHT='#ededed', BLU='#6fa8dc', SOFT='rgba(232,232,232,.30)';
+const TT={backgroundColor:'#171717',titleColor:'#ededed',bodyColor:'#ededed',borderColor:'#444',borderWidth:1,padding:10};
+const LEG={labels:{boxWidth:10,boxHeight:10,usePointStyle:true,pointStyle:'rectRounded'}};
+new Chart(document.getElementById('chGoogleProjection'),{type:'bar',data:{labels:['Conservador','Meta','Potencial'],datasets:[{label:'Leads/mês',data:[45,50,55],backgroundColor:[SOFT,YEL,BLU],borderRadius:6,datalabels:{display:true,anchor:'end',align:'top',color:WHT,font:{weight:'600'}}}]},options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:TT},scales:{y:{beginAtZero:true,suggestedMax:65}}}});
+new Chart(document.getElementById('chIgFunnel'),{type:'bar',data:{labels:['Visitas ao perfil','Seguidores · mínimo','Seguidores · potencial'],datasets:[{data:[800,40,64],backgroundColor:[BLU,SOFT,YEL],borderRadius:6,datalabels:{display:true,anchor:'end',align:'top',color:WHT,font:{weight:'600'}}}]},options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:TT},scales:{y:{beginAtZero:true,suggestedMax:950}}}});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');io.unobserve(e.target)}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const secs=[...document.querySelectorAll('section[id]')];
+const links=[...document.querySelectorAll('.nav-links a')];
+window.addEventListener('scroll',()=>{let cur=null;secs.forEach(s=>{if(s.getBoundingClientRect().top<120)cur=s.id});links.forEach(l=>l.classList.toggle('active',cur&&l.getAttribute('href')==='#'+cur))},{passive:true});
+</script>
+
+</body>
+</html>

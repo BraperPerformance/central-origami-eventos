@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMX · Status de Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Narrow:wght@500;600;700&family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15161a;          /* base grafite quase preto */
+    --panel:#1d1f24;        /* painel */
+    --panel-2:#26282f;      /* painel claro */
+    --line:#34373f;         /* divisórias */
+    --line-soft:#2a2c33;
+    --txt:#eef0f3;          /* texto primário */
+    --txt-2:#9aa0ab;        /* texto secundário */
+    --txt-3:#6a6f7a;        /* legendas */
+    --bmx:#f1c232;          /* amarelo BMX */
+    --bmx-deep:#d8a91d;
+    --graphite:#434343;     /* grafite BMX */
+    --pos:#4ec47e;          /* positivo */
+    --neg:#f06a5d;          /* negativo */
+    --neu:#7d8392;
+    --grid:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--txt);
+    font-family:'Archivo',-apple-system,system-ui,sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding:0 0 80px;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* ============ HERO ============ */
+  header{
+    border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(120% 140% at 88% -10%, rgba(241,194,50,.10), transparent 55%),
+      var(--ink);
+  }
+  .hero{padding:38px 0 30px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px}
+  .mark{display:flex;align-items:center;gap:14px}
+  .logo{
+    width:52px;height:52px;border-radius:11px;flex:none;
+    background:var(--bmx);color:var(--ink);
+    display:grid;place-items:center;font-weight:700;
+    font-family:'Archivo Narrow',sans-serif;font-size:13px;letter-spacing:.04em;
+    box-shadow:0 0 0 1px rgba(0,0,0,.3) inset;
+  }
+  .logo span{transform:translateY(1px)}
+  .mark h1{font-size:21px;font-weight:700;letter-spacing:-.01em;line-height:1.15}
+  .mark .sub{color:var(--txt-2);font-size:13px;font-weight:500;margin-top:2px}
+  .period{text-align:right}
+  .period .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--bmx);font-weight:600;
+  }
+  .period .ref{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:27px;letter-spacing:.01em;margin-top:3px}
+  .period .upd{color:var(--txt-3);font-size:11.5px;font-family:'IBM Plex Mono',monospace;margin-top:2px}
+
+  /* dual badge maio/junho */
+  .legendbar{display:flex;gap:18px;align-items:center;padding:14px 0 0;flex-wrap:wrap}
+  .lg{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--txt-2);font-weight:500}
+  .swatch{width:13px;height:13px;border-radius:3px}
+  .sw-may{background:var(--bmx)}
+  .sw-jun{background:transparent;border:1.5px solid var(--bmx)}
+  .lg .pill{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--txt-3);border:1px solid var(--line);border-radius:20px;padding:2px 9px}
+
+  /* ============ SECTION ============ */
+  section{padding-top:44px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;border-bottom:1px solid var(--line-soft);padding-bottom:12px}
+  .sec-num{
+    font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;
+    color:var(--ink);background:var(--bmx);border-radius:6px;
+    padding:1px 9px;letter-spacing:.04em;flex:none;transform:translateY(-2px);
+  }
+  .sec-head h2{font-size:19px;font-weight:700;letter-spacing:-.01em}
+  .sec-head .tag{margin-left:auto;font-size:12px;color:var(--txt-3);font-weight:500;font-family:'IBM Plex Mono',monospace}
+
+  /* ============ KPI dual cards ============ */
+  .kgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .kpi{
+    background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;
+    padding:16px 16px 14px;position:relative;overflow:hidden;
+  }
+  .kpi .klabel{font-size:11.5px;color:var(--txt-2);font-weight:600;letter-spacing:.01em;text-transform:uppercase;font-family:'Archivo Narrow',sans-serif}
+  .kpi .dual{display:flex;align-items:flex-end;gap:16px;margin-top:11px}
+  .colm{display:flex;flex-direction:column}
+  .colm .tier{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-3);margin-bottom:3px}
+  .v-big{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:33px;line-height:.92;letter-spacing:.005em}
+  .v-may{color:var(--bmx)}
+  .v-jun{color:var(--txt);position:relative}
+  .colm.jun .v-big{color:var(--txt)}
+  .unit{font-size:13px;color:var(--txt-3);font-weight:600;font-family:'Barlow Condensed',sans-serif}
+  .divline{width:1px;align-self:stretch;background:var(--line);margin:2px 0}
+  .delta{display:inline-flex;align-items:center;gap:3px;font-size:11.5px;font-weight:600;font-family:'IBM Plex Mono',monospace;margin-top:9px}
+  .delta.pos{color:var(--pos)} .delta.neg{color:var(--neg)} .delta.neu{color:var(--neu)}
+  .delta .arw{font-size:10px}
+  .kpi .foot{font-size:11px;color:var(--txt-3);margin-top:7px;line-height:1.35}
+
+  /* ============ Funnel ============ */
+  .funwrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .funcard{background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;padding:18px 18px 16px}
+  .funcard h3{font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:2px}
+  .funcard h3 .mo{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.1em;padding:2px 8px;border-radius:5px}
+  .mo.may{background:var(--bmx);color:var(--ink)}
+  .mo.jun{background:transparent;border:1px solid var(--bmx);color:var(--bmx)}
+  .funcard .invsum{font-size:12px;color:var(--txt-2);margin-bottom:14px;font-weight:500}
+  .funcard .invsum b{color:var(--txt);font-weight:700}
+  .step{margin-bottom:10px}
+  .step:last-child{margin-bottom:0}
+  .step .sl{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;margin-bottom:4px}
+  .step .sl .name{color:var(--txt-2);font-weight:600}
+  .step .sl .num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--txt)}
+  .bar{height:9px;border-radius:5px;background:var(--line-soft);overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--bmx-deep),var(--bmx))}
+  .funcard.jun .bar i{background:linear-gradient(90deg,#5b5f6a,#8b909b)}
+
+  /* ============ table ============ */
+  .tbl{background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;overflow:hidden;margin-top:14px}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  thead th{
+    background:var(--panel-2);text-align:right;padding:11px 14px;font-weight:600;
+    color:var(--txt-2);font-family:'Archivo Narrow',sans-serif;letter-spacing:.02em;
+    text-transform:uppercase;font-size:11px;border-bottom:1px solid var(--line);
+  }
+  thead th:first-child{text-align:left}
+  tbody td{padding:10px 14px;text-align:right;border-bottom:1px solid var(--line-soft);font-family:'IBM Plex Mono',monospace;color:var(--txt)}
+  tbody td:first-child{text-align:left;font-family:'Archivo',sans-serif;font-weight:600;color:var(--txt-2)}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr.hl td{background:rgba(241,194,50,.07)}
+  tbody tr.hl td:first-child{color:var(--bmx)}
+  tbody tr.totalrow td{background:var(--panel-2);font-weight:700;border-top:1px solid var(--line)}
+  tbody tr.totalrow td:first-child{color:var(--txt)}
+  .cap{font-size:11px;color:var(--txt-3);padding:9px 14px;background:var(--panel-2);border-top:1px solid var(--line-soft)}
+
+  /* ============ posts ============ */
+  .posts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px}
+  .post{background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;padding:15px 16px;display:flex;flex-direction:column}
+  .post .ptop{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}
+  .ptype{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--bmx);padding:2px 8px;border-radius:5px;font-weight:600}
+  .ptype.org{background:transparent;border:1px solid var(--bmx);color:var(--bmx)}
+  .pdate{font-size:11px;color:var(--txt-3);font-family:'IBM Plex Mono',monospace}
+  .post .ptitle{font-size:12.5px;color:var(--txt);font-weight:500;line-height:1.4;margin-bottom:12px;flex:1}
+  .post .pstats{display:flex;gap:14px;border-top:1px solid var(--line-soft);padding-top:10px}
+  .pstat{display:flex;flex-direction:column}
+  .pstat .pv{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;line-height:1}
+  .pstat .pk{font-size:10px;color:var(--txt-3);text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+  .pstat.win .pv{color:var(--bmx)}
+
+  /* ============ bench ============ */
+  .bench{margin-top:14px;background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;overflow:hidden}
+
+  /* ============ pending ============ */
+  .pending{
+    margin-top:14px;border:1.5px dashed var(--line);border-radius:12px;
+    padding:26px 22px;text-align:center;background:repeating-linear-gradient(45deg,transparent,transparent 11px,rgba(255,255,255,.012) 11px,rgba(255,255,255,.012) 22px);
+  }
+
+  /* ============ context banner ============ */
+  .context{margin-bottom:16px;background:linear-gradient(90deg,rgba(241,194,50,.07),transparent);border:1px solid var(--line-soft);border-left:3px solid var(--bmx);border-radius:10px;padding:14px 18px}
+  .context .ctx-label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--bmx);font-weight:600;display:block;margin-bottom:5px}
+  .context p{font-size:13px;color:var(--txt);line-height:1.55}
+  .context p b{color:var(--bmx);font-weight:700}
+
+  /* ============ actions ============ */
+  .actwrap{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .actcard{background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;padding:18px;height:100%}
+  .actcard h3{font-size:14px;font-weight:700;display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line-soft)}
+  .owner{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.03em;padding:2px 11px;border-radius:6px}
+  .own-b{background:var(--bmx);color:var(--ink)}
+  .own-x{background:var(--graphite);color:var(--txt);border:1px solid var(--line)}
+  .task{display:flex;align-items:flex-start;gap:11px;padding:9px 0;cursor:pointer;border-bottom:1px solid var(--line-soft)}
+  .task:last-child{border-bottom:none}
+  .task input{position:absolute;opacity:0;width:0;height:0}
+  .box{flex:none;width:19px;height:19px;border-radius:5px;border:1.5px solid var(--line);margin-top:1px;display:grid;place-items:center;transition:.15s;position:relative}
+  .box::after{content:"";width:9px;height:9px;border-radius:2px;background:var(--bmx);transform:scale(0);transition:.15s}
+  .task input:checked ~ .box{border-color:var(--bmx);background:rgba(241,194,50,.12)}
+  .task input:checked ~ .box::after{transform:scale(1)}
+  .task .txt{font-size:13px;color:var(--txt);line-height:1.45;transition:.15s}
+  .task .txt em{color:var(--txt-3);font-style:normal;font-size:12px}
+  .task input:checked ~ .txt{color:var(--txt-3);text-decoration:line-through;text-decoration-color:var(--bmx-deep)}
+  .task input:focus-visible ~ .box{outline:2px solid var(--bmx);outline-offset:2px}
+
+  /* ============ editorial calendar ============ */
+  .edsub{margin-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .edtitle{font-size:14px;font-weight:700}
+  .edlegend{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .edlegend .lg{font-size:11.5px;color:var(--txt-2);display:flex;align-items:center;gap:6px;font-weight:500}
+  .prod{font-family:'Barlow Condensed',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:1px 9px;border-radius:5px;display:inline-block}
+  .prod-br{background:#9c1f17;color:#fff}
+  .prod-bmx{background:#3a3326;color:var(--bmx);border:1px solid #5a4f38}
+  .dot-appr{width:9px;height:9px;border-radius:50%;background:var(--bmx);box-shadow:0 0 0 3px rgba(241,194,50,.2)}
+  .edtbl{margin-top:10px}
+  .edtbl tbody td:first-child{font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--txt);font-size:14px}
+  .edtbl tbody td{text-align:left}
+  .edtbl thead th{text-align:left}
+  .edtbl tbody td:nth-child(2){font-family:'IBM Plex Mono',monospace;color:var(--txt-2)}
+  tr.approw td{background:rgba(241,194,50,.08)!important}
+  tr.approw{box-shadow:inset 3px 0 0 var(--bmx)}
+  .dlink{display:inline-block;margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--bmx);text-decoration:none;border-bottom:1px dashed var(--bmx-deep);font-weight:500}
+  .dlink:hover{color:#fff;border-color:#fff}
+  .stp{font-family:'Archivo Narrow',sans-serif;font-size:11px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;padding:3px 9px;border-radius:5px;white-space:nowrap}
+  .stp.appr{background:var(--bmx);color:var(--ink)}
+  .stp.next{background:rgba(78,196,126,.14);color:var(--pos);border:1px solid rgba(78,196,126,.3)}
+  .stp.prog{background:rgba(125,131,146,.14);color:var(--txt-2);border:1px solid var(--line)}
+  .stp.plan{background:transparent;color:var(--txt-3);border:1px solid var(--line)}
+  .stp.done{background:transparent;color:var(--txt-3);border:1px solid var(--line-soft);text-decoration:line-through;text-decoration-color:var(--bmx-deep)}
+
+  .notecard{margin-top:14px;background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;padding:18px}
+  .notehead{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:12px}
+  .notehead h3{font-size:14px;font-weight:700}
+  .copybtn{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:12px;letter-spacing:.03em;text-transform:uppercase;background:var(--bmx);color:var(--ink);border:none;border-radius:7px;padding:8px 14px;cursor:pointer;transition:.15s}
+  .copybtn:hover{background:var(--bmx-deep)}
+  .copybtn.done{background:var(--pos);color:var(--ink)}
+  #notes{width:100%;min-height:150px;background:var(--ink);border:1px solid var(--line);border-radius:9px;padding:13px 14px;color:var(--txt);font-family:'Archivo',sans-serif;font-size:13.5px;line-height:1.6;resize:vertical}
+  #notes:focus{outline:none;border-color:var(--bmx)}
+  #notes::placeholder{color:var(--txt-3)}
+  .notehint{font-size:11px;color:var(--txt-3);margin-top:9px;font-family:'IBM Plex Mono',monospace}
+
+  /* ============ takeaways ============ */
+  .reads{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .read{background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;padding:16px 18px;border-left:3px solid var(--bmx)}
+  .read.watch{border-left-color:var(--neg)}
+  .read h4{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--txt-2);font-family:'Archivo Narrow',sans-serif;margin-bottom:7px;font-weight:700}
+  .read.watch h4{color:var(--neg)}
+  .read p{font-size:13px;color:var(--txt);line-height:1.55}
+  .read p b{color:var(--bmx);font-weight:700}
+  .read.watch p b{color:var(--neg)}
+
+  footer{margin-top:50px;border-top:1px solid var(--line);padding-top:20px;color:var(--txt-3);font-size:11.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:'IBM Plex Mono',monospace}
+
+  @media(max-width:880px){
+    .kgrid{grid-template-columns:repeat(2,1fr)}
+    .funwrap,.posts,.reads,.actwrap{grid-template-columns:1fr}
+  }
+  @media(max-width:540px){
+    .kgrid{grid-template-columns:1fr}
+    .hero{flex-direction:column;align-items:flex-start}
+    .period{text-align:left}
+    .v-big{font-size:29px}
+  }
+  @media(prefers-reduced-motion:no-preference){
+    .kpi,.funcard,.post,.read{animation:rise .5s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="hero">
+      <div class="mark">
+        <div class="logo"><span>bmx</span></div>
+        <div>
+          <h1>Status de Marketing · BMX Serviços</h1>
+          <div class="sub">Tráfego pago · Social media · CRM — leitura mensal e ritmo da semana</div>
+        </div>
+      </div>
+      <div class="period">
+        <div class="eyebrow">Relatório de performance</div>
+        <div class="ref">Maio × Junho · fechados</div>
+        <div class="upd">atualizado 02/07/2026 · mês fechado</div>
+      </div>
+    </div>
+    <div class="legendbar">
+      <div class="lg"><span class="swatch sw-may"></span> Maio/2026 — fechado</div>
+      <div class="lg"><span class="swatch sw-jun"></span> Junho/2026 — fechado</div>
+      <div class="lg"><span class="pill">evolução mês a mês, lado a lado</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ============ 1. PAID ============ -->
+  <section id="paid">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2>Tráfego pago — Google Ads + LinkedIn Ads</h2>
+      <span class="tag">fonte: TCI 2026</span>
+    </div>
+
+    <div class="kgrid">
+      <div class="kpi">
+        <div class="klabel">Investimento</div>
+        <div class="dual">
+          <div class="colm"><span class="tier">Maio</span><span class="v-big v-may">3.109<span class="unit"> R$</span></span></div>
+          <div class="divline"></div>
+          <div class="colm jun"><span class="tier">Junho</span><span class="v-big">3.066<span class="unit"> R$</span></span></div>
+        </div>
+        <div class="foot">Maio: Google R$ 2.031 + LinkedIn R$ 1.078. Junho: Google R$ 2.028 + LinkedIn R$ 1.038.</div>
+      </div>
+
+      <div class="kpi">
+        <div class="klabel">Leads gerados</div>
+        <div class="dual">
+          <div class="colm"><span class="tier">Maio</span><span class="v-big v-may">40</span></div>
+          <div class="divline"></div>
+          <div class="colm jun"><span class="tier">Junho</span><span class="v-big">35</span></div>
+        </div>
+        <div class="delta neg"><span class="arw">▼</span> 12,5% vs. maio (40 → 35)</div>
+      </div>
+
+      <div class="kpi">
+        <div class="klabel">Custo por lead (CPL)</div>
+        <div class="dual">
+          <div class="colm"><span class="tier">Maio</span><span class="v-big v-may">53,45<span class="unit"> R$</span></span></div>
+          <div class="divline"></div>
+          <div class="colm jun"><span class="tier">Junho</span><span class="v-big">57,95<span class="unit"> R$</span></span></div>
+        </div>
+        <div class="delta neg"><span class="arw">▲</span> 8,4% mais caro (Google)</div>
+      </div>
+
+      <div class="kpi">
+        <div class="klabel">CTR Google Ads</div>
+        <div class="dual">
+          <div class="colm"><span class="tier">Maio</span><span class="v-big v-may">7,5<span class="unit"> %</span></span></div>
+          <div class="divline"></div>
+          <div class="colm jun"><span class="tier">Junho</span><span class="v-big">9,1<span class="unit"> %</span></span></div>
+        </div>
+        <div class="delta pos"><span class="arw">▲</span> +1,6 p.p. vs. maio (melhor do ano)</div>
+      </div>
+    </div>
+
+    <!-- funil dual -->
+    <div class="funwrap">
+      <div class="funcard">
+        <h3><span class="mo may">MAIO</span> Funil de conversão · fechado</h3>
+        <div class="invsum">Investimento <b>R$ 3.109</b> · 2 canais ativos (Google + LinkedIn)</div>
+        <div class="step"><div class="sl"><span class="name">Impressões</span><span class="num">36.608</span></div><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="step"><div class="sl"><span class="name">Cliques no link</span><span class="num">789</span></div><div class="bar"><i style="width:42%"></i></div></div>
+        <div class="step"><div class="sl"><span class="name">Leads</span><span class="num">40</span></div><div class="bar"><i style="width:20%"></i></div></div>
+        <div class="step"><div class="sl"><span class="name">MQL (Google)</span><span class="num">34</span></div><div class="bar"><i style="width:16%"></i></div></div>
+      </div>
+      <div class="funcard jun">
+        <h3><span class="mo jun">JUNHO</span> Funil de conversão · fechado</h3>
+        <div class="invsum">Investimento <b>R$ 3.066</b> · mês completo · 2 canais ativos</div>
+        <div class="step"><div class="sl"><span class="name">Impressões</span><span class="num">15.930</span></div><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="step"><div class="sl"><span class="name">Cliques no link</span><span class="num">546</span></div><div class="bar"><i style="width:44%"></i></div></div>
+        <div class="step"><div class="sl"><span class="name">Leads</span><span class="num">35</span></div><div class="bar"><i style="width:24%"></i></div></div>
+        <div class="step"><div class="sl"><span class="name">MQL (Google)</span><span class="num">30</span></div><div class="bar"><i style="width:20%"></i></div></div>
+      </div>
+    </div>
+
+    <!-- MoM google table -->
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Google Ads — mês</th><th>Investido</th><th>Impressões</th><th>Cliques</th><th>CTR</th><th>Leads</th><th>MQL</th><th>CPL</th></tr></thead>
+        <tbody>
+          <tr><td>Janeiro</td><td>1.914</td><td>4.531</td><td>391</td><td>8,6%</td><td>23</td><td>18</td><td>83,23</td></tr>
+          <tr><td>Fevereiro</td><td>2.006</td><td>2.511</td><td>210</td><td>8,4%</td><td>11</td><td>10</td><td>182,36</td></tr>
+          <tr><td>Março</td><td>2.550</td><td>6.465</td><td>572</td><td>8,8%</td><td>37</td><td>30</td><td>68,92</td></tr>
+          <tr><td>Abril</td><td>2.090</td><td>8.411</td><td>612</td><td>7,3%</td><td>48</td><td>42</td><td>43,53</td></tr>
+          <tr class="hl"><td>Maio · fechado</td><td>2.031</td><td>6.201</td><td>466</td><td>7,5%</td><td>38</td><td>34</td><td>53,45</td></tr>
+          <tr class="hl"><td>Junho · fechado</td><td>2.028</td><td>5.012</td><td>458</td><td>9,1%</td><td>35</td><td>30</td><td>57,95</td></tr>
+        </tbody>
+      </table>
+      <div class="cap">Valores em R$ (Google Ads). LinkedIn Ads reportado à parte: maio R$ 1.078 / 2 leads · junho R$ 1.038 / 0 lead direto — detalhamento na análise de criativos abaixo.</div>
+    </div>
+
+    <div class="reads">
+      <div class="read">
+        <h4>Leitura — o que está funcionando</h4>
+        <p>Junho fechou com <b>investimento praticamente igual a maio</b> (R$ 3.066 vs. R$ 3.109) e o <b>melhor CTR do ano no Google (9,1%, +1,6 p.p.)</b>. Menos impressões, mas <b>tráfego mais qualificado</b> — a conta segue eficiente mesmo com leve queda de volume.</p>
+      </div>
+      <div class="read watch">
+        <h4>Ponto de atenção</h4>
+        <p>Leads caíram de 40 para 35 e o CPL subiu de R$ 53 para R$ 58. O <b>LinkedIn Ads não gerou lead direto no consolidado</b> (R$ 1.038 investidos) — mas os dados de criativos e cobertura abaixo mostram onde ele está entregando valor de fato.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. LINKEDIN ADS CRIATIVOS ============ -->
+  <section id="liads">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2>LinkedIn Ads — análise de criativos (Lead Ads)</h2>
+      <span class="tag">3 campanhas · junho</span>
+    </div>
+
+    <div class="context">
+      <span class="ctx-label">Como ler</span>
+      <p>Três campanhas rodaram em junho com objetivos distintos: <b>duas de Lead Form</b> (Armazenagem de Vinhos e Transporte Químico) e <b>uma institucional de engajamento</b>. Elas não devem ser medidas pela mesma régua — a de engajamento é topo de funil (alcance/marca), as de Lead Form miram captura.</p>
+    </div>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Campanha</th><th>Formato</th><th>Investido</th><th>Impressões</th><th>Cliques</th><th>CTR</th><th>Leads</th><th>CPL</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>Armazenagem de Vinhos</td><td>Vídeo</td><td>783</td><td>6.984</td><td>51</td><td>0,73%</td><td>1</td><td>783,33</td></tr>
+          <tr><td>Transporte Químico</td><td>Estático</td><td>1.500</td><td>17.865</td><td>171</td><td>0,96%</td><td>3</td><td>500,07</td></tr>
+          <tr><td>Institucional (engajamento)</td><td>Feed</td><td>696</td><td>102.474</td><td>995</td><td>0,97%</td><td>0</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <div class="cap">Valores em R$. A campanha institucional carrega 80% das impressões (102 mil) a um CPC de R$ 0,70 — é o motor de alcance. As de Lead Form entregam captura a um custo alto por lead, esperado para o público de decisores B2B no LinkedIn.</div>
+    </div>
+
+    <!-- Vídeo de vinhos: funil de retenção -->
+    <div class="funwrap">
+      <div class="funcard">
+        <h3><span class="mo may">VÍDEO</span> Armazenagem de Vinhos · retenção</h3>
+        <div class="invsum"><b>2.829 visualizações</b> de vídeo · 6.976 reproduções iniciadas</div>
+        <div class="step"><div class="sl"><span class="name">Iniciou reprodução</span><span class="num">6.976</span></div><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="step"><div class="sl"><span class="name">Assistiu 25%</span><span class="num">414</span></div><div class="bar"><i style="width:6%"></i></div></div>
+        <div class="step"><div class="sl"><span class="name">Assistiu 50%</span><span class="num">156</span></div><div class="bar"><i style="width:2.2%"></i></div></div>
+        <div class="step"><div class="sl"><span class="name">Assistiu 75%</span><span class="num">93</span></div><div class="bar"><i style="width:1.3%"></i></div></div>
+        <div class="step"><div class="sl"><span class="name">Assistiu 100%</span><span class="num">72</span></div><div class="bar"><i style="width:1%"></i></div></div>
+      </div>
+      <div class="funcard jun">
+        <h3><span class="mo jun">COMPARA</span> Vídeo × Estático</h3>
+        <div class="invsum">Mesmo objetivo (Lead Form), abordagens diferentes</div>
+        <div class="step"><div class="sl"><span class="name">CTR — Vídeo (vinhos)</span><span class="num">0,73%</span></div><div class="bar"><i style="width:76%"></i></div></div>
+        <div class="step"><div class="sl"><span class="name">CTR — Estático (químico)</span><span class="num">0,96%</span></div><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="step"><div class="sl"><span class="name">CPL — Vídeo</span><span class="num">R$ 783</span></div><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="step"><div class="sl"><span class="name">CPL — Estático</span><span class="num">R$ 500</span></div><div class="bar"><i style="width:64%"></i></div></div>
+      </div>
+    </div>
+
+    <div class="reads">
+      <div class="read">
+        <h4>Leitura — vídeo de vinhos</h4>
+        <p>O vídeo <b>gerou 1 lead e engajou 134 interações</b>, mas a retenção mostra o gargalo: dos 6.976 que iniciaram, só <b>6% chegam a 25%</b> e 1% assiste até o fim. O interesse inicial existe, mas os <b>primeiros segundos não seguram</b> — vale testar um corte mais curto com o gancho de dor logo na abertura.</p>
+      </div>
+      <div class="read watch">
+        <h4>Recomendação</h4>
+        <p>No comparativo, o <b>estático de Transporte Químico converteu melhor</b> (CPL R$ 500 vs. R$ 783) e com CTR maior. Sugiro <b>reeditar o vídeo de vinhos</b> (abertura mais direta, legenda queimada, CTA antecipado) antes de escalar investimento — ou priorizar o formato estático para captura.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. COBERTURA DE CONTAS ============ -->
+  <section id="abm">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <h2>Cobertura de contas — quem estamos tocando</h2>
+      <span class="tag">LinkedIn Ads · 362 empresas</span>
+    </div>
+
+    <div class="kgrid">
+      <div class="kpi">
+        <div class="klabel">Contas alcançadas</div>
+        <div class="dual"><div class="colm"><span class="tier">Empresas únicas</span><span class="v-big v-may">362</span></div></div>
+        <div class="foot">Empresas distintas impactadas pelos anúncios no período.</div>
+      </div>
+      <div class="kpi">
+        <div class="klabel">Engajamento "Very High"</div>
+        <div class="dual"><div class="colm"><span class="tier">Contas</span><span class="v-big v-may">266</span></div></div>
+        <div class="foot">73% da base tocada com nível de engajamento máximo — audiência quente.</div>
+      </div>
+      <div class="kpi">
+        <div class="klabel">Contas com clique</div>
+        <div class="dual"><div class="colm"><span class="tier">Interagiram</span><span class="v-big v-may">26</span></div></div>
+        <div class="foot">14 com clique + 26 com engajamento ativo no conteúdo pago.</div>
+      </div>
+      <div class="kpi">
+        <div class="klabel">Lead de conta-alvo</div>
+        <div class="dual"><div class="colm"><span class="tier">Origem</span><span class="v-big v-may">Ambev</span></div></div>
+        <div class="foot">O lead pago do período veio de uma conta enterprise estratégica.</div>
+      </div>
+    </div>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Top contas alcançadas</th><th>Impressões</th><th>Cliques</th><th>Views de vídeo</th><th>Engaj.</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>Ambev</td><td>212</td><td>0</td><td>17</td><td>10 · 1 lead</td></tr>
+          <tr><td>Mercado Livre</td><td>795</td><td>6</td><td>10</td><td>6</td></tr>
+          <tr><td>Assaí Atacadista</td><td>344</td><td>5</td><td>3</td><td>5</td></tr>
+          <tr><td>JBS</td><td>141</td><td>3</td><td>10</td><td>4</td></tr>
+          <tr><td>Riachuelo</td><td>156</td><td>4</td><td>0</td><td>5</td></tr>
+          <tr><td>GOL Linhas Aéreas</td><td>76</td><td>3</td><td>0</td><td>5</td></tr>
+          <tr><td>Uber · Petrobras · Total Express · Grupo GPS</td><td>64–77</td><td>0</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <div class="cap">O LinkedIn Ads está colocando a marca BMX na frente de <b>grandes embarcadores</b> (Mercado Livre, Ambev, JBS, Petrobras, Riachuelo) — exatamente o perfil de decisor de supply chain que interessa. É valor de ABM/marca que o número de "leads diretos" não captura.</div>
+    </div>
+
+    <div class="reads">
+      <div class="read">
+        <h4>Highlight — alcance qualificado</h4>
+        <p>73% das contas tocadas estão em <b>"Very High engagement"</b> e a lista inclui <b>marcas enterprise de logística e varejo</b>. Mesmo com poucos leads diretos, a mídia está construindo presença junto a quem decide grandes contratos — e já rendeu um lead da <b>Ambev</b>.</p>
+      </div>
+      <div class="read watch">
+        <h4>Como capitalizar</h4>
+        <p>Essa cobertura abre espaço para uma <b>camada de ABM/InMail</b> direcionada às contas mais engajadas — conectando o alcance atual com abordagem 1:1. Casa diretamente com a campanha de InMail com o perfil do Fausto que está no radar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. SOCIAL ============ -->
+  <section id="social">
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <h2>Social media — Instagram + LinkedIn (orgânico)</h2>
+      <span class="tag">Junho fechado · IG 01–30/06 · LinkedIn</span>
+    </div>
+
+    <div class="kgrid">
+      <div class="kpi">
+        <div class="klabel">Visualizações IG</div>
+        <div class="dual"><div class="colm"><span class="tier">Período · 12 posts</span><span class="v-big v-may">20,8<span class="unit"> mil</span></span></div></div>
+        <div class="delta pos"><span class="arw">▲</span> 144,9% vs. período anterior</div>
+        <div class="foot">47,7% de seguidores · 52,3% de não-seguidores. Mix: 6 carrosséis, 6 Reels.</div>
+      </div>
+      <div class="kpi">
+        <div class="klabel">Interações IG</div>
+        <div class="dual"><div class="colm"><span class="tier">Período</span><span class="v-big v-may">1,3<span class="unit"> mil</span></span></div></div>
+        <div class="delta pos"><span class="arw">▲</span> 403,8%</div>
+        <div class="foot">690 curtidas · 145 comentários · 155 compart. 69% vêm de seguidores.</div>
+      </div>
+      <div class="kpi">
+        <div class="klabel">Alcance IG</div>
+        <div class="dual"><div class="colm"><span class="tier">Período</span><span class="v-big v-may">3,3<span class="unit"> mil</span></span></div></div>
+        <div class="delta pos"><span class="arw">▲</span> 137,4%</div>
+        <div class="foot">Não-seguidores: 2.738 (+204,2%) — forte descoberta.</div>
+      </div>
+      <div class="kpi">
+        <div class="klabel">Impressões LinkedIn</div>
+        <div class="dual"><div class="colm"><span class="tier">Junho · orgânico+ads</span><span class="v-big v-may">18,0<span class="unit"> mil</span></span></div></div>
+        <div class="delta neu"><span class="arw">▶</span> 260 reações · 17 comentários</div>
+        <div class="foot">7,1 mil orgânicas + 10,9 mil patrocinadas. 128 novos seguidores.</div>
+      </div>
+    </div>
+
+    <!-- top posts -->
+    <div class="posts">
+      <div class="post">
+        <div class="ptop"><span class="ptype">IG · Reel</span><span class="pdate">26/06</span></div>
+        <div class="ptitle">🛢️ Radar Logístico — petróleo em queda e reabertura do Estreito de Ormuz. Maior peça do mês.</div>
+        <div class="pstats">
+          <div class="pstat win"><span class="pv">3.213</span><span class="pk">views</span></div>
+          <div class="pstat"><span class="pv">128</span><span class="pk">curtidas</span></div>
+          <div class="pstat"><span class="pv">41</span><span class="pk">coment.</span></div>
+          <div class="pstat"><span class="pv">5</span><span class="pk">segue</span></div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="ptop"><span class="ptype">IG · Reel</span><span class="pdate">12/06</span></div>
+        <div class="ptitle">🎙️ Radar Logístico — o que você precisa saber do mercado na última semana.</div>
+        <div class="pstats">
+          <div class="pstat win"><span class="pv">2.432</span><span class="pk">views</span></div>
+          <div class="pstat"><span class="pv">155</span><span class="pk">curtidas</span></div>
+          <div class="pstat"><span class="pv">36</span><span class="pk">coment.</span></div>
+          <div class="pstat"><span class="pv">10</span><span class="pk">segue</span></div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="ptop"><span class="ptype">IG · Reel</span><span class="pdate">08/06</span></div>
+        <div class="ptitle">Por trás de cada entrega — operação eficiente e prazo cumprido.</div>
+        <div class="pstats">
+          <div class="pstat win"><span class="pv">1.763</span><span class="pk">views</span></div>
+          <div class="pstat"><span class="pv">77</span><span class="pk">curtidas</span></div>
+          <div class="pstat"><span class="pv">14</span><span class="pk">coment.</span></div>
+          <div class="pstat"><span class="pv">1</span><span class="pk">segue</span></div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="ptop"><span class="ptype">IG · Reel</span><span class="pdate">19/06</span></div>
+        <div class="ptitle">Radar Logístico — movimentos da economia, comércio global e logística.</div>
+        <div class="pstats">
+          <div class="pstat win"><span class="pv">1.714</span><span class="pk">views</span></div>
+          <div class="pstat"><span class="pv">114</span><span class="pk">curtidas</span></div>
+          <div class="pstat"><span class="pv">28</span><span class="pk">coment.</span></div>
+          <div class="pstat"><span class="pv">852</span><span class="pk">alcance</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- benchmark -->
+    <div class="bench tbl">
+      <table>
+        <thead><tr><th>Benchmark LinkedIn · últimos 30 dias</th><th>Seguidores</th><th>Novos seg.</th><th>Publicações</th><th>Comentários</th><th>Reações</th></tr></thead>
+        <tbody>
+          <tr><td>Luft Logistics</td><td>146.165</td><td>1.500</td><td>12</td><td>23</td><td>1.100</td></tr>
+          <tr><td>Mundial Logistics</td><td>43.274</td><td>333</td><td>22</td><td>18</td><td>426</td></tr>
+          <tr><td>Grupo Mirassol</td><td>43.356</td><td>233</td><td>7</td><td>5</td><td>266</td></tr>
+          <tr class="hl"><td>BMX Serviços (você)</td><td>26.970</td><td>128</td><td>13</td><td>17</td><td>260</td></tr>
+          <tr><td>GT Solutions</td><td>7.342</td><td>87</td><td>5</td><td>3</td><td>285</td></tr>
+          <tr><td>PierServ Logística</td><td>5.177</td><td>81</td><td>9</td><td>2</td><td>140</td></tr>
+        </tbody>
+      </table>
+      <div class="cap">Num grupo agora de 10 concorrentes, BMX é <b>2º em cadência e reações</b> atrás só da Luft, e lidera publicações (+85,7%) no período. Reações subiram 33,3%. Oportunidade segue em novos seguidores, onde ainda fica atrás dos pares diretos.</div>
+    </div>
+
+    <div class="reads">
+      <div class="read">
+        <h4>Leitura — o que está funcionando</h4>
+        <p>Junho foi <b>o melhor mês de social do período</b>: visualizações do IG +144,9%, interações +403,8% e alcance +137,4%, puxado por <b>não-seguidores (+204,2%)</b>. A série <b>Radar Logístico</b> consolidou-se como ativo de tração — as 4 maiores peças são Reels dela, com pico de 3.213 views.</p>
+      </div>
+      <div class="read watch">
+        <h4>Ponto de atenção</h4>
+        <p>Os <b>novos seguidores (128) seguem abaixo</b> dos pares diretos e caíram vs. o mês anterior. O consumo e o engajamento estão fortes, mas a <b>conversão em seguidor</b> ainda é o elo fraco — vale um CTA de follow mais explícito nas peças de melhor desempenho.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. CRM ============ -->
+  <section id="crm">
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <h2>CRM Marketing — E-mail marketing</h2>
+      <span class="tag">fluxo Newsletter Maio26 · 02–15/06 · dados mantidos</span>
+    </div>
+
+    <div class="context">
+      <span class="ctx-label">Objetivo desta fase</span>
+      <p>A newsletter atual é de <b>nutrição e educação da base</b> — relacionamento contínuo, não captação. Diferente dos disparos anteriores (focados em <b>gerar leads</b>), aqui o sucesso se mede por <b>abertura, engajamento recorrente e saúde da base</b>, não por CPL ou volume de leads. A leitura abaixo segue essa lente.</p>
+    </div>
+
+    <div class="kgrid">
+      <div class="kpi">
+        <div class="klabel">Base impactada (1º envio)</div>
+        <div class="dual"><div class="colm"><span class="tier">Válidos</span><span class="v-big v-may">5.829</span></div></div>
+        <div class="foot">1.044 inválidos higienizados · 3.346 não impactados na 1ª onda.</div>
+      </div>
+      <div class="kpi">
+        <div class="klabel">Abertura — média do fluxo</div>
+        <div class="dual">
+          <div class="colm"><span class="tier">1º envio</span><span class="v-big v-may">42,6<span class="unit"> %</span></span></div>
+          <div class="divline"></div>
+          <div class="colm jun"><span class="tier">3º envio</span><span class="v-big">96,5<span class="unit"> %</span></span></div>
+        </div>
+        <div class="delta pos"><span class="arw">▲</span> sobe a cada onda de segmentação</div>
+      </div>
+      <div class="kpi">
+        <div class="klabel">Entregabilidade</div>
+        <div class="dual">
+          <div class="colm"><span class="tier">2º envio</span><span class="v-big v-may">90,2<span class="unit"> %</span></span></div>
+          <div class="divline"></div>
+          <div class="colm jun"><span class="tier">3º envio</span><span class="v-big">98,3<span class="unit"> %</span></span></div>
+        </div>
+        <div class="foot">Base mais limpa nas ondas seguintes eleva a entrega.</div>
+      </div>
+      <div class="kpi">
+        <div class="klabel">Descadastros</div>
+        <div class="dual"><div class="colm"><span class="tier">Fluxo</span><span class="v-big v-may">22</span></div></div>
+        <div class="delta pos"><span class="arw">▼</span> ≤0,16% por envio — saúde da base ok</div>
+      </div>
+    </div>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Disparo</th><th>Data</th><th>Segmento</th><th>Entregues</th><th>Aberturas</th><th>Cliques</th><th>Descad.</th></tr></thead>
+        <tbody>
+          <tr><td>1º · Base Total</td><td>02/06</td><td>Todos os leads</td><td>5.829</td><td>2.483 · 42,6%</td><td>1.953 · 33,5%</td><td>10</td></tr>
+          <tr><td>2º · Não abriu o 1º</td><td>08/06</td><td>Reengajamento</td><td>4.527 · 90,2%</td><td>1.964 · 39,1%</td><td>8.121 abs.</td><td>8 · 0,16%</td></tr>
+          <tr class="hl"><td>3º · Já engajou</td><td>15/06</td><td>Leads quentes</td><td>2.864 · 98,3%</td><td>2.812 · 96,5%</td><td>8.059 abs.</td><td>4 · 0,14%</td></tr>
+        </tbody>
+      </table>
+      <div class="cap">Estratégia de 3 ondas: dispara para a base, reimpacta quem não abriu e aprofunda em quem engajou. <b>Atenção de leitura:</b> os cliques do 2º e 3º envios são contados sobre aberturas (cada lead clica em vários links), por isso o índice passa de 100% — não é taxa de clique por entrega. Em volume absoluto: 8.121 e 8.059 cliques.</div>
+    </div>
+
+    <div class="reads">
+      <div class="read">
+        <h4>O que evoluiu — engajamento da base</h4>
+        <p>Como peça de <b>nutrição</b>, o fluxo cumpre o papel: a abertura sobe de 42,6% na base fria para <b>96,5% entre os leads engajados</b>, e a entregabilidade chega a 98,3% nas ondas mais quentes. O <b>CTOR de 78,7% no 1º envio</b> mostra que quem abre, clica — o conteúdo conversa com a base. Descadastro mínimo (≤0,16%) confirma que a frequência está bem calibrada para educar sem cansar.</p>
+      </div>
+      <div class="read watch">
+        <h4>Oportunidade de melhoria</h4>
+        <p>O 1º envio teve <b>15,2% de contatos inválidos (1.044)</b> e <b>57,4% de não impactados</b> — sinal de base a higienizar. Limpar a lista e atualizar a planilha de receptivos amplia o alcance real da nutrição. Vale também puxar <b>cliques únicos</b> na Ramper: hoje o índice acima de 100% conta cliques repetidos e mascara a taxa real de quem clicou.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. AÇÕES ============ -->
+  <section id="acoes">
+    <div class="sec-head">
+      <span class="sec-num">06</span>
+      <h2>Ações &amp; Pendências</h2>
+      <span class="tag">alinhado em 10/06</span>
+    </div>
+
+    <div class="actwrap">
+      <div class="actcol">
+        <div class="actcard">
+          <h3><span class="owner own-b">Braper</span> Mídia &amp; conteúdo</h3>
+          <label class="task"><input type="checkbox"><span class="box"></span><span class="txt"><b style="color:var(--bmx)">Validar conteúdo de sexta (06/07) — aprovar na call</b></span></label>
+          <label class="task"><input type="checkbox"><span class="box"></span><span class="txt">Planejar campanha de InMail com o perfil do Fausto <em>(pendente info — João alinha internamente)</em></span></label>
+          <label class="task"><input type="checkbox"><span class="box"></span><span class="txt">Implementar LPs novas para Armazenagem e Container</span></label>
+          <label class="task"><input type="checkbox"><span class="box"></span><span class="txt">Aprovar calendário editorial de julho/2026</span></label>
+        </div>
+      </div>
+      <div class="actcol">
+        <div class="actcard">
+          <h3><span class="owner own-x">BMX</span> Insumos &amp; validações</h3>
+          <label class="task"><input type="checkbox"><span class="box"></span><span class="txt">Montar briefing — info de segmento para testar campanha com o perfil do Fausto</span></label>
+          <label class="task"><input type="checkbox"><span class="box"></span><span class="txt">Van — enviar palavras-chave para complementar a campanha de Armazenagem no Google Ads</span></label>
+          <label class="task"><input type="checkbox"><span class="box"></span><span class="txt">João — compartilhar calendário editorial BMX</span></label>
+          <label class="task"><input type="checkbox"><span class="box"></span><span class="txt">João — validar internamente campanha com o caso de sucesso do segmento automotivo</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="edsub">
+      <h3 class="edtitle">Calendário editorial — quem produz o quê</h3>
+      <div class="edlegend">
+        <span class="lg"><span class="prod prod-br">BRAPER</span> produção nossa</span>
+        <span class="lg"><span class="prod prod-bmx">BMX</span> produção do cliente</span>
+        <span class="lg"><span class="dot-appr"></span> aprovar nesta call</span>
+      </div>
+    </div>
+    <div class="tbl edtbl">
+      <table>
+        <thead><tr><th>Post</th><th>Data</th><th>Tema</th><th>Formato</th><th>Produção</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Post 02</td><td>03/07</td><td>NRs e SASSMAQ — o que sua área de Compras precisa exigir</td>
+            <td>Reels</td><td><span class="prod prod-br">BRAPER</span></td>
+            <td><span class="stp done">Publicado</span></td>
+          </tr>
+          <tr class="approw">
+            <td>Post 03</td><td>06/07</td>
+            <td>Armazenagem — o custo invisível do estoque mal coordenado</td>
+            <td>Carrossel</td><td><span class="prod prod-br">BRAPER</span></td>
+            <td><span class="stp appr">Aprovar hoje</span></td>
+          </tr>
+          <tr>
+            <td>Post 04</td><td>08/07</td><td>Transporte Automotivo</td>
+            <td>Reels</td><td><span class="prod prod-br">BRAPER</span></td>
+            <td><span class="stp next">Próximo</span></td>
+          </tr>
+          <tr>
+            <td>Post 07</td><td>16/07</td><td>Ebook Automotivo — O Risco Invisível que pode parar sua linha</td>
+            <td>Carrossel</td><td><span class="prod prod-br">BRAPER</span></td>
+            <td><span class="stp prog">Em produção</span></td>
+          </tr>
+          <tr>
+            <td>Post 10</td><td>22/07</td><td>Transporte de Container — coordenação silenciosa, resultado visível</td>
+            <td>Reels</td><td><span class="prod prod-br">BRAPER</span></td>
+            <td><span class="stp plan">Planejado</span></td>
+          </tr>
+          <tr>
+            <td>Post 14</td><td>30/07</td><td>Operação bem feita é percebida mesmo sem aparecer</td>
+            <td>Carrossel</td><td><span class="prod prod-br">BRAPER</span></td>
+            <td><span class="stp plan">Planejado</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="cap">Calendário de julho — foco em Consideração e Conversão. <b>Aprovação de hoje:</b> conteúdo de sexta (06/07, Armazenagem). Posts com versão diferenciada para LinkedIn Fausto/Marcelo conforme planejamento.</div>
+    </div>
+
+    <div class="notecard">
+      <div class="notehead">
+        <h3>Próximos passos — call de hoje</h3>
+        <button class="copybtn" onclick="copyNotes()">Copiar anotações</button>
+      </div>
+      <textarea id="notes" placeholder="Digite aqui os próximos passos definidos na call de hoje…&#10;&#10;• &#10;• &#10;• "></textarea>
+      <div class="notehint">As anotações ficam só nesta sessão — clique em “Copiar anotações” ao final para salvar o texto.</div>
+    </div>
+  </section>
+
+  <footer>
+    <span>BMX Serviços · Status de Marketing · Maio × Junho fechados (jun/2026)</span>
+    <span>Fontes: TCI 2026 · Meta Business Suite · LinkedIn Analytics · Ramper (CRM)</span>
+  </footer>
+
+</div>
+
+<script>
+  function copyNotes(){
+    var ta=document.getElementById('notes');
+    var btn=document.querySelector('.copybtn');
+    var text=ta.value.trim();
+    if(!text){ ta.focus(); return; }
+    navigator.clipboard.writeText(text).then(function(){
+      var orig=btn.textContent;
+      btn.textContent='Copiado ✓'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent=orig; btn.classList.remove('done'); },1800);
+    }).catch(function(){
+      ta.select(); document.execCommand('copy');
+    });
+  }
+</script>
+</body>
+</html>
