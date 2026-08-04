@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roteiros · BMX Serviços · Agosto 2026 (Braper)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --yellow:#F1C232;--graphite:#434343;--graphite-deep:#2b2b2b;--ink:#1a1a1a;
+    --panel:#363636;--panel-2:#3f3f3f;--line:#525252;--line-soft:#4a4a4a;
+    --text:#ECEAE5;--text-dim:#A8A49C;--text-faint:#7C7872;
+    --green:#7BBF6A;--blue:#5B9BD5;--amber:#E0A33A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'IBM Plex Sans',system-ui,sans-serif;background:var(--graphite-deep);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .mono{font-family:'Space Mono',monospace}
+  header{background:repeating-linear-gradient(45deg,transparent,transparent 22px,rgba(241,194,50,.04) 22px,rgba(241,194,50,.04) 24px),var(--ink);border-bottom:3px solid var(--yellow);padding:48px 28px 40px;position:relative;overflow:hidden}
+  .head-inner{max-width:1080px;margin:0 auto;position:relative;z-index:2}
+  .eyebrow{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--yellow);display:flex;align-items:center;gap:12px;margin-bottom:20px}
+  .eyebrow::before{content:"";width:34px;height:2px;background:var(--yellow)}
+  header h1{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(34px,6vw,62px);line-height:.98;letter-spacing:-.02em;color:var(--text);text-transform:uppercase}
+  header h1 span{color:var(--yellow);display:block}
+  .head-meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 14px;font-family:'Space Mono',monospace;font-size:12px;color:var(--text-dim)}
+  .chip{border:1px solid var(--line);padding:6px 12px;border-radius:2px;display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.02)}
+  .chip b{color:var(--yellow);font-weight:700}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--yellow);display:inline-block}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  .legend{background:var(--panel);border:1px solid var(--line-soft);border-left:3px solid var(--yellow);padding:22px 24px;margin:36px auto 8px;border-radius:3px}
+  .legend h2{font-family:'Archivo';font-size:15px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px;color:var(--text)}
+  .legend p{font-size:14.5px;color:var(--text-dim);max-width:82ch}
+  .legend p+p{margin-top:9px}
+  .legend b{color:var(--text)}
+  .data-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px auto 0;max-width:1080px}
+  .data-card{background:var(--panel);border:1px solid var(--line-soft);border-radius:4px;padding:14px 16px}
+  .data-card .n{font-family:'Archivo';font-weight:900;font-size:26px;color:var(--yellow);line-height:1}
+  .data-card .l{font-family:'Space Mono';font-size:10.5px;letter-spacing:.06em;color:var(--text-faint);text-transform:uppercase;margin-top:6px}
+  .data-card .s{font-size:12px;color:var(--text-dim);margin-top:6px;line-height:1.35}
+  .toolbar{position:sticky;top:0;z-index:30;background:rgba(43,43,43,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 28px;margin-top:34px}
+  .toolbar-inner{max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .toolbar .lbl{font-family:'Space Mono';font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-faint);margin-right:4px}
+  .navbtn{font-family:'Space Mono';font-size:12px;color:var(--text-dim);background:transparent;border:1px solid var(--line);border-radius:2px;padding:6px 10px;cursor:pointer;transition:.16s}
+  .navbtn:hover{border-color:var(--yellow);color:var(--yellow)}
+  .navbtn b{color:var(--yellow);font-weight:700}
+  main{padding:40px 0 80px}
+  .post{background:var(--panel);border:1px solid var(--line-soft);border-radius:5px;margin:0 auto 34px;overflow:hidden;scroll-margin-top:72px}
+  .post-top{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start;justify-content:space-between;padding:24px 26px 20px;border-bottom:1px solid var(--line-soft);background:linear-gradient(180deg,rgba(241,194,50,.05),transparent)}
+  .post-id{display:flex;align-items:center;gap:16px}
+  .post-num{font-family:'Archivo';font-weight:900;font-size:30px;color:var(--graphite-deep);background:var(--yellow);width:58px;height:58px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 1px rgba(0,0,0,.2) inset}
+  .post-titles h3{font-family:'Archivo';font-weight:800;font-size:20px;line-height:1.15;color:var(--text);letter-spacing:-.01em;max-width:48ch}
+  .post-sub{font-family:'Space Mono';font-size:11.5px;color:var(--text-faint);margin-top:6px;letter-spacing:.04em}
+  .post-tags{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+  .tag{font-family:'Space Mono';font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border-radius:2px;border:1px solid var(--line);color:var(--text-dim);white-space:nowrap}
+  .tag.fmt{border-color:var(--yellow);color:var(--yellow)}
+  .tag.obj-CONSIDERA{border-color:#5B9BD5;color:#7FB4E2}
+  .tag.obj-CONVERSAO{border-color:#7BBF6A;color:#93CE84}
+  .tag.obj-EXPANSAO{border-color:#E0A33A;color:#ECBE6A}
+  .tag.date{border-color:var(--line);color:var(--text);font-weight:700}
+  .post-body{padding:8px 26px 26px}
+  .block{margin-top:24px}
+  .block-h{font-family:'Space Mono';font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--yellow);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .block-h::after{content:"";flex:1;height:1px;background:var(--line-soft)}
+  .hook{font-family:'Archivo';font-weight:700;font-size:19px;line-height:1.3;color:var(--text);border-left:3px solid var(--yellow);padding:4px 0 4px 16px;background:rgba(241,194,50,.04);border-radius:0 3px 3px 0}
+  .spec{font-family:'Space Mono';font-size:12px;color:var(--blue);background:rgba(91,155,213,.08);border:1px solid rgba(91,155,213,.3);border-radius:3px;padding:8px 12px;margin-top:10px}
+  .note-data{margin-top:14px;background:rgba(224,163,58,.08);border:1px solid rgba(224,163,58,.35);border-left:3px solid var(--amber);padding:12px 15px;border-radius:0 3px 3px 0;font-size:13px;color:var(--text-dim)}
+  .note-data b{color:var(--amber)}
+  .slides{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+  .slide{background:var(--panel-2);border:1px solid var(--line-soft);border-radius:4px;padding:14px 15px;position:relative;display:flex;flex-direction:column}
+  .slide-n{font-family:'Space Mono';font-size:10px;letter-spacing:.1em;color:var(--graphite-deep);background:var(--text-dim);padding:2px 7px;border-radius:2px;align-self:flex-start;margin-bottom:10px;font-weight:700}
+  .slide.cover .slide-n{background:var(--yellow)}
+  .slide.cta .slide-n{background:var(--green);color:#13270d}
+  .slide-role{font-family:'Space Mono';font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint);margin-bottom:6px}
+  .slide-txt{font-size:13.5px;color:var(--text);line-height:1.45}
+  .slide-txt strong{color:var(--yellow);font-weight:600}
+  .slide-note{font-size:11.5px;color:var(--text-faint);margin-top:9px;font-style:italic;line-height:1.4}
+  .reel{display:flex;flex-direction:column;gap:0}
+  .reel-row{display:flex;gap:16px;padding:13px 0;border-bottom:1px dashed var(--line-soft)}
+  .reel-row:last-child{border-bottom:none}
+  .reel-t{font-family:'Space Mono';font-size:12px;color:var(--yellow);font-weight:700;width:62px;flex-shrink:0;padding-top:2px}
+  .reel-c{flex:1}
+  .reel-scene{font-family:'Space Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);margin-bottom:4px}
+  .reel-txt{font-size:14px;color:var(--text)}
+  .reel-txt .vo{color:var(--text-dim)}
+  .reel-txt strong{color:var(--yellow);font-weight:600}
+  .caption{background:var(--ink);border:1px solid var(--line-soft);border-radius:4px;padding:18px 20px;font-size:14.5px;color:var(--text);white-space:pre-line;line-height:1.6}
+  .caption strong{color:var(--yellow)}
+  .cta-line{margin-top:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;color:var(--text)}
+  .cta-badge{font-family:'Space Mono';font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:var(--green);color:#13270d;padding:4px 9px;border-radius:2px;font-weight:700}
+  .hashtags{margin-top:14px;font-family:'Space Mono';font-size:12.5px;color:var(--blue);line-height:1.8;word-spacing:2px}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.twocol{grid-template-columns:1fr}}
+  .meta-strip{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:6px;padding-top:14px;border-top:1px solid var(--line-soft);font-family:'Space Mono';font-size:11.5px;color:var(--text-faint)}
+  .meta-strip b{color:var(--text-dim)}
+  footer{border-top:3px solid var(--yellow);background:var(--ink);padding:34px 28px;text-align:center}
+  footer p{font-family:'Space Mono';font-size:12px;color:var(--text-faint);letter-spacing:.06em}
+  footer b{color:var(--yellow)}
+  @media print{.toolbar{display:none}.post{break-inside:avoid;page-break-inside:avoid}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="head-inner">
+    <div class="eyebrow">Plano editorial · Redes sociais</div>
+    <h1>Roteiros de Conteúdo<span>BMX · Agosto 2026</span></h1>
+    <div class="head-meta">
+      <span class="chip"><span class="dot"></span>Produção <b>Braper</b></span>
+      <span class="chip mono">9 posts · 6 Reels · 3 carrosséis</span>
+      <span class="chip mono">Baseado em dados de julho</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="legend">
+    <h2>O que julho ensinou — e como agosto responde</h2>
+    <p>Em julho, <b>Reels renderam ~3x mais alcance que carrosséis</b> (969 vs. 375 de média). Os 6 melhores posts do mês foram Reels. O campeão absoluto foi o Reels da Copa ("logística é futebol", 2.231 de alcance, +8 seguidores), seguido do Reels emocional do Dia do Motorista. Carrosséis institucionais/de conversão ficaram no fundo da lista.</p>
+    <p>Por isso agosto vem com <b>mais Reels (6 de 9)</b>, sazonais com gancho emocional e cultural (Agosto Lilás, eventos de logística), e carrossel reservado para conteúdo educativo denso. O <b>Radar Logístico passa a ser produção BMX</b> (4 Reels semanais). Marcação: <b style="color:#7FB4E2">Consideração</b> · <b style="color:#93CE84">Conversão</b> · <b style="color:#ECBE6A">Expansão</b>.</p>
+  </div>
+</div>
+
+<div class="data-strip wrap" style="padding:0 28px">
+  <div class="data-card"><div class="n">969</div><div class="l">Alcance médio · Reels</div><div class="s">vs. 375 dos carrosséis</div></div>
+  <div class="data-card"><div class="n">2.231</div><div class="l">Melhor post (Copa)</div><div class="s">Reels sazonal · +8 seguidores</div></div>
+  <div class="data-card"><div class="n">328</div><div class="l">Partilhas no mês</div><div class="s">Radar e sazonais lideram</div></div>
+  <div class="data-card"><div class="n">7</div><div class="l">Salvamentos no mês</div><div class="s">falta conteúdo "de referência"</div></div>
+</div>
+
+<div class="toolbar">
+  <div class="toolbar-inner">
+    <span class="lbl">Ir para</span>
+    <button class="navbtn" onclick="go('p1')"><b>04</b> Lilás</button>
+    <button class="navbtn" onclick="go('p2')"><b>07</b> Logistique</button>
+    <button class="navbtn" onclick="go('p3')"><b>11</b> Time</button>
+    <button class="navbtn" onclick="go('p4')"><b>14</b> ILOS</button>
+    <button class="navbtn" onclick="go('p5')"><b>18</b> Armazenagem</button>
+    <button class="navbtn" onclick="go('p6')"><b>21</b> Bastidor</button>
+    <button class="navbtn" onclick="go('p7')"><b>25</b> Simpósio</button>
+    <button class="navbtn" onclick="go('p8')"><b>28</b> NRs</button>
+    <button class="navbtn" onclick="go('p9')"><b>31</b> Marca</button>
+  </div>
+</div>
+
+<div class="wrap">
+<main>
+
+  <!-- POST 1 -->
+  <article class="post" id="p1">
+    <div class="post-top">
+      <div class="post-id"><div class="post-num">1</div>
+        <div class="post-titles"><h3>Agosto Lilás — segurança de pessoas é a mesma cultura que protege a operação</h3>
+        <div class="post-sub">04/08 · Terça · Pilar: Data comemorativa</div></div></div>
+      <div class="post-tags"><span class="tag date">04/AGO</span><span class="tag fmt">Reels</span><span class="tag obj-EXPANSAO">Expansão</span></div>
+    </div>
+    <div class="post-body">
+      <div class="block"><div class="block-h">Gancho · 3s</div>
+        <div class="hook">"A mesma cultura que evita um acidente na estrada é a que protege as pessoas dentro de casa."</div>
+        <div class="spec">Reels 9:16 · 1080×1920px · ~30s · texto/CTA a ≥250px do topo e base</div>
+      </div>
+      <div class="note-data"><b>Por que Reels:</b> sazonal com carga emocional foi o formato que mais entregou alcance e seguidores em julho. Agosto Lilás permite conectar a cultura de segurança operacional da BMX com um tema humano.</div>
+      <div class="block"><div class="block-h">Roteiro cena a cena</div>
+        <div class="reel">
+          <div class="reel-row"><div class="reel-t">0–4s</div><div class="reel-c"><div class="reel-scene">Abertura sóbria</div><div class="reel-txt"><strong>"Agosto é Lilás. E segurança, aqui, não para no portão da operação."</strong></div></div></div>
+          <div class="reel-row"><div class="reel-t">4–14s</div><div class="reel-c"><div class="reel-scene">Ponte de sentido</div><div class="reel-txt"><span class="vo">VO:</span> "A gente cuida de cada carga com protocolo, atenção e responsabilidade. A mesma cultura que protege quem trabalha — e quem convive com a gente."</div></div></div>
+          <div class="reel-row"><div class="reel-t">14–24s</div><div class="reel-c"><div class="reel-scene">Posicionamento</div><div class="reel-txt"><span class="vo">VO:</span> "Ambiente seguro se constrói todo dia: no respeito, na escuta e no cuidado com as pessoas."</div></div></div>
+          <div class="reel-row"><div class="reel-t">24–30s</div><div class="reel-c"><div class="reel-scene">Fecho + laço lilás</div><div class="reel-txt"><strong>"BMX · Segurança é cultura. Todos os dias."</strong></div></div></div>
+        </div>
+      </div>
+      <div class="twocol">
+        <div class="block"><div class="block-h">Legenda</div>
+          <div class="caption"><strong>Agosto Lilás — e aqui, segurança não para no portão da operação.</strong>
+
+A mesma cultura que faz a gente cuidar de cada carga com protocolo e responsabilidade é a que protege as pessoas: no trabalho, no respeito e na convivência.
+
+Ambiente seguro não é campanha de um mês. É prática de todo dia. Neste Agosto Lilás, a BMX reforça o compromisso de cuidar — das operações e, principalmente, das pessoas.</div></div>
+        <div class="block"><div class="block-h">CTA + Hashtags</div>
+          <div class="cta-line"><span class="cta-badge">CTA</span> Engajamento/valor — sem pitch comercial. "Compartilhe para reforçar essa causa."</div>
+          <div class="hashtags">#AgostoLilás #culturadesegurança #ambienteseguro #pessoas #BMXserviços #logísticacomresponsabilidade</div></div>
+      </div>
+      <div class="meta-strip"><span><b>Responsável:</b> Braper</span><span><b>Redes:</b> IG, LinkedIn + Fausto e Marcelo</span><span><b>Objetivo:</b> Expansão</span><span><b>Captação:</b> imagens da equipe/operação (acervo)</span></div>
+    </div>
+  </article>
+
+  <!-- POST 2 -->
+  <article class="post" id="p2">
+    <div class="post-top">
+      <div class="post-id"><div class="post-num">2</div>
+        <div class="post-titles"><h3>Logistique 2026 — o setor evolui, mas o gargalo ainda é a execução</h3>
+        <div class="post-sub">07/08 · Sexta · Pilar: Evento</div></div></div>
+      <div class="post-tags"><span class="tag date">07/AGO</span><span class="tag fmt">Carrossel</span><span class="tag obj-CONSIDERA">Consideração</span></div>
+    </div>
+    <div class="post-body">
+      <div class="block"><div class="block-h">Gancho</div>
+        <div class="hook">"Tecnologia nova, promessa de eficiência… e a operação ainda travando no básico. Por quê?"</div>
+        <div class="spec">Carrossel 4:5 · 1080×1350px · capa + 5 cards · elementos a ≥50px das bordas</div>
+      </div>
+      <div class="note-data"><b>Por que carrossel:</b> conteúdo de tese/análise justifica o swipe e pode gerar salvamento (que ficou baixo em julho). Ancorado no Logistique 2026 (11–13/08) como gancho de atualidade.</div>
+      <div class="block"><div class="block-h">Roteiro card a card</div>
+        <div class="slides">
+          <div class="slide cover"><span class="slide-n">CAPA</span><span class="slide-role">Headline</span><div class="slide-txt">O setor evoluiu. <strong>A execução, nem sempre.</strong></div><div class="slide-note">Gancho Logistique 2026.</div></div>
+          <div class="slide"><span class="slide-n">02</span><span class="slide-role">Contexto</span><div class="slide-txt">Eventos como o Logistique mostram um setor cheio de tecnologia, IA e automação. Mas no chão da operação, o gargalo continua o mesmo.</div></div>
+          <div class="slide"><span class="slide-n">03</span><span class="slide-role">Tensão</span><div class="slide-txt">De nada adianta o painel mais moderno se a carga atrasa, o pedido sai errado ou o processo depende de improviso.</div></div>
+          <div class="slide"><span class="slide-n">04</span><span class="slide-role">Tese</span><div class="slide-txt">A tecnologia acelera — mas quem entrega resultado é a <strong>execução consistente</strong>. Método antes de ferramenta.</div></div>
+          <div class="slide"><span class="slide-n">05</span><span class="slide-role">Posicionamento</span><div class="slide-txt">Há 37 anos a BMX investe onde o resultado aparece: processo, controle e gente que faz acontecer.</div></div>
+          <div class="slide cta"><span class="slide-n">CTA</span><span class="slide-role">Fechamento</span><div class="slide-txt">Sua operação está travando na tecnologia ou na execução? Vamos conversar.</div></div>
+        </div>
+      </div>
+      <div class="twocol">
+        <div class="block"><div class="block-h">Legenda</div>
+          <div class="caption"><strong>O setor evoluiu. A execução, nem sempre.</strong>
+
+Eventos como o Logistique 2026 mostram um setor cheio de tecnologia, IA e automação. Mas no chão da operação, o maior gargalo continua sendo o mesmo: a execução.
+
+De nada adianta o painel mais moderno se a carga atrasa ou o processo depende de improviso. A tecnologia acelera — mas quem entrega resultado é a consistência. Há 37 anos é nisso que a BMX investe: método, controle e gente que faz acontecer.</div></div>
+        <div class="block"><div class="block-h">CTA + Hashtags</div>
+          <div class="cta-line"><span class="cta-badge">CTA</span> "Salve para lembrar na próxima decisão de operação. Fale com a BMX no link da bio."</div>
+          <div class="hashtags">#Logistique2026 #logística #execuçãooperacional #supplychain #BMXserviços #eficiência #gestãologística</div></div>
+      </div>
+      <div class="meta-strip"><span><b>Responsável:</b> Braper</span><span><b>Redes:</b> IG, LinkedIn + Fausto e Marcelo</span><span><b>Objetivo:</b> Consideração</span></div>
+    </div>
+  </article>
+
+  <!-- POST 3 -->
+  <article class="post" id="p3">
+    <div class="post-top">
+      <div class="post-id"><div class="post-num">3</div>
+        <div class="post-titles"><h3>Se a logística fosse um time — cada posição sustenta a operação</h3>
+        <div class="post-sub">11/08 · Terça · Pilar: Serviços</div></div></div>
+      <div class="post-tags"><span class="tag date">11/AGO</span><span class="tag fmt">Reels</span><span class="tag obj-CONSIDERA">Consideração</span></div>
+    </div>
+    <div class="post-body">
+      <div class="block"><div class="block-h">Gancho · 3s</div>
+        <div class="hook">"Na logística, como no futebol, não adianta um craque se o time não joga junto."</div>
+        <div class="spec">Reels 9:16 · 1080×1920px · ~30s</div>
+      </div>
+      <div class="note-data"><b>Por que este formato:</b> replica a fórmula do post campeão de julho ("logística é futebol", 2.231 de alcance). Metáfora esportiva + gancho emocional foi o maior driver de alcance e seguidores do mês.</div>
+      <div class="block"><div class="block-h">Roteiro cena a cena</div>
+        <div class="reel">
+          <div class="reel-row"><div class="reel-t">0–3s</div><div class="reel-c"><div class="reel-scene">Abertura com analogia</div><div class="reel-txt"><strong>"Uma operação logística é um time em campo."</strong></div></div></div>
+          <div class="reel-row"><div class="reel-t">3–12s</div><div class="reel-c"><div class="reel-scene">Desenvolvimento</div><div class="reel-txt"><span class="vo">VO:</span> "Tem a defesa que garante a segurança da carga. O meio que organiza a rota. E o ataque que entrega no prazo. Cada posição importa."</div></div></div>
+          <div class="reel-row"><div class="reel-t">12–22s</div><div class="reel-c"><div class="reel-scene">Virada</div><div class="reel-txt"><span class="vo">VO:</span> "Não adianta um craque isolado. O resultado vem quando <strong>todos jogam juntos</strong> — planejamento, frota e equipe."</div></div></div>
+          <div class="reel-row"><div class="reel-t">22–30s</div><div class="reel-c"><div class="reel-scene">Fecho + logo</div><div class="reel-txt"><strong>"A BMX é o time que a sua operação escala com confiança."</strong></div></div></div>
+        </div>
+      </div>
+      <div class="twocol">
+        <div class="block"><div class="block-h">Legenda</div>
+          <div class="caption"><strong>Se a logística fosse um time, cada posição contaria.</strong>
+
+A defesa garante a segurança da carga. O meio organiza a rota. O ataque entrega no prazo. Não adianta um craque isolado se o time não joga junto.
+
+Uma operação de verdade funciona assim: planejamento, frota e equipe em sintonia. Há 37 anos, a BMX é o time que a sua operação escala com confiança.</div></div>
+        <div class="block"><div class="block-h">CTA + Hashtags</div>
+          <div class="cta-line"><span class="cta-badge">CTA</span> "Marca aquele parceiro que joga junto com você. Fale com a BMX no link da bio."</div>
+          <div class="hashtags">#logística #trabalhoemequipe #operaçãologística #supplychain #BMXserviços #transporte #logísticaéfutebol</div></div>
+      </div>
+      <div class="meta-strip"><span><b>Responsável:</b> Braper</span><span><b>Redes:</b> IG, LinkedIn</span><span><b>Objetivo:</b> Consideração</span><span><b>Trilha:</b> ritmo de "vibe de jogo"</span></div>
+    </div>
+  </article>
+
+  <!-- POST 4 -->
+  <article class="post" id="p4">
+    <div class="post-top">
+      <div class="post-id"><div class="post-num">4</div>
+        <div class="post-titles"><h3>Fórum ILOS — logística é decisão estratégica, não só operação</h3>
+        <div class="post-sub">14/08 · Sexta · Pilar: Evento</div></div></div>
+      <div class="post-tags"><span class="tag date">14/AGO</span><span class="tag fmt">Reels</span><span class="tag obj-CONSIDERA">Consideração</span></div>
+    </div>
+    <div class="post-body">
+      <div class="block"><div class="block-h">Gancho · 3s</div>
+        <div class="hook">"Enquanto sua empresa trata logística como custo, o concorrente trata como estratégia."</div>
+        <div class="spec">Reels 9:16 · 1080×1920px · ~32s</div>
+      </div>
+      <div class="note-data"><b>Ancoragem:</b> Fórum ILOS (19–20/08). Reels analítico com gancho de negócio — direciona para LinkedIn/decisores, reforçando o posicionamento estratégico.</div>
+      <div class="block"><div class="block-h">Roteiro cena a cena</div>
+        <div class="reel">
+          <div class="reel-row"><div class="reel-t">0–4s</div><div class="reel-c"><div class="reel-scene">Abertura-tese</div><div class="reel-txt"><strong>"Logística parou de ser área de apoio. Virou decisão de diretoria."</strong></div></div></div>
+          <div class="reel-row"><div class="reel-t">4–14s</div><div class="reel-c"><div class="reel-scene">Argumento</div><div class="reel-txt"><span class="vo">VO:</span> "Prazo, custo, experiência do cliente, risco de ruptura — tudo passa pela logística. É ela que sustenta a promessa que a empresa faz ao mercado."</div></div></div>
+          <div class="reel-row"><div class="reel-t">14–25s</div><div class="reel-c"><div class="reel-scene">Reframe</div><div class="reel-txt"><span class="vo">VO:</span> "Fóruns como o ILOS existem justamente porque quem entende logística como <strong>estratégia</strong> sai na frente."</div></div></div>
+          <div class="reel-row"><div class="reel-t">25–32s</div><div class="reel-c"><div class="reel-scene">Fecho + logo</div><div class="reel-txt"><strong>"A BMX é parceira estratégica — não só transportadora."</strong></div></div></div>
+        </div>
+      </div>
+      <div class="twocol">
+        <div class="block"><div class="block-h">Legenda</div>
+          <div class="caption"><strong>Logística deixou de ser área de apoio. Virou decisão de diretoria.</strong>
+
+Prazo, custo, experiência do cliente, risco de ruptura — tudo passa pela logística. É ela que sustenta a promessa que a empresa faz ao mercado.
+
+Fóruns como o ILOS existem porque quem entende logística como estratégia sai na frente. E é assim que a BMX se posiciona há 37 anos: parceira estratégica, não só transportadora.</div></div>
+        <div class="block"><div class="block-h">CTA + Hashtags</div>
+          <div class="cta-line"><span class="cta-badge">CTA</span> "Sua logística é tratada como custo ou como estratégia? Fale com a BMX."</div>
+          <div class="hashtags">#FórumILOS #logísticaestratégica #supplychain #gestão #BMXserviços #liderança #decisãoestratégica</div></div>
+      </div>
+      <div class="meta-strip"><span><b>Responsável:</b> Braper</span><span><b>Redes:</b> IG, LinkedIn + Fausto e Marcelo</span><span><b>Objetivo:</b> Consideração</span></div>
+    </div>
+  </article>
+
+  <!-- POST 5 -->
+  <article class="post" id="p5">
+    <div class="post-top">
+      <div class="post-id"><div class="post-num">5</div>
+        <div class="post-titles"><h3>Armazenagem em números — o custo que não aparece no relatório</h3>
+        <div class="post-sub">18/08 · Terça · Pilar: Serviços (conteúdo de referência)</div></div></div>
+      <div class="post-tags"><span class="tag date">18/AGO</span><span class="tag fmt">Carrossel</span><span class="tag obj-CONSIDERA">Consideração</span></div>
+    </div>
+    <div class="post-body">
+      <div class="block"><div class="block-h">Gancho</div>
+        <div class="hook">"3 custos de armazenagem que não aparecem na sua planilha — mas aparecem no seu resultado."</div>
+        <div class="spec">Carrossel 4:5 · 1080×1350px · capa + 5 cards · foco central (grade 3:4)</div>
+      </div>
+      <div class="note-data"><b>Objetivo do formato:</b> testar conteúdo utilitário/"de referência" — julho teve só 7 salvamentos no mês todo. Carrossel de lista numerada é o formato mais salvável. A versão de armazenagem em julho já teve bom alcance (650).</div>
+      <div class="block"><div class="block-h">Roteiro card a card</div>
+        <div class="slides">
+          <div class="slide cover"><span class="slide-n">CAPA</span><span class="slide-role">Headline</span><div class="slide-txt"><strong>3 custos invisíveis</strong> da armazenagem mal coordenada.</div><div class="slide-note">Formato salvável: lista numerada.</div></div>
+          <div class="slide"><span class="slide-n">01</span><span class="slide-role">Custo 1</span><div class="slide-txt"><strong>Obsolescência.</strong> Produto que vence ou perde valor parado no estoque. Não vem na fatura — vem na baixa.</div></div>
+          <div class="slide"><span class="slide-n">02</span><span class="slide-role">Custo 2</span><div class="slide-txt"><strong>Ruptura e retrabalho.</strong> Item que some ou separação errada geram atraso e refação — e um SLA em risco.</div></div>
+          <div class="slide"><span class="slide-n">03</span><span class="slide-role">Custo 3</span><div class="slide-txt"><strong>Tempo ocioso.</strong> Layout mal pensado é minuto perdido em cada separação, multiplicado por mês.</div></div>
+          <div class="slide"><span class="slide-n">04</span><span class="slide-role">Virada</span><div class="slide-txt">Boa armazenagem ataca os três: endereçamento, acuracidade e layout orientado a giro. Organização que vira <strong>velocidade</strong>.</div></div>
+          <div class="slide cta"><span class="slide-n">CTA</span><span class="slide-role">Fechamento</span><div class="slide-txt">Salve este post e revise sua operação. Quer ajuda? Fale com a BMX.</div></div>
+        </div>
+      </div>
+      <div class="twocol">
+        <div class="block"><div class="block-h">Legenda</div>
+          <div class="caption"><strong>Os maiores custos da armazenagem não aparecem na fatura.</strong>
+
+Obsolescência, ruptura e tempo ocioso: três custos que não vêm destacados em nenhum relatório — mas aparecem, todo mês, no resultado da operação.
+
+Boa armazenagem ataca os três com endereçamento, acuracidade e layout orientado a giro. É o que transforma um depósito em vantagem. Salve este post e use na próxima revisão da sua operação.</div></div>
+        <div class="block"><div class="block-h">CTA + Hashtags</div>
+          <div class="cta-line"><span class="cta-badge">CTA</span> "Salve 🔖 e revise sua armazenagem. Fale com a BMX no link da bio."</div>
+          <div class="hashtags">#armazenagem #gestãodeestoque #logística #supplychain #BMXserviços #intralogística #eficiênciaoperacional</div></div>
+      </div>
+      <div class="meta-strip"><span><b>Responsável:</b> Braper</span><span><b>Redes:</b> IG, LinkedIn</span><span><b>Objetivo:</b> Consideração</span><span><b>Meta:</b> aumentar salvamentos</span></div>
+    </div>
+  </article>
+
+  <!-- POST 6 -->
+  <article class="post" id="p6">
+    <div class="post-top">
+      <div class="post-id"><div class="post-num">6</div>
+        <div class="post-titles"><h3>Bastidor de operação — as pessoas por trás de cada entrega no horário</h3>
+        <div class="post-sub">21/08 · Sexta · Pilar: Bastidor estratégico</div></div></div>
+      <div class="post-tags"><span class="tag date">21/AGO</span><span class="tag fmt">Reels</span><span class="tag obj-CONSIDERA">Consideração</span></div>
+    </div>
+    <div class="post-body">
+      <div class="block"><div class="block-h">Gancho · 3s</div>
+        <div class="hook">"Toda entrega no horário tem um nome, um rosto e uma rotina por trás."</div>
+        <div class="spec">Reels 9:16 · 1080×1920px · ~35s · estilo bastidor</div>
+      </div>
+      <div class="note-data"><b>Por que Reels humano:</b> o Reels emocional do Dia do Motorista foi o 2º maior alcance de julho (1.328) e alta partilha. Bastidor com pessoas reais conecta e é compartilhável.</div>
+      <div class="block"><div class="block-h">Roteiro cena a cena</div>
+        <div class="reel">
+          <div class="reel-row"><div class="reel-t">0–4s</div><div class="reel-c"><div class="reel-scene">Abertura · rostos reais</div><div class="reel-txt"><strong>"Por trás de cada operação que 'simplesmente funciona'…"</strong> <span class="vo">(planos de equipe, expedição, motorista)</span></div></div></div>
+          <div class="reel-row"><div class="reel-t">4–16s</div><div class="reel-c"><div class="reel-scene">Rotina</div><div class="reel-txt"><span class="vo">VO:</span> "Tem quem confere a carga, quem planeja a rota, quem dirige, quem acompanha o horário. Uma engrenagem de pessoas que se importam."</div></div></div>
+          <div class="reel-row"><div class="reel-t">16–28s</div><div class="reel-c"><div class="reel-scene">Emoção + orgulho</div><div class="reel-txt"><span class="vo">VO:</span> "Cada entrega no prazo é resultado de gente que faz bem feito — mesmo quando ninguém está olhando."</div></div></div>
+          <div class="reel-row"><div class="reel-t">28–35s</div><div class="reel-c"><div class="reel-scene">Fecho + logo</div><div class="reel-txt"><strong>"BMX · Operação é feita de pessoas."</strong></div></div></div>
+        </div>
+      </div>
+      <div class="twocol">
+        <div class="block"><div class="block-h">Legenda</div>
+          <div class="caption"><strong>Toda entrega no horário tem um nome, um rosto e uma rotina por trás.</strong>
+
+Tem quem confere a carga, quem planeja a rota, quem dirige, quem acompanha cada horário. Uma engrenagem de pessoas que se importam com o que fazem.
+
+Cada operação que "simplesmente funciona" é resultado de gente que faz bem feito — mesmo quando ninguém está olhando. Porque, no fim, operação é feita de pessoas. 🧡</div></div>
+        <div class="block"><div class="block-h">CTA + Hashtags</div>
+          <div class="cta-line"><span class="cta-badge">CTA</span> Humanização/engajamento. "Marque alguém que faz a diferença na operação."</div>
+          <div class="hashtags">#bastidores #pessoas #logística #time #BMXserviços #orgulhodefazer #operação</div></div>
+      </div>
+      <div class="meta-strip"><span><b>Responsável:</b> Braper</span><span><b>Redes:</b> IG, LinkedIn</span><span><b>Objetivo:</b> Consideração</span><span><b>Captação:</b> equipe/rostos reais (alinhar com João)</span></div>
+    </div>
+  </article>
+
+  <!-- POST 7 -->
+  <article class="post" id="p7">
+    <div class="post-top">
+      <div class="post-id"><div class="post-num">7</div>
+        <div class="post-titles"><h3>Simpósio Supply Chain — operação isolada é risco; integração é controle</h3>
+        <div class="post-sub">25/08 · Terça · Pilar: Evento</div></div></div>
+      <div class="post-tags"><span class="tag date">25/AGO</span><span class="tag fmt">Carrossel</span><span class="tag obj-CONVERSAO">Conversão</span></div>
+    </div>
+    <div class="post-body">
+      <div class="block"><div class="block-h">Gancho</div>
+        <div class="hook">"Cada elo da sua cadeia funcionando sozinho não é eficiência. É risco esperando a hora de aparecer."</div>
+        <div class="spec">Carrossel 4:5 · 1080×1350px · capa + 5 cards</div>
+      </div>
+      <div class="note-data"><b>Ancoragem:</b> Simpósio Supply Chain & Logística (25–26/08). Objetivo Conversão — mas com formato de tese (não pitch puro), já que conversão direta teve alcance baixo em julho. O CTA aquece, não força.</div>
+      <div class="block"><div class="block-h">Roteiro card a card</div>
+        <div class="slides">
+          <div class="slide cover"><span class="slide-n">CAPA</span><span class="slide-role">Headline</span><div class="slide-txt">Operação isolada é <strong>risco</strong>. Integração é controle.</div><div class="slide-note">Gancho Simpósio Supply Chain.</div></div>
+          <div class="slide"><span class="slide-n">02</span><span class="slide-role">Problema</span><div class="slide-txt">Transporte de um lado, armazenagem de outro, informação em silos. Quando cada elo trabalha sozinho, a falha de um vira problema de todos.</div></div>
+          <div class="slide"><span class="slide-n">03</span><span class="slide-role">Consequência</span><div class="slide-txt">O resultado: retrabalho, atraso, custo escondido e ninguém com a visão completa da operação.</div></div>
+          <div class="slide"><span class="slide-n">04</span><span class="slide-role">Virada</span><div class="slide-txt">Integração muda o jogo: transporte, armazenagem e informação conversando. Aí o risco vira <strong>previsibilidade</strong>.</div></div>
+          <div class="slide"><span class="slide-n">05</span><span class="slide-role">Posicionamento</span><div class="slide-txt">A BMX integra as pontas da operação para o cliente enxergar tudo — e controlar tudo.</div></div>
+          <div class="slide cta"><span class="slide-n">CTA</span><span class="slide-role">Conversão</span><div class="slide-txt">Sua cadeia trabalha integrada ou em silos? Vamos conversar.</div></div>
+        </div>
+      </div>
+      <div class="twocol">
+        <div class="block"><div class="block-h">Legenda</div>
+          <div class="caption"><strong>Operação isolada não é eficiência. É risco esperando a hora de aparecer.</strong>
+
+Transporte de um lado, armazenagem de outro, informação em silos. Quando cada elo trabalha sozinho, a falha de um vira problema de todos — retrabalho, atraso e custo escondido.
+
+Integração muda o jogo: transporte, armazenagem e informação conversando entre si. É quando o risco vira previsibilidade. A BMX integra as pontas da operação para você enxergar — e controlar — tudo.</div></div>
+        <div class="block"><div class="block-h">CTA + Hashtags</div>
+          <div class="cta-line"><span class="cta-badge">CTA</span> "Quer enxergar sua operação de ponta a ponta? Fale com a BMX no link da bio."</div>
+          <div class="hashtags">#SupplyChain #logísticaintegrada #gestãoderisco #operações #BMXserviços #controle #logística</div></div>
+      </div>
+      <div class="meta-strip"><span><b>Responsável:</b> Braper</span><span><b>Redes:</b> IG, LinkedIn + Fausto e Marcelo</span><span><b>Objetivo:</b> Conversão</span></div>
+    </div>
+  </article>
+
+  <!-- POST 8 -->
+  <article class="post" id="p8">
+    <div class="post-top">
+      <div class="post-id"><div class="post-num">8</div>
+        <div class="post-titles"><h3>Certificações e NRs — o que separa transporte de transporte responsável</h3>
+        <div class="post-sub">28/08 · Sexta · Pilar: Autoridade</div></div></div>
+      <div class="post-tags"><span class="tag date">28/AGO</span><span class="tag fmt">Reels</span><span class="tag obj-EXPANSAO">Expansão</span></div>
+    </div>
+    <div class="post-body">
+      <div class="block"><div class="block-h">Gancho · 3s</div>
+        <div class="hook">"Qualquer um transporta. Nem todo mundo transporta com responsabilidade — e dá pra provar."</div>
+        <div class="spec">Reels 9:16 · 1080×1920px · ~32s</div>
+      </div>
+      <div class="note-data"><b>Nota:</b> em julho, o Reels de NRs/SASSMAQ teve alcance mediano (471) mas é conteúdo de autoridade que sustenta o posicionamento. Aqui migra para tom mais direto e menos "aula", buscando mais retenção.</div>
+      <div class="block"><div class="block-h">Roteiro cena a cena</div>
+        <div class="reel">
+          <div class="reel-row"><div class="reel-t">0–3s</div><div class="reel-c"><div class="reel-scene">Provocação</div><div class="reel-txt"><strong>"Transportar, qualquer um faz. A diferença está no que você não vê."</strong></div></div></div>
+          <div class="reel-row"><div class="reel-t">3–13s</div><div class="reel-c"><div class="reel-scene">Prova</div><div class="reel-txt"><span class="vo">VO:</span> "Certificação auditada, NRs cumpridas na prática, frota com manutenção rastreável, equipe treinada. Não é papel — é rotina."</div></div></div>
+          <div class="reel-row"><div class="reel-t">13–24s</div><div class="reel-c"><div class="reel-scene">Reframe</div><div class="reel-txt"><span class="vo">VO:</span> "Isso é o que separa transporte de <strong>transporte responsável</strong>. E é o que protege a sua carga e o seu nome."</div></div></div>
+          <div class="reel-row"><div class="reel-t">24–32s</div><div class="reel-c"><div class="reel-scene">Fecho + logo</div><div class="reel-txt"><strong>"BMX · Responsabilidade que se comprova."</strong></div></div></div>
+        </div>
+      </div>
+      <div class="twocol">
+        <div class="block"><div class="block-h">Legenda</div>
+          <div class="caption"><strong>Transportar, qualquer um faz. A diferença está no que você não vê.</strong>
+
+Certificação auditada, NRs cumpridas na prática, frota com manutenção rastreável, equipe treinada. Não é papel guardado na gaveta — é rotina aplicada todo dia.
+
+É isso que separa transporte de transporte responsável. E é o que protege a sua carga e o seu nome. Na BMX, responsabilidade não se promete: se comprova.</div></div>
+        <div class="block"><div class="block-h">CTA + Hashtags</div>
+          <div class="cta-line"><span class="cta-badge">CTA</span> "Seu transporte se comprova? Fale com a BMX no link da bio."</div>
+          <div class="hashtags">#certificações #NR #SASSMAQ #compliance #logística #BMXserviços #transporteresponsável #segurança</div></div>
+      </div>
+      <div class="meta-strip"><span><b>Responsável:</b> Braper</span><span><b>Redes:</b> IG, LinkedIn + Fausto e Marcelo</span><span><b>Objetivo:</b> Expansão</span></div>
+    </div>
+  </article>
+
+  <!-- POST 9 -->
+  <article class="post" id="p9">
+    <div class="post-top">
+      <div class="post-id"><div class="post-num">9</div>
+        <div class="post-titles"><h3>Fechamento de mês — a logística que você não precisa vigiar</h3>
+        <div class="post-sub">31/08 · Segunda · Pilar: Posicionamento & Marca</div></div></div>
+      <div class="post-tags"><span class="tag date">31/AGO</span><span class="tag fmt">Reels</span><span class="tag obj-CONVERSAO">Conversão</span></div>
+    </div>
+    <div class="post-body">
+      <div class="block"><div class="block-h">Gancho · 3s</div>
+        <div class="hook">"A melhor logística é a que some da sua cabeça — porque nunca te dá problema."</div>
+        <div class="spec">Reels 9:16 · 1080×1920px · ~28s</div>
+      </div>
+      <div class="note-data"><b>Correção de julho:</b> o mesmo tema ("operação bem feita") foi carrossel em julho e teve o PIOR alcance do mês (102). Agora vira Reels curto — formato que consistentemente performou melhor.</div>
+      <div class="block"><div class="block-h">Roteiro cena a cena</div>
+        <div class="reel">
+          <div class="reel-row"><div class="reel-t">0–3s</div><div class="reel-c"><div class="reel-scene">Abertura</div><div class="reel-txt"><strong>"Quando foi a última vez que você pensou na sua logística?"</strong></div></div></div>
+          <div class="reel-row"><div class="reel-t">3–12s</div><div class="reel-c"><div class="reel-scene">Reframe</div><div class="reel-txt"><span class="vo">VO:</span> "Se a resposta for 'só quando deu problema', tem algo errado. Boa logística é a que você esquece que existe."</div></div></div>
+          <div class="reel-row"><div class="reel-t">12–22s</div><div class="reel-c"><div class="reel-scene">Posicionamento</div><div class="reel-txt"><span class="vo">VO:</span> "Sem susto, sem atraso, sem precisar vigiar. Só a operação rodando. É o que a BMX entrega há <strong>37 anos</strong>."</div></div></div>
+          <div class="reel-row"><div class="reel-t">22–28s</div><div class="reel-c"><div class="reel-scene">CTA + logo</div><div class="reel-txt"><strong>"Uma logística que você não precisa vigiar. Fale com a BMX."</strong></div></div></div>
+        </div>
+      </div>
+      <div class="twocol">
+        <div class="block"><div class="block-h">Legenda</div>
+          <div class="caption"><strong>A melhor logística é a que você esquece que existe.</strong>
+
+Quando foi a última vez que você pensou na sua operação logística? Se a resposta for "só quando deu problema", tem algo errado.
+
+Sem susto, sem atraso, sem precisar vigiar — só a operação rodando. É o que a BMX entrega há 37 anos: a parte da sua empresa com que você não precisa se preocupar.</div></div>
+        <div class="block"><div class="block-h">CTA + Hashtags</div>
+          <div class="cta-line"><span class="cta-badge">CTA</span> "Quer uma logística que não te dá trabalho? Fale com a BMX no link da bio."</div>
+          <div class="hashtags">#logística #posicionamento #operaçãologística #supplychain #BMXserviços #confiança #37anos</div></div>
+      </div>
+      <div class="meta-strip"><span><b>Responsável:</b> Braper</span><span><b>Redes:</b> IG, LinkedIn</span><span><b>Objetivo:</b> Conversão</span><span><b>Função:</b> fechamento de mês</span></div>
+    </div>
+  </article>
+
+</main>
+</div>
+
+<footer>
+  <p>BMX Serviços · Plano editorial Agosto 2026 · Produção <b>Braper</b> · 9 roteiros · orientado por dados de julho</p>
+</footer>
+
+<script>function go(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}</script>
+</body>
+</html>
