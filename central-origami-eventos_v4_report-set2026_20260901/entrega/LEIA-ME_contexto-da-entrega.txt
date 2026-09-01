@@ -1,0 +1,59 @@
+///BRAPER · ENTREGA · CENTRAL ORIGAMI · SPRINT 1 · 30/07/2026
+=============================================================
+
+CONTEÚDO DO PACOTE
+------------------
+1. central-origami-eventos/            → conteúdo COMPLETO do repositório
+   ├── index.html                      → portal (arquivo único: login, rotas, viewer)
+   ├── assets/
+   │   ├── favicon.png                 → 64×64 RGBA, símbolo Origami
+   │   ├── origami_logo_offwhite.png   → wordmark transparente (topbar e login)
+   │   ├── origami_symbol_orange.png   → símbolo transparente
+   │   └── chart.umd.js                → Chart.js 4.x local (regra inegociável)
+   └── docs/
+       ├── origami_planejamento_midia_20260723.html
+       └── origami_planejamento_formulario-logica-condicional_20260723.pdf
+
+2. entrega/ (NUNCA COMMITAR NADA DESTA PASTA)
+   ├── origami_guia-administracao_central_20260730.html  → guia interno Braper
+   ├── origami_acesso_central_20260730_v2.pdf               → PDF de acesso p/ cliente
+   ├── origami_emails-apresentacao_central_20260730.txt  → e-mails grupo + diretoria
+   ├── checksums_md5.txt                                 → conferência pós-deploy
+   └── este arquivo
+
+COMO PUBLICAR
+-------------
+1. Criar/usar o repo BraperPerformance/central-origami-eventos (PRIVADO)
+2. Subir o conteúdo da pasta central-origami-eventos/ na raiz do repo
+3. Conectar ao Vercel → deploy automático
+4. Conferir a URL final; se diferente de
+   https://central-origami-eventos.vercel.app/# → regerar PDF e e-mails
+5. Rodar md5sum e comparar com checksums_md5.txt
+6. Enviar e-mails com o PDF de acesso em anexo
+
+ACESSOS
+-------
+Cliente: Bruno · Evandro · Guilherme · Barreto  → senha Or1g@mi!26#eventos (v2 — senha anterior descartada)
+Admin:   Rafael · Gabriel                        → senha Braper!26#growth (v2)
+Suporte: WhatsApp +55 11 99555-0735
+
+QA EXECUTADO NESTA ENTREGA
+--------------------------
+Funcional (22/22 aprovado): login normalizado, recusa genérica, grupos
+cruzados, selo ADMIN, logout, 8 rotas, viewer com retorno à lista de
+origem, rota de doc morto redirecionando ao início, zero storage.
+Estático: sintaxe JS, DOCS íntegro, arquivos existentes, IDs únicos,
+links do Drive validados por ID, WhatsApp validado, varredura completa
+anti-contaminação entre clientes (nenhum termo, cor ou elemento de
+outros projetos presente).
+Antes do primeiro envio ao cliente: rodar o QA visual em navegador real
+(1440px e 390px, todos os estados) conforme playbook.
+
+PENDÊNCIAS ASSUMIDAS (flags, não bloqueios)
+-------------------------------------------
+- URL Vercel: assumido o padrão do nome do repo; confirmar no 1º deploy
+- Tipografia: manual da Origami define apenas cores; aplicado par
+  Outfit (display) + Inter (corpo), coerente com a wordmark. Se surgir
+  manual de marca com fonte oficial, trocar o import no index.html
+- Nomes de login cadastrados pelo primeiro nome (fonte: doc 02); o login
+  aceita nome+sobrenome automaticamente
