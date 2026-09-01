@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Administração · Central Origami · Interno Braper</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#f55139;--ink:#1A1A1C;--muted:#6B6B70;--bg:#FAFAF8;--panel:#FFFFFF;--line:#E7E5E0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:15.5px;line-height:1.65}
+.wrap{max-width:860px;margin:0 auto;padding:56px 32px 90px}
+h1,h2,h3{font-family:'Montserrat',sans-serif}
+.brand{font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:-.02em;color:var(--orange);font-size:1rem}
+.badge{display:inline-block;background:var(--ink);color:#fff;font-size:.66rem;font-weight:700;letter-spacing:.1em;border-radius:5px;padding:4px 10px;margin-left:10px;vertical-align:middle}
+h1{font-size:2rem;margin:14px 0 6px}
+.sub{color:var(--muted);margin-bottom:44px}
+h2{font-size:1.25rem;margin:44px 0 14px;padding-top:24px;border-top:2px solid var(--orange)}
+h3{font-size:1rem;margin:24px 0 8px}
+p,li{color:#3A3A3E}
+ul,ol{padding-left:24px;margin:8px 0 16px}
+li{margin:5px 0}
+code{background:#F1EFEA;border:1px solid var(--line);border-radius:5px;padding:2px 7px;font-size:.86rem;color:#C0361F}
+pre{background:var(--ink);color:#F5F3EE;border-radius:10px;padding:18px 20px;font-size:.84rem;overflow-x:auto;margin:14px 0 20px;line-height:1.55}
+pre code{background:none;border:none;color:inherit;padding:0}
+table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:.9rem;background:var(--panel)}
+th,td{border:1px solid var(--line);padding:10px 13px;text-align:left;vertical-align:top}
+th{background:#F5F3EE;font-family:'Montserrat',sans-serif;font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.warn{background:#FFF4E8;border-left:4px solid var(--orange);border-radius:0 10px 10px 0;padding:16px 20px;margin:18px 0}
+.warn strong{color:#C0361F}
+.ok{background:#EDF7F0;border-left:4px solid #2E9E5B;border-radius:0 10px 10px 0;padding:16px 20px;margin:18px 0}
+footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand">///BRAPER</div>
+<h1>Guia de Administração — Central Origami <span class="badge">INTERNO · NÃO PUBLICAR</span></h1>
+<p class="sub">Como publicar, versionar e manter a Central do Cliente da Origami. Este arquivo nunca entra no repositório.</p>
+
+<h2>1 · Visão geral</h2>
+<p>A Central Origami é um site estático: um único <code>index.html</code> + pasta <code>assets/</code> + pasta <code>docs/</code>. Sem servidor e sem banco de dados. O GitHub guarda os arquivos e o Vercel publica automaticamente a cada commit (~1 minuto).</p>
+<table>
+<tr><th>Item</th><th>Valor</th></tr>
+<tr><td>Repositório</td><td><code>BraperPerformance/central-origami-eventos</code></td></tr>
+<tr><td>URL de produção</td><td><code>https://central-origami-eventos.vercel.app/#</code> <em>(confirmar após o primeiro deploy; se sair diferente, regerar o PDF de acesso)</em></td></tr>
+<tr><td>Grupo Cliente</td><td>Bruno · Evandro · Guilherme · Barreto</td></tr>
+<tr><td>Grupo Admin Braper</td><td>Rafael · Gabriel</td></tr>
+<tr><td>WhatsApp de suporte</td><td>+55 11 99555-0735</td></tr>
+</table>
+<div class="warn"><strong>Repositório sempre privado.</strong> Repo público expõe todos os arquivos e todo o histórico de commits — arquivos deletados continuam acessíveis pelo histórico. Nunca commitar senhas, PDFs de acesso, dados individuais de leads ou este guia.</div>
+
+<h2>2 · Estrutura do objeto DOCS</h2>
+<p>Todos os documentos publicados vivem em um único objeto JavaScript dentro do <code>index.html</code>:</p>
+<pre><code>const DOCS = {
+  plan: [
+    { id:'plan-midia-fda-2026',            // nunca repetir um id
+      titulo:'Plano de Mídia · Meta Ads · Festa de Fim de Ano',
+      tag:'JUL/2026',
+      desc:'Descrição de uma frase.',
+      arquivo:'docs/origami_planejamento_midia_20260723.html' },
+  ],
+  report: [],   // Relatórios
+  status: [],   // Status Semanais
+  analise: [],  // Análises e Estudos
+};</code></pre>
+<h3>Regras críticas</h3>
+<ul>
+<li>O <code>id</code> deve ser único em todo o DOCS.</li>
+<li>O <code>arquivo</code> deve bater exatamente com o nome real no disco — é case-sensitive.</li>
+<li>Cada bloco <code>{ ... }</code> termina com vírgula, inclusive o último antes do <code>]</code>.</li>
+<li>Vírgula quebrada = portal em branco. Na dúvida, valide o trecho em jsonlint.com antes de commitar.</li>
+<li>Documento mais recente sempre no topo do array — a ordem do array é a ordem na tela.</li>
+</ul>
+
+<h2>3 · Publicar um documento novo</h2>
+<ol>
+<li>Logado no GitHub, abra a pasta <code>docs/</code> → <strong>Add file → Upload files</strong>.</li>
+<li>Arraste o HTML ou PDF (nome já na taxonomia: <code>origami_[categoria]_[descrição]_[AAAAMMDD]</code>) → <strong>Commit changes</strong>.</li>
+<li>Abra <code>index.html</code> → lápis (Edit) → localize a categoria correta (<code>plan: [</code>, <code>report: [</code>, <code>status: [</code> ou <code>analise: [</code>) → adicione o bloco no <strong>topo</strong> do array → <strong>Commit changes</strong>.</li>
+<li>Aguarde ~1 minuto → o Vercel publica sozinho. Confira com Ctrl+Shift+R.</li>
+</ol>
+<div class="warn"><strong>GitHub mostrando "Sign in" no canto superior?</strong> Você está deslogado — os botões de upload não aparecem para visitante. Faça login primeiro.</div>
+
+<h2>4 · Substituir ou versionar um documento</h2>
+<ul>
+<li><strong>Substituição direta (mesmo nome):</strong> antes de subir, compare o novo arquivo com o publicado — arquivo reenviado pode ser idêntico ao que já está no ar. Depois: Upload files com o mesmo nome sobrescreve.</li>
+<li><strong>Versão nova (v2):</strong> suba com data nova no nome, adicione novo bloco no topo do array e mantenha ou remova o antigo conforme o combinado com o cliente.</li>
+<li><strong>Substituir o index.html:</strong> abrir o arquivo → lápis → Ctrl+A → colar o novo conteúdo → Commit changes.</li>
+</ul>
+
+<h2>5 · Remover documento ou feature</h2>
+<p>Remoção real, não cosmética:</p>
+<ol>
+<li><strong>Deletar o arquivo</strong> da pasta <code>docs/</code> — enquanto existir, a URL direta continua funcionando.</li>
+<li><strong>Remover o bloco</strong> correspondente do DOCS — a rota <code>#/doc/id-antigo</code> passa a redirecionar ao Início automaticamente.</li>
+<li>Testar a URL direta do arquivo e confirmar 404.</li>
+</ol>
+
+<h2>6 · Documentos com gráficos (Chart.js)</h2>
+<p>O repo carrega a biblioteca local em <code>assets/chart.umd.js</code>. Todo documento com gráficos deve referenciá-la com fallback CDN síncrono:</p>
+<pre><code>&lt;script src="../assets/chart.umd.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+if(!window.Chart){document.write('&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"&gt;&lt;\/script&gt;')}
+&lt;/script&gt;</code></pre>
+<ul>
+<li>Documento recebido com <code>src="https://cdnjs..."</code>? Trocar o src para <code>../assets/chart.umd.js</code> + fallback antes de publicar.</li>
+<li>Após qualquer deploy que envolva gráficos, confirmar que <code>assets/chart.umd.js</code> subiu — a ausência dele deixa todos os gráficos em branco.</li>
+</ul>
+
+<h2>7 · Usuários e senhas</h2>
+<p>No <code>index.html</code>, objeto <code>USERS</code>:</p>
+<pre><code>const USERS = {
+  cliente: { nomes: ['bruno','evandro','guilherme','barreto'], senha: '...' },
+  admin:   { nomes: ['rafael','gabriel'],                      senha: '...' }
+};</code></pre>
+<ul>
+<li>Nomes sempre em minúsculas e sem acento no array — a normalização do login cuida do resto. O login também aceita nome + sobrenome (ex.: "Bruno Silva" entra pelo registro "bruno").</li>
+<li>Para adicionar usuário: incluir o primeiro nome normalizado no array do grupo correto.</li>
+<li>Para trocar senha: editar o valor, commitar, avisar o grupo pelo WhatsApp.</li>
+<li>O login é uma barreira organizacional, não um cofre — nunca publicar na Central nada que não possa vazar (dados individuais de leads, contratos, valores).</li>
+</ul>
+
+<h2>8 · Checagem pós-deploy</h2>
+<pre><code>md5sum index.html assets/chart.umd.js docs/*.html docs/*.pdf</code></pre>
+<p>Comparar com os checksums da entrega. Divergiu = o arquivo não foi atualizado no deploy.</p>
+
+<h2>9 · Problemas comuns</h2>
+<table>
+<tr><th>Sintoma</th><th>Causa</th><th>Correção</th></tr>
+<tr><td>Portal em branco após commit</td><td>Vírgula quebrada no DOCS</td><td>Console do navegador aponta a linha; corrigir ou reverter o commit</td></tr>
+<tr><td>Documento novo não aparece</td><td>Cache ou deploy ainda rodando</td><td>Ctrl+Shift+R; aguardar 1 min; checar painel do Vercel</td></tr>
+<tr><td>Documento abre 404</td><td>Nome no campo <code>arquivo</code> difere do arquivo real</td><td>Comparar caractere a caractere (case-sensitive)</td></tr>
+<tr><td>Usuário legítimo não entra</td><td>Grafia errada no array <code>nomes</code></td><td>Conferir o array; nomes em minúsculas, sem acento</td></tr>
+<tr><td>Gráficos em branco</td><td><code>chart.umd.js</code> não subiu no deploy</td><td>Subir o arquivo; conferir checksums</td></tr>
+<tr><td>Fonte estranha em rede corporativa</td><td>Google Fonts bloqueado</td><td>Comportamento esperado; o fallback do sistema assume</td></tr>
+</table>
+
+<div class="ok"><strong>Rotina de segurança:</strong> repo privado sempre · senhas renovadas periodicamente · nada sensível no repositório · este guia e o PDF de acesso circulam apenas fora do GitHub.</div>
+
+<footer>///BRAPER · Guia de Administração · Central Origami · Julho 2026 · Documento interno</footer>
+</div>
+</body>
+</html>
