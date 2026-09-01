@@ -1,8 +1,0 @@
-a123d2ca7e21daae16c04d944b20358b  index.html
-61095ed4dc231d385757e1295f41ad95  assets/chart.umd.js
-69c567d77fba3914a862d82666f34b21  assets/favicon.png
-a7a4d5a8dfc2541d4248e52ecfa98d7f  assets/origami_logo_offwhite.png
-194ff17fb14004399611a847b15fb10f  assets/origami_symbol_orange.png
-6e9666e0062f98d2e702eae10e005d6d  docs/origami_planejamento_formulario-logica-condicional_20260723.pdf
-38e4186c403d04342c28fc61ec07154a  docs/origami_planejamento_midia_20260723.html
-15705d41a60d6b4439ffa7a39afede43  docs/origami_relatorio_performance-26jul-31ago_20260901.html
