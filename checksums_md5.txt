@@ -1,2 +1,0 @@
-cb6b8a7cc98320c92cb14778b6211beb  index.html
-15705d41a60d6b4439ffa7a39afede43  docs/origami_relatorio_performance-26jul-31ago_20260901.html
