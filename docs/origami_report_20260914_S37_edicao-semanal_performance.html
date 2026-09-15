@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Performance · S37 · Festa de Fim de Ano 2026 | Origami Eventos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070707; --panel:#101010; --panel-2:#0B0B0B; --panel-3:#161616;
+  --accent:#EB6927; --accent-soft:rgba(235,105,39,.10); --accent-line:rgba(235,105,39,.35);
+  --gold:#F5C25B; --gold-soft:rgba(245,194,91,.12);
+  --text:#FFFFFF; --muted:#AEAEAE; --muted-2:#6F6F6F;
+  --line:#232325;
+  --ok:#4CC38A; --ok-soft:rgba(76,195,138,.12);
+  --radius:16px;
+  --font-display:'Outfit',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#fff}
+.num{font-variant-numeric:tabular-nums}
+.rule{height:3px;background:var(--accent)}
+
+header{position:relative;overflow:hidden;padding:56px 24px 44px;background:
+  radial-gradient(ellipse at 92% 18%, rgba(235,105,39,.16), transparent 42%),
+  linear-gradient(180deg,#0B0B0B 0%,#070707 100%)}
+.hero{max-width:1180px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;flex-wrap:wrap}
+.eyebrow img{height:16px;width:auto;display:block}
+.eyebrow .sep{color:var(--muted-2);letter-spacing:0}
+h1{font-family:var(--font-display);font-size:clamp(30px,4.4vw,50px);font-weight:600;line-height:1.1;letter-spacing:-.02em;margin:0 0 12px;max-width:920px}
+.lead{font-size:16px;color:var(--muted);max-width:760px;margin:0 0 26px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 20px}
+.stat strong{display:block;font-family:var(--font-display);font-size:30px;white-space:nowrap;font-weight:600;letter-spacing:-.01em;margin-bottom:4px}
+.stat span{color:var(--muted);font-size:12.5px;line-height:1.4;display:block}
+.stat.hl{border-color:var(--accent-line);background:linear-gradient(160deg,rgba(235,105,39,.16),var(--panel) 70%)}
+.stat.hl strong{color:var(--accent)}
+.acum{display:flex;flex-wrap:wrap;gap:6px 22px;background:var(--panel-2);border:1px dashed var(--line);border-radius:14px;padding:12px 18px;font-size:12.5px;color:var(--muted)}
+.acum b{color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
+.acum .t{color:var(--muted-2);margin-right:2px}
+@media(max-width:900px){.hero-stats{grid-template-columns:repeat(2,1fr)}}
+
+nav.sticky{position:sticky;top:0;z-index:60;background:rgba(7,7,7,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 16px;display:flex;gap:6px;overflow-x:auto;justify-content:center;flex-wrap:wrap}
+nav.sticky a{color:var(--muted);text-decoration:none;font-weight:500;font-size:13.5px;padding:8px 16px;border-radius:999px;border:1px solid transparent;white-space:nowrap;transition:.18s}
+nav.sticky a:hover,nav.sticky a:focus-visible{color:var(--text);border-color:var(--line);background:var(--panel)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+section{padding:56px 24px}
+section.alt{background:var(--panel-2)}
+.container{max-width:1180px;margin:0 auto}
+.section-mark{display:inline-flex;align-items:center;gap:12px;margin-bottom:12px;color:var(--accent);font-size:13px;font-weight:600}
+.circ{width:34px;height:34px;border:1.5px solid var(--accent);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0;font-size:14px}
+h2{font-family:var(--font-display);font-size:clamp(24px,2.8vw,33px);font-weight:600;line-height:1.12;letter-spacing:-.015em;margin:0 0 8px}
+.section-intro{max-width:880px;margin-bottom:26px}
+.section-intro p{color:var(--muted);font-size:14.5px;margin:0}
+h3{font-family:var(--font-display);font-size:18px;font-weight:600;margin:0 0 8px}
+p{margin:0 0 12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.card .kicker{font-size:12px;font-weight:600;color:var(--accent);display:block;margin-bottom:8px}
+.card .body{color:var(--muted);font-size:13.5px}
+.card .body p:last-child{margin-bottom:0}
+.chart-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.chart-title{font-family:var(--font-display);font-size:17px;font-weight:600;margin:0 0 4px}
+.chart-sub{font-size:13px;color:var(--muted);margin:0 0 14px;line-height:1.5}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
+.legend span{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--muted);font-weight:500}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.legend i.ln{width:18px;height:0;border-top:2px dashed currentColor;border-radius:0;background:none!important}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:760px}
+thead th{background:var(--panel-3);color:var(--muted);font-size:11px;font-weight:600;padding:12px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+thead th:first-child{text-align:left}
+tbody td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--text)}
+tbody td:first-child{text-align:left;font-weight:500}
+tbody tr:hover{background:rgba(235,105,39,.05)}
+tbody tr:last-child td{border-bottom:none}
+tr.total td{background:var(--panel-3);font-weight:600;border-top:2px solid var(--line)}
+tr.hi td{background:rgba(235,105,39,.08)}
+td.dim,th.dim{color:var(--muted-2)}
+td.acc{color:var(--accent);font-weight:600}
+td.q,th.q{background:rgba(235,105,39,.06)}
+.badge{display:inline-block;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:999px}
+.badge.pos{background:var(--ok-soft);color:var(--ok)}
+.badge.acc{background:var(--accent-soft);color:var(--accent)}
+.badge.gold{background:var(--gold-soft);color:var(--gold)}
+.badge.mut{background:rgba(174,174,174,.12);color:var(--muted)}
+
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:4px 0 12px}
+.chips .lbl{font-size:12px;color:var(--muted-2);font-weight:600;margin-right:4px;min-width:72px}
+.chip{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-size:13.5px;font-weight:500;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:999px;padding:8px 18px;cursor:pointer;transition:.18s}
+.chip i{width:11px;height:11px;border-radius:3px;display:inline-block;background:var(--muted-2)}
+.chip.on{color:var(--text);border-color:var(--muted-2);background:var(--panel-3)}
+.chip:not(.on){opacity:.55}
+.chip:hover{border-color:var(--muted)}
+.chip.mode.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.wsvg{width:100%;height:auto;display:block}
+.tip{position:fixed;z-index:50;pointer-events:none;background:#0B0B0B;border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13px;line-height:1.55;color:var(--muted);box-shadow:0 8px 28px rgba(0,0,0,.6);opacity:0;transition:opacity .15s;max-width:280px}
+.tip b{color:var(--text);display:block;margin-bottom:2px;font-size:13.5px}
+.tip .tv{color:var(--text);font-weight:600}
+.tip .hl{color:var(--accent);font-weight:600}
+.chart-note{font-size:12px;color:var(--muted-2);margin-top:10px}
+
+.callout{border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 14px 14px 0;padding:14px 18px;margin-top:16px}
+.callout.gold{border-color:var(--gold);background:var(--gold-soft)}
+.callout.ok{border-color:var(--ok);background:var(--ok-soft)}
+.callout b{display:block;margin-bottom:4px;font-family:var(--font-display);font-weight:600;font-size:15px}
+.callout p{margin:0;font-size:13.5px;color:var(--muted)}
+.callout p b{display:inline;font-family:var(--font-body);font-size:inherit;color:var(--text)}
+
+/* fases */
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+@media(max-width:900px){.phases{grid-template-columns:repeat(2,1fr)}}
+.phase{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;border-top:3px solid var(--muted-2)}
+.phase.p1{border-top-color:#7A7A7A}
+.phase.p2{border-top-color:var(--accent)}
+.phase.p3{border-top-color:#5A2A12}
+.phase.p4{border-top-color:var(--gold)}
+.phase u{text-decoration:none;font-size:12px;font-weight:600;color:var(--text);display:block;margin-bottom:2px;font-family:var(--font-display)}
+.phase em{font-style:normal;font-size:11px;color:var(--muted-2);display:block;margin-bottom:8px}
+.phase .pr{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:2px 0}
+.phase .pr b{color:var(--text);font-variant-numeric:tabular-nums;font-weight:600}
+.phase.p4 .pr b.g{color:var(--gold)}
+
+/* comparativo campanhas */
+.duel{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:900px){.duel{grid-template-columns:1fr}}
+.dcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.dcard.t{border-color:var(--accent-line)}
+.dcard .dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.dcard .dh h3{margin:0}
+.dnums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.dnums div{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.dnums b{display:block;font-family:var(--font-display);font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.dcard.t .dnums b{color:var(--accent)}
+.dnums span{font-size:11px;color:var(--muted-2)}
+.dweek{border-top:1px dashed var(--line);padding-top:12px;font-size:13px;color:var(--muted)}
+.dweek b{color:var(--text)}
+
+/* recon strip */
+.recon{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+@media(max-width:700px){.recon{grid-template-columns:1fr}}
+.rstep{padding:20px 22px 16px;border:1px solid var(--line);background:var(--panel)}
+.rstep:first-child{border-radius:var(--radius) 0 0 var(--radius)}
+.rstep:last-child{border-radius:0 var(--radius) var(--radius) 0;border-color:var(--accent-line);background:linear-gradient(160deg,rgba(235,105,39,.14),var(--panel) 70%)}
+.rstep+.rstep{border-left:none}
+@media(max-width:700px){.rstep{border-radius:var(--radius)!important;border-left:1px solid var(--line)!important;margin:4px 0}}
+.rstep u{text-decoration:none;font-size:12px;color:var(--muted-2);font-weight:600;display:block;margin-bottom:6px}
+.rstep b{font-family:var(--font-display);font-size:32px;font-weight:600;display:block;line-height:1;margin-bottom:6px;font-variant-numeric:tabular-nums}
+.rstep:last-child b{color:var(--accent)}
+.rstep span{font-size:12px;color:var(--muted);display:block}
+
+.next{margin:0;padding:0;list-style:none;counter-reset:np}
+.next li{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:14px}
+.next li:last-child{border-bottom:none}
+.next li .circ{counter-increment:np;font-size:13px;font-weight:600;flex-shrink:0;width:30px;height:30px}
+.next li .circ::before{content:counter(np)}
+.next li b{color:var(--text);font-family:var(--font-display);font-weight:600;font-size:15px}
+
+footer{padding:56px 24px 50px;text-align:center;border-top:1px solid var(--line);background:linear-gradient(180deg,#0B0B0B,#070707)}
+footer h2{max-width:860px;margin:0 auto 12px}
+footer p{color:var(--muted);max-width:700px;margin:0 auto;font-size:14px}
+footer .brand{margin-top:28px;font-size:11.5px;color:var(--muted-2);letter-spacing:.14em;text-transform:uppercase}
+svg text{font-family:var(--font-body);font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<div class="rule"></div>
+
+<!-- ===== HERO ===== -->
+<header>
+  <div class="hero">
+    <div class="eyebrow">
+      <img src="../assets/origami_symbol_orange.png" alt="" onerror="this.style.display='none'">
+      Origami Eventos <span class="sep">·</span> Edição semanal · S37 · 06 a 12/09 <span class="sep">·</span> Festa de Fim de Ano 2026
+    </div>
+    <h1>A retomada começou, e o funil respondeu na primeira semana.</h1>
+    <p class="lead">A verba voltou a subir em 09/09, dentro da retomada planejada. Resultado imediato: 4 leads na semana, os 4 qualificados, todos pelo testemunhal, e a melhor semana do CRM até aqui, com 2 oportunidades qualificadas novas e a primeira proposta enviada da campanha.</p>
+    <div class="hero-stats">
+      <div class="stat"><strong class="num">R$ 256,52</strong><span>Investido na S37 · retomada a partir de 09/09</span></div>
+      <div class="stat hl"><strong class="num">4 leads</strong><span>4 qualificados · 100% da semana</span></div>
+      <div class="stat hl"><strong class="num">R$ 64,13</strong><span>Custo por lead da S37</span></div>
+      <div class="stat"><strong class="num">2 OQs + 1ª proposta</strong><span>Movimento do CRM na semana</span></div>
+    </div>
+    <div class="acum">
+      <span><span class="t">Acumulado 26/07 a 13/09:</span></span>
+      <span><b>R$ 3.739,62</b> investidos</span>
+      <span><b>55</b> conversões</span>
+      <span><b>52</b> leads</span>
+      <span><b>41</b> qualificados · <b>78,8%</b></span>
+      <span>CPL <b>R$ 71,92</b></span>
+      <span>Custo/qualif. <b>R$ 91,21</b></span>
+      <span class="t">Extração 14/09 · dados até 13/09</span>
+    </div>
+  </div>
+</header>
+
+<nav class="sticky">
+  <a href="#momento">O momento</a>
+  <a href="#semanal">Semana a semana</a>
+  <a href="#campanhas">Topo × Meio</a>
+  <a href="#criativos">Criativos</a>
+  <a href="#funil">Funil e CRM</a>
+  <a href="#proximos">Próximos passos</a>
+</nav>
+
+<!-- ===== O MOMENTO ===== -->
+<section id="momento">
+  <div class="container">
+    <div class="section-mark"><span class="circ">1</span>O momento da conta</div>
+    <h2>Quatro fases em 50 dias, e a quarta acabou de começar.</h2>
+    <div class="section-intro"><p>Investimento diário desde a ativação. Cada fase foi uma decisão de plano; a barra do dia mostra o ritmo e os pontos marcam os leads.</p></div>
+
+    <div class="chart-card">
+      <div id="pwrap"></div>
+      <div class="tip" id="ptip"></div>
+      <div class="phases">
+        <div class="phase p1"><u>1 · Construção</u><em>26/07 a 22/08 · 28 dias · aprendizado com verba controlada</em>
+          <div class="pr"><span>Investimento</span><b>R$ 1.467,63</b></div>
+          <div class="pr"><span>Leads</span><b>8</b></div>
+          <div class="pr"><span>CPL</span><b>R$ 183,45</b></div>
+        </div>
+        <div class="phase p2"><u>2 · Escala</u><em>23 a 31/08 · 9 dias · entrega concentrada no vencedor</em>
+          <div class="pr"><span>Investimento</span><b>R$ 1.848,57</b></div>
+          <div class="pr"><span>Leads</span><b>37</b></div>
+          <div class="pr"><span>CPL</span><b>R$ 49,96</b></div>
+        </div>
+        <div class="phase p3"><u>3 · Manutenção</u><em>01 a 08/09 · 8 dias · estrutura preservada entre verbas</em>
+          <div class="pr"><span>Investimento</span><b>R$ 166,83</b></div>
+          <div class="pr"><span>Leads</span><b>2</b></div>
+          <div class="pr"><span>CPL</span><b>R$ 83,42</b></div>
+        </div>
+        <div class="phase p4"><u>4 · Retomada gradual</u><em>desde 09/09 · verba subindo por degraus</em>
+          <div class="pr"><span>Investimento</span><b class="g">R$ 256,59</b></div>
+          <div class="pr"><span>Leads</span><b class="g">5 · todos qualif.</b></div>
+          <div class="pr"><span>CPL</span><b class="g">R$ 51,32</b></div>
+        </div>
+      </div>
+      <div class="callout ok" style="margin-top:16px">
+        <b>A leitura de 30 segundos</b>
+        <p>A manutenção cumpriu o que prometia: a conta voltou a investir e <b>não passou por reaprendizado</b>. Nos 5 primeiros dias de retomada, cada lead custou R$ 51,32, o mesmo patamar da fase de escala, e os 5 qualificaram. A máquina está pronta para o degrau seguinte de verba.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEMANAL ===== -->
+<section id="semanal" class="alt">
+  <div class="container">
+    <div class="section-mark"><span class="circ">2</span>Semana a semana · domingo a sábado</div>
+    <h2>Volumetria, custo e taxa: escolha a lente.</h2>
+    <div class="section-intro"><p>Um modo por vez, para apresentar sem ruído. Volumetria em barras; custo e taxa em linhas. Filtre Topo, Meio ou Total e passe o mouse para o detalhe completo da semana.</p></div>
+
+    <div class="chart-card">
+      <div class="chips" id="wmode">
+        <span class="lbl">Ver por</span>
+        <button class="chip mode on" data-mode="vol">Volumetria</button>
+        <button class="chip mode" data-mode="cost">Custo</button>
+        <button class="chip mode" data-mode="rate">Taxa</button>
+      </div>
+      <div class="chips" id="wseries">
+        <span class="lbl">Campanhas</span>
+        <button class="chip on" data-serie="T"><i style="background:#EB6927"></i>Topo</button>
+        <button class="chip on" data-serie="M"><i style="background:#F5C25B"></i>Meio</button>
+        <button class="chip" data-serie="ALL"><i style="background:#AEAEAE"></i>Total</button>
+      </div>
+      <div id="wwrap"></div>
+      <div class="legend" id="wlegend"></div>
+      <div class="tip" id="wtip"></div>
+      <div class="chart-note">* S38 parcial: 13/09 · Meio ativo desde 12/08 · Volumetria: leads e qualificados · Custo: investimento, CPL e custo por qualificado · Taxa: qualificação em barras, CTR e clique → lead em linhas.</div>
+    </div>
+
+    <div class="callout">
+      <b>O que apontar no gráfico</b>
+      <p>Em <b>Volumetria</b>: a S37 é o primeiro degrau da retomada (4 leads). Em <b>Custo</b>: o CPL do topo está estável há três semanas (R$ 27 a R$ 32) em três ritmos de verba diferentes. Em <b>Taxa</b>: a qualificação voltou a 100% na S37 e o CTR do topo recuperou para 2,06%.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TOPO x MEIO ===== -->
+<section id="campanhas">
+  <div class="container">
+    <div class="section-mark"><span class="circ">3</span>Performance por campanha</div>
+    <h2>Topo × Meio: papéis diferentes, régua clara.</h2>
+    <div class="section-intro"><p>O topo é a máquina de leads; o meio mantém a marca presente para quem já assistiu e prepara o público do fundo, que entra no próximo degrau da retomada.</p></div>
+
+    <div class="duel">
+      <div class="dcard t">
+        <div class="dh"><h3>Topo · interesses</h3><span class="badge pos">Ativa desde 26/07</span></div>
+        <div class="dnums">
+          <div><b class="num">45</b><span>leads · 87% do total</span></div>
+          <div><b class="num">38</b><span>qualificados · 84%</span></div>
+          <div><b class="num">R$ 50,55</b><span>CPL do período</span></div>
+        </div>
+        <div class="dnums">
+          <div><b class="num">2,22%</b><span>CTR</span></div>
+          <div><b class="num">R$ 3,62</b><span>CPC</span></div>
+          <div><b class="num">R$ 59,87</b><span>custo por qualificado</span></div>
+        </div>
+        <div class="dweek"><b>S37:</b> R$ 127,17 · 4 leads · 4 qualificados · CPL <b>R$ 31,79</b> · CTR 2,06% · o terceiro CPL semanal seguido na faixa dos R$ 30.</div>
+      </div>
+      <div class="dcard">
+        <div class="dh"><h3>Meio · remarketing</h3><span class="badge mut">Ativa desde 12/08</span></div>
+        <div class="dnums">
+          <div><b class="num">7</b><span>leads · 13% do total</span></div>
+          <div><b class="num">3</b><span>qualificados · 43%</span></div>
+          <div><b class="num">R$ 209,25</b><span>CPL do período</span></div>
+        </div>
+        <div class="dnums">
+          <div><b class="num">1,27%</b><span>CTR</span></div>
+          <div><b class="num">R$ 8,05</b><span>CPC</span></div>
+          <div><b class="num">R$ 488,25</b><span>custo por qualificado</span></div>
+        </div>
+        <div class="dweek"><b>S37:</b> R$ 129,35 · 17 cliques · sem lead na semana, dentro do esperado para o volume · função atual: frequência sobre a base que o topo construiu, preparando o fundo.</div>
+      </div>
+    </div>
+
+    <div class="spacer" style="height:16px"></div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Campanha</th><th>Investimento</th><th>Particip.</th><th>Impressões</th><th>Cliques</th><th>CTR</th><th>CPC</th><th>Conversões</th><th class="q">Leads</th><th class="q">Qualificados</th><th class="q">Tx. qualif.</th><th>CPL</th><th>Custo/qualif.</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td><b>Topo</b></td><td>R$ 2.274,88</td><td>60,8%</td><td>28.337</td><td>628</td><td>2,22%</td><td>R$ 3,62</td><td>48</td><td class="q"><b>45</b></td><td class="q"><b>38</b></td><td class="q">84%</td><td class="acc">R$ 50,55</td><td class="acc">R$ 59,87</td></tr>
+          <tr><td><b>Meio</b></td><td>R$ 1.464,74</td><td>39,2%</td><td>14.380</td><td>182</td><td>1,27%</td><td>R$ 8,05</td><td>7</td><td class="q">7</td><td class="q">3</td><td class="q">43%</td><td>R$ 209,25</td><td>R$ 488,25</td></tr>
+          <tr class="total"><td>Total · 26/07 a 13/09</td><td>R$ 3.739,62</td><td>100%</td><td>42.717</td><td>810</td><td>1,90%</td><td>R$ 4,62</td><td>55</td><td class="q">52</td><td class="q">41</td><td class="q">78,8%</td><td>R$ 71,92</td><td>R$ 91,21</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CRIATIVOS ===== -->
+<section id="criativos" class="alt">
+  <div class="container">
+    <div class="section-mark"><span class="circ">4</span>Performance por criativo</div>
+    <h2>Seis vídeos, uma conclusão: o testemunhal carrega a campanha.</h2>
+    <div class="section-intro"><p>Números do período inteiro, com os leads atribuídos ao anúncio de origem registrado na base nativa do Meta. Os 5 leads de setembro, sem exceção, vieram do testemunhal do Evandro no topo.</p></div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Criativo</th><th>Campanha</th><th>Formato</th><th>Investimento</th><th>CTR</th><th>CPC</th><th>Conversões</th><th class="q">Leads</th><th class="q">Qualificados</th><th class="q">Tx. qualif.</th><th>CPL</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td><b>T-A1</b></td><td class="dim">Topo</td><td>Testemunhal · Evandro</td><td>R$ 1.216,83</td><td><b>2,34%</b></td><td>R$ 2,51</td><td>43</td><td class="q"><b>42</b></td><td class="q"><b>37</b></td><td class="q"><b>88%</b></td><td class="acc">R$ 28,97</td></tr>
+          <tr><td><b>T-A2</b></td><td class="dim">Topo</td><td>Showreel</td><td>R$ 698,46</td><td>1,97%</td><td>R$ 7,20</td><td>4</td><td class="q">3</td><td class="q">1</td><td class="q">33%</td><td>R$ 232,82</td></tr>
+          <tr><td><b>T-A3</b></td><td class="dim">Topo</td><td>Lettering</td><td>R$ 359,59</td><td>1,70%</td><td>R$ 7,82</td><td>1</td><td class="q">0</td><td class="q">0</td><td class="q dim">0%</td><td class="dim">sem lead</td></tr>
+          <tr><td><b>M-A3</b></td><td class="dim">Meio</td><td>Lettering</td><td>R$ 1.187,02</td><td>1,31%</td><td>R$ 7,51</td><td>6</td><td class="q">6</td><td class="q">3</td><td class="q">50%</td><td>R$ 197,84</td></tr>
+          <tr><td><b>M-A2</b></td><td class="dim">Meio</td><td>Showreel</td><td>R$ 140,81</td><td>0,88%</td><td>R$ 17,60</td><td>1</td><td class="q">1</td><td class="q">0</td><td class="q dim">0%</td><td>R$ 140,81</td></tr>
+          <tr><td><b>M-A1</b></td><td class="dim">Meio</td><td>Testemunhal · Evandro</td><td>R$ 136,91</td><td>1,14%</td><td>R$ 8,56</td><td>0</td><td class="q">0</td><td class="q">0</td><td class="q dim">0%</td><td class="dim">sem lead</td></tr>
+          <tr class="total"><td>Total</td><td class="dim">Topo + Meio</td><td class="dim">6 criativos</td><td>R$ 3.739,62</td><td>1,90%</td><td>R$ 4,62</td><td>55</td><td class="q">52</td><td class="q">41</td><td class="q">78,8%</td><td>R$ 71,92</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <b>A decisão de criativo para o próximo degrau</b>
+      <p>O T-A1 combina o clique mais barato (R$ 2,51), a maior conversão de clique em lead e 88% de qualificação: é nele que a verba da retomada se concentra. As <b>duas variações do testemunhal</b> (outra abertura, outro gancho) entram junto com o degrau seguinte para proteger o desempenho contra desgaste, e o <b>testemunhal de objeções substitui o M-A1</b> no meio, onde o público já conhece o Evandro. Formato vertical, pensado para o Instagram, origem de 94% dos leads.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FUNIL E CRM ===== -->
+<section id="funil">
+  <div class="container">
+    <div class="section-mark"><span class="circ">5</span>Funil e CRM · Meta, RD Marketing e CRM conciliados</div>
+    <h2>A melhor semana do funil comercial até aqui.</h2>
+    <div class="section-intro"><p>Cada conversão do Meta tem destino conhecido nas três bases. E, nesta semana, o movimento importante aconteceu depois do formulário: negociações avançando de etapa em velocidade nova.</p></div>
+
+    <div class="recon">
+      <div class="rstep"><u>Conversões no Meta</u><b class="num">55</b><span>3 fora da base: 1 teste de rotina, 1 cadastro inválido, 1 em recuperação</span></div>
+      <div class="rstep"><u>Leads reais</u><b class="num">52</b><span>RD Station + CRM · 5 novos na semana, conciliação 100%</span></div>
+      <div class="rstep"><u>Leads qualificados</u><b class="num">41</b><span>78,8% dos leads · R$ 91,21 por qualificado</span></div>
+    </div>
+
+    <div class="spacer" style="height:16px"></div>
+
+    <div class="grid3">
+      <div class="card">
+        <span class="kicker">Movimento da semana no CRM</span>
+        <h3>2 oportunidades qualificadas novas</h3>
+        <div class="body"><p>Morgana (10/09) e Laura (13/09) avançaram para Oportunidade Qualificada, Laura no dia seguinte à conversão. O funil agora tem <b style="color:var(--text)">4 OQs ativas</b>, o dobro da semana passada.</p></div>
+      </div>
+      <div class="card">
+        <span class="kicker">Marco da campanha</span>
+        <h3>Primeira proposta enviada</h3>
+        <div class="body"><p>A negociação que estava em Apresentação avançou para <b style="color:var(--text)">Proposta enviada</b>: é a primeira proposta gerada pela campanha, a 7 semanas das festas de fim de ano. O funil completo agora existe de ponta a ponta: anúncio → lead → contato → oportunidade → proposta.</p></div>
+      </div>
+      <div class="card">
+        <span class="kicker">Perfil dos leads da semana</span>
+        <h3>O público certo continua chegando</h3>
+        <div class="body"><p>Dos 5 novos leads, <b style="color:var(--text)">4 são de empresas de 50 a 199 colaboradores</b>, o porte núcleo da campanha, entre RH e sócios. Todos já estão com contato feito ou além no CRM.</p></div>
+      </div>
+    </div>
+
+    <div class="callout gold">
+      <b>Estado do funil · 52 leads</b>
+      <p><b>39 em andamento</b> (34 em contato, 4 oportunidades qualificadas, 1 proposta enviada) · <b>11 perdidos</b> (9 fora de perfil, 2 sem budget, nenhum para concorrente) · <b>2 aguardando sincronização</b> no CRM (leads de 30/08). Qualificação: etapa atual além da Caixa de Entrada, descontadas as perdas por fora de perfil registradas até 01/09.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROXIMOS ===== -->
+<section id="proximos" class="alt">
+  <div class="container">
+    <div class="section-mark"><span class="circ">6</span>Próximos passos</div>
+    <h2>Cinco movimentos para a semana.</h2>
+    <div class="card">
+      <ol class="next">
+        <li><span class="circ"></span><div><b>Subir o próximo degrau da retomada.</b> O CPL de R$ 51 nos primeiros 5 dias confirma a calibragem; cada degrau de verba aproxima a conta do ritmo de 25 a 30 leads semanais da fase de escala, na janela de decisão de outubro e novembro.</div></li>
+        <li><span class="circ"></span><div><b>Publicar as variações do testemunhal.</b> Duas versões do T-A1 no topo e o testemunhal de objeções no lugar do M-A1, prontas para acompanhar o aumento de entrega.</div></li>
+        <li><span class="circ"></span><div><b>Ativar o fundo no próximo degrau.</b> Remarketing de alta intenção (visualizadores do meio, abandono de formulário e base de contatos da Origami), com o criativo F-A1.</div></li>
+        <li><span class="circ"></span><div><b>Converter as 4 OQs em proposta.</b> As oportunidades qualificadas ativas são as candidatas a acompanhar a proposta já enviada; registrar cada avanço mantém a leitura de custo por oportunidade na próxima edição.</div></li>
+        <li><span class="circ"></span><div><b>Fechar as duas pendências de base.</b> Importar o lead de 14/08 recuperado da base do Meta e sincronizar os 2 leads de 30/08 sem etapa no CRM.</div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h2>A semana que ligou o motor de novo.</h2>
+  <p>Retomada iniciada com CPL de escala, 100% de qualificação na semana, o dobro de oportunidades qualificadas e a primeira proposta da campanha na mesa. O próximo relatório acompanha o degrau seguinte de verba, a estreia das variações do testemunhal e a ativação do fundo.</p>
+  <div class="brand">Origami Eventos × Braper · Edição semanal S37 · 26/07 a 13/09/2026 · Extração 14/09/2026 · Meta Ads, RD Marketing e CRM</div>
+</footer>
+
+<script>
+(function(){
+  function br(v,dec){ return Number(v).toLocaleString('pt-BR',{minimumFractionDigits:dec,maximumFractionDigits:dec}); }
+  function svgEl(t,a){ var el=document.createElementNS('http://www.w3.org/2000/svg',t); for(var k in a) el.setAttribute(k,a[k]); return el; }
+  function niceMax(v){ if(v<=0) return 1; var p=Math.pow(10,Math.floor(Math.log10(v))); var n=v/p; var s=n<=1?1:n<=2?2:n<=3?3:n<=4?4:n<=5?5:n<=6?6:n<=8?8:10; return s*p; }
+
+  /* ===== Fases: investimento diário ===== */
+  var D=[
+    ['26/07',19.37,0,0],['27/07',30.62,0,0],['28/07',41.84,0,0],['29/07',37.75,0,0],['30/07',30.43,0,0],['31/07',29.42,0,0],['01/08',23.50,1,0],
+    ['02/08',50.97,0,0],['03/08',39.46,2,1],['04/08',35.83,0,0],['05/08',38.45,0,0],['06/08',40.01,0,0],['07/08',29.18,0,0],['08/08',10.49,0,0],
+    ['09/08',50.84,0,0],['10/08',28.17,0,0],['11/08',17.95,0,0],['12/08',86.85,0,0],['13/08',65.05,0,0],['14/08',83.83,1,0],['15/08',52.29,1,0],
+    ['16/08',92.22,0,0],['17/08',73.72,0,0],['18/08',113.66,0,0],['19/08',101.54,1,0],['20/08',65.09,0,0],['21/08',82.01,2,1],['22/08',97.09,0,0],
+    ['23/08',204.46,6,3],['24/08',166.29,2,2],['25/08',220.37,3,3],['26/08',255.91,2,2],['27/08',225.24,4,4],['28/08',215.56,10,10],['29/08',174.85,3,3],
+    ['30/08',278.56,6,4],['31/08',107.33,1,1],
+    ['01/09',19.05,0,0],['02/09',22.25,0,0],['03/09',25.53,1,1],['04/09',20.22,0,0],['05/09',11.73,1,1],['06/09',28.56,0,0],['07/09',16.68,0,0],['08/09',22.81,0,0],
+    ['09/09',67.18,0,0],['10/09',53.99,1,1],['11/09',44.28,0,0],['12/09',23.02,3,3],['13/09',68.12,1,1]
+  ];
+  var PH=[{a:0,b:27,c:'#7A7A7A',n:'Construção'},{a:28,b:36,c:'#EB6927',n:'Escala'},{a:37,b:44,c:'#5A2A12',n:'Manutenção'},{a:45,b:49,c:'#F5C25B',n:'Retomada'}];
+  function phaseOf(i){ for(var k=0;k<PH.length;k++) if(i>=PH[k].a&&i<=PH[k].b) return PH[k]; }
+  (function(){
+    var VW=960,VH=240,L=44,R=10,T=34,B=26,plotW=VW-L-R,plotH=VH-T-B,MAX=300;
+    var svg=svgEl('svg',{viewBox:'0 0 '+VW+' '+VH,class:'wsvg',role:'img','aria-label':'Investimento diário por fase'});
+    [0,100,200,300].forEach(function(v){ var y=T+plotH-v/MAX*plotH;
+      svg.appendChild(svgEl('line',{x1:L,y1:y,x2:L+plotW,y2:y,stroke:v===0?'#232325':'#1A1A1A'}));
+      var t=svgEl('text',{x:L-6,y:y+4,'font-size':'11','fill':'#6F6F6F','text-anchor':'end'}); t.textContent='R$ '+v; svg.appendChild(t); });
+    var bw=plotW/D.length;
+    PH.forEach(function(p){
+      var x1=L+bw*p.a, x2=L+bw*(p.b+1);
+      svg.appendChild(svgEl('line',{x1:x1+2,y1:T-18,x2:x2-2,y2:T-18,stroke:p.c,'stroke-width':2}));
+      var t=svgEl('text',{x:(x1+x2)/2,y:T-24,'font-size':'11.5','fill':p.c,'text-anchor':'middle','font-weight':'600'}); t.textContent=p.n; svg.appendChild(t);
+    });
+    var tip=document.getElementById('ptip');
+    D.forEach(function(d,i){
+      var p=phaseOf(i); var h=Math.max(2,d[1]/MAX*plotH); var x=L+bw*i+1;
+      var r=svgEl('rect',{x:x,y:T+plotH-h,width:Math.max(2,bw-2),height:h,rx:2,fill:p.c,'fill-opacity':i>=45?1:.85,style:'cursor:pointer'});
+      r.addEventListener('mousemove',function(e){
+        tip.innerHTML='<b>'+d[0]+' · '+p.n+'</b>Investimento: <span class="tv">R$ '+br(d[1],2)+'</span><br>Leads: <span class="tv">'+d[2]+'</span> · Qualificados: <span class="tv">'+d[3]+'</span>';
+        tip.style.opacity='1'; tip.style.left=Math.min(e.clientX+16,window.innerWidth-260)+'px'; tip.style.top=(e.clientY-10)+'px';
+      });
+      r.addEventListener('mouseleave',function(){ tip.style.opacity='0'; });
+      svg.appendChild(r);
+      if(d[2]>0){ svg.appendChild(svgEl('circle',{cx:x+bw/2-1,cy:T+plotH-h-7,r:2.6,fill:'#fff','pointer-events':'none'})); }
+      if(i===0||i===14||i===28||i===37||i===45||i===49){ var t=svgEl('text',{x:x+bw/2,y:T+plotH+16,'font-size':'10.5','fill':i>=45?'#F5C25B':'#AEAEAE','text-anchor':'middle','font-weight':'600'}); t.textContent=d[0]; svg.appendChild(t); }
+    });
+    document.getElementById('pwrap').appendChild(svg);
+    var nt=document.createElement('div'); nt.className='chart-note'; nt.textContent='● ponto branco: dia com lead'; document.getElementById('pwrap').appendChild(nt);
+  })();
+
+  /* ===== Semana a semana: 3 modos ===== */
+  var W=[
+    {id:'S31',n:'semana 1',per:'26/07 a 01/08',part:false,
+      T:{spend:212.93,imp:2077,clicks:41,conv:1,leads:1,mql:0},M:null,
+      ALL:{spend:212.93,imp:2077,clicks:41,conv:1,leads:1,mql:0}},
+    {id:'S32',n:'semana 2',per:'02/08 a 08/08',part:false,
+      T:{spend:244.39,imp:1783,clicks:35,conv:3,leads:2,mql:1},M:null,
+      ALL:{spend:244.39,imp:1783,clicks:35,conv:3,leads:2,mql:1}},
+    {id:'S33',n:'semana 3',per:'09/08 a 15/08',part:false,
+      T:{spend:308.74,imp:2211,clicks:44,conv:1,leads:1,mql:0},
+      M:{spend:76.24,imp:573,clicks:6,conv:1,leads:1,mql:0},
+      ALL:{spend:384.98,imp:2784,clicks:50,conv:2,leads:2,mql:0}},
+    {id:'S34',n:'semana 4',per:'16/08 a 22/08',part:false,
+      T:{spend:406.12,imp:2115,clicks:37,conv:2,leads:1,mql:1},
+      M:{spend:219.21,imp:1498,clicks:25,conv:2,leads:2,mql:0},
+      ALL:{spend:625.33,imp:3613,clicks:62,conv:4,leads:3,mql:1}},
+    {id:'S35',n:'semana 5 · escala',per:'23/08 a 29/08',part:false,
+      T:{spend:727.26,imp:11202,clicks:307,conv:27,leads:27,mql:25},
+      M:{spend:735.42,imp:6725,clicks:96,conv:3,leads:3,mql:2},
+      ALL:{spend:1462.68,imp:17927,clicks:403,conv:30,leads:30,mql:27}},
+    {id:'S36',n:'semana 6 · manutenção',per:'30/08 a 05/09',part:false,
+      T:{spend:214.95,imp:5218,clicks:93,conv:9,leads:8,mql:6},
+      M:{spend:269.72,imp:3123,clicks:29,conv:1,leads:1,mql:1},
+      ALL:{spend:484.67,imp:8341,clicks:122,conv:10,leads:9,mql:7}},
+    {id:'S37',n:'semana 7 · retomada',per:'06 a 12/09',part:false,
+      T:{spend:127.17,imp:2814,clicks:58,conv:4,leads:4,mql:4},
+      M:{spend:129.35,imp:1891,clicks:17,conv:0,leads:0,mql:0},
+      ALL:{spend:256.52,imp:4705,clicks:75,conv:4,leads:4,mql:4}},
+    {id:'S38*',n:'semana 8 · parcial',per:'13/09',part:true,
+      T:{spend:33.32,imp:917,clicks:13,conv:1,leads:1,mql:1},
+      M:{spend:34.80,imp:570,clicks:9,conv:0,leads:0,mql:0},
+      ALL:{spend:68.12,imp:1487,clicks:22,conv:1,leads:1,mql:1}}
+  ];
+  W.forEach(function(w){ ['T','M','ALL'].forEach(function(k){ var d=w[k]; if(!d) return;
+    d.ctr=d.imp?d.clicks/d.imp*100:0; d.cpc=d.clicks?d.spend/d.clicks:null; d.cpl=d.leads?d.spend/d.leads:null;
+    d.cpmql=d.mql?d.spend/d.mql:null; d.txmql=d.leads?d.mql/d.leads*100:null; d.txlead=d.clicks?d.leads/d.clicks*100:0; }); });
+
+  var CAMP={T:{c:'#EB6927',nome:'Topo'},M:{c:'#F5C25B',nome:'Meio'},ALL:{c:'#AEAEAE',nome:'Total'}};
+  var MET={
+    leads:{nome:'Leads',fmt:function(v){return String(v)}},
+    mql:{nome:'Qualificados',fmt:function(v){return String(v)}},
+    spend:{nome:'Investimento',fmt:function(v){return 'R$ '+br(v,0)}},
+    cpl:{nome:'CPL',fmt:function(v){return 'R$ '+br(v,0)}},
+    cpmql:{nome:'Custo por qualificado',fmt:function(v){return 'R$ '+br(v,0)}},
+    ctr:{nome:'CTR',fmt:function(v){return br(v,2)+'%'}},
+    txmql:{nome:'Tx. qualificação',fmt:function(v){return br(v,0)+'%'}},
+    txlead:{nome:'Clique → lead',fmt:function(v){return br(v,1)+'%'}}
+  };
+  var MODES={
+    vol:{bars:['leads','mql'],lines:[],axis:null},
+    cost:{bars:[],lines:['spend','cpl','cpmql'],axis:'cost'},
+    rate:{bars:['txmql'],lines:['ctr','txlead'],axis:'rate',barPct:true}
+  };
+  var BARSTYLE={leads:{op:1},mql:{op:.55},txmql:{op:.35}};
+  var LINEDASH={spend:'',cpl:'6 4',cpmql:'2 4',ctr:'',txmql:'6 4',txlead:'2 4'};
+  var mode='vol'; var selC={T:true,M:true,ALL:false};
+  var wrap=document.getElementById('wwrap'), tip=document.getElementById('wtip'), legend=document.getElementById('wlegend');
+  function tipHTML(w,k,m){
+    var d=w[k];
+    function f(x,dec,pre,suf){ return x===null||x===undefined?'sem dado':(pre||'')+br(x,dec)+(suf||''); }
+    return '<b>'+w.id.replace('*','')+' · '+w.n+' · '+CAMP[k].nome+'</b>'+
+      '<span class="hl">'+MET[m].nome+': '+MET[m].fmt(d[m]===null?0:d[m])+'</span><br>'+
+      w.per+'<br>Investimento: <span class="tv">R$ '+br(d.spend,2)+'</span> · CPC: <span class="tv">'+f(d.cpc,2,'R$ ')+'</span><br>'+
+      'Cliques: <span class="tv">'+d.clicks+'</span> · CTR: <span class="tv">'+br(d.ctr,2)+'%</span><br>'+
+      'Leads: <span class="tv">'+d.leads+'</span> · Qualif.: <span class="tv">'+d.mql+'</span> · Tx.: <span class="tv">'+f(d.txmql,0,'','%')+'</span><br>'+
+      'CPL: <span class="tv">'+f(d.cpl,2,'R$ ')+'</span> · Custo/qualif.: <span class="tv">'+f(d.cpmql,2,'R$ ')+'</span>';
+  }
+  function showTip(e,html){ tip.innerHTML=html; tip.style.opacity='1'; tip.style.left=Math.min(e.clientX+16,window.innerWidth-300)+'px'; tip.style.top=(e.clientY-10)+'px'; }
+  function hideTip(){ tip.style.opacity='0'; }
+
+  function render(){
+    var cfg=MODES[mode];
+    var camps=['T','M','ALL'].filter(function(c){return selC[c]});
+    var VW=960, VH=380, L=48, R=(cfg.lines.length?70:24), T=28, B=58;
+    var plotW=VW-L-R, plotH=VH-T-B;
+    var svg=svgEl('svg',{viewBox:'0 0 '+VW+' '+VH,class:'wsvg',role:'img','aria-label':'Evolução semanal'});
+    var bmax=0; W.forEach(function(w){ camps.forEach(function(c){ if(!w[c]) return; cfg.bars.forEach(function(m){ var v=w[c][m]||0; if(v>bmax) bmax=v; }); }); });
+    var BMAX=cfg.barPct?100:niceMax(bmax*1.15);
+    var lmax=0; W.forEach(function(w){ camps.forEach(function(c){ if(!w[c]) return; cfg.lines.forEach(function(m){ var v=w[c][m]; if(v!==null&&v>lmax) lmax=v; }); }); });
+    var LMAX=niceMax(lmax*1.15); if(cfg.axis==='rate'&&lmax<=100&&lmax>40) LMAX=100;
+    for(var i=0;i<=4;i++){
+      var y=T+plotH-plotH*i/4;
+      svg.appendChild(svgEl('line',{x1:L,y1:y,x2:L+plotW,y2:y,stroke:i===0?'#232325':'#1A1A1A'}));
+      if(cfg.bars.length){ var tx=svgEl('text',{x:L-8,y:y+4,'font-size':'12','fill':'#6F6F6F','text-anchor':'end'}); tx.textContent=br(BMAX*i/4,BMAX<10?1:0)+(cfg.barPct?'%':''); svg.appendChild(tx); }
+      if(cfg.lines.length){ var tr=svgEl('text',{x:L+plotW+8,y:y+4,'font-size':'12','fill':'#6F6F6F'}); tr.textContent=(cfg.axis==='cost'?'R$ ':'')+br(LMAX*i/4,LMAX<10?1:0)+(cfg.axis==='rate'?'%':''); svg.appendChild(tr); }
+    }
+    var gw=plotW/W.length;
+    var slots=[]; camps.forEach(function(c){ cfg.bars.forEach(function(m){ slots.push({c:c,m:m}); }); });
+    var slotW=Math.min(26,Math.max(7,(gw*0.72)/Math.max(1,slots.length)-4));
+    var groupWidth=slots.length*(slotW+4)-4;
+    W.forEach(function(w,wi){
+      var gx=L+gw*wi+gw/2;
+      slots.forEach(function(s,si){
+        if(!w[s.c]) return;
+        if(cfg.barPct&&(w[s.c][s.m]===null||w[s.c][s.m]===undefined)) return;
+        var v=w[s.c][s.m]||0; var h=Math.max(v>0?3:0,v/BMAX*plotH);
+        var x=gx-groupWidth/2+si*(slotW+4);
+        var attrs={x:x,y:T+plotH-h,width:slotW,height:h,rx:4,fill:CAMP[s.c].c,'fill-opacity':BARSTYLE[s.m].op,style:'cursor:pointer'};
+        if(w.part) attrs.opacity=.85;
+        var r=svgEl('rect',attrs);
+        r.addEventListener('mousemove',function(e){ showTip(e,tipHTML(w,s.c,s.m)); }); r.addEventListener('mouseleave',hideTip);
+        svg.appendChild(r);
+        var lab=svgEl('text',{x:x+slotW/2,y:T+plotH-h-6,'font-size':slots.length>4?'10':'12','fill':CAMP[s.c].c,'text-anchor':'middle','font-weight':'600'}); lab.textContent=cfg.barPct?MET[s.m].fmt(v):v; svg.appendChild(lab);
+      });
+      var l1=svgEl('text',{x:gx,y:T+plotH+22,'font-size':'13','fill':w.part?'#F5C25B':(w.id==='S37'?'#EB6927':'#AEAEAE'),'text-anchor':'middle','font-weight':'600'}); l1.textContent=w.id; svg.appendChild(l1);
+      var l2=svgEl('text',{x:gx,y:T+plotH+38,'font-size':'10.5','fill':'#6F6F6F','text-anchor':'middle'}); l2.textContent=w.per; svg.appendChild(l2);
+    });
+    cfg.lines.forEach(function(m){ camps.forEach(function(c){
+      var pts=[]; W.forEach(function(w,wi){ if(!w[c]||w[c][m]===null||w[c][m]===undefined) { pts.push(null); return; } pts.push({x:L+gw*wi+gw/2,y:T+plotH-(w[c][m]/LMAX)*plotH,w:w}); });
+      var d='',started=false; pts.forEach(function(p){ if(!p){started=false;return;} d+=(started?' L':' M')+p.x+' '+p.y; started=true; });
+      var path=svgEl('path',{d:d.trim(),fill:'none',stroke:CAMP[c].c,'stroke-width':2.5,'stroke-dasharray':LINEDASH[m],'stroke-linecap':'round','stroke-linejoin':'round',opacity:.95}); svg.appendChild(path);
+      pts.forEach(function(p){ if(!p) return; var ci=svgEl('circle',{cx:p.x,cy:p.y,r:5,fill:'#0B0B0B',stroke:CAMP[c].c,'stroke-width':2.5,style:'cursor:pointer'});
+        ci.addEventListener('mousemove',function(e){ showTip(e,tipHTML(p.w,c,m)); }); ci.addEventListener('mouseleave',hideTip); svg.appendChild(ci);
+        var lab=svgEl('text',{x:p.x,y:p.y-11,'font-size':'11','fill':CAMP[c].c,'text-anchor':'middle','font-weight':'600',stroke:'#0B0B0B','stroke-width':'3','paint-order':'stroke'}); lab.textContent=MET[m].fmt(p.w[c][m]); svg.appendChild(lab); });
+    }); });
+    wrap.innerHTML=''; wrap.appendChild(svg);
+    legend.innerHTML='';
+    camps.forEach(function(c){ cfg.bars.forEach(function(m){ var s=document.createElement('span'); var i=document.createElement('i'); i.style.background=CAMP[c].c; i.style.opacity=BARSTYLE[m].op; s.appendChild(i); s.appendChild(document.createTextNode(CAMP[c].nome+' · '+MET[m].nome)); legend.appendChild(s); }); });
+    camps.forEach(function(c){ cfg.lines.forEach(function(m){ var s=document.createElement('span'); var i=document.createElement('i'); i.className='ln'; i.style.color=CAMP[c].c; i.style.borderTopStyle=LINEDASH[m]?'dashed':'solid'; s.appendChild(i); s.appendChild(document.createTextNode(CAMP[c].nome+' · '+MET[m].nome)); legend.appendChild(s); }); });
+  }
+  document.querySelectorAll('#wmode .chip').forEach(function(ch){
+    ch.addEventListener('click',function(){
+      mode=ch.getAttribute('data-mode');
+      document.querySelectorAll('#wmode .chip').forEach(function(b){ b.classList.toggle('on',b===ch); });
+      render();
+    });
+  });
+  document.querySelectorAll('#wseries .chip').forEach(function(ch){
+    ch.addEventListener('click',function(){
+      var k=ch.getAttribute('data-serie');
+      var onCount=Object.keys(selC).filter(function(x){return selC[x]}).length;
+      if(selC[k]&&onCount===1) return;
+      selC[k]=!selC[k]; ch.classList.toggle('on',selC[k]); render();
+    });
+  });
+  render();
+})();
+</script>
+</body>
+</html>
