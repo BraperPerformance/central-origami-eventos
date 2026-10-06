@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Performance · S40 + S41 parcial · Festa de Fim de Ano 2026 | Origami Eventos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070707; --panel:#101010; --panel-2:#0B0B0B; --panel-3:#161616;
+  --accent:#EB6927; --accent-soft:rgba(235,105,39,.10); --accent-line:rgba(235,105,39,.35);
+  --gold:#F5C25B; --gold-soft:rgba(245,194,91,.12);
+  --text:#FFFFFF; --muted:#AEAEAE; --muted-2:#6F6F6F;
+  --line:#232325;
+  --ok:#4CC38A; --ok-soft:rgba(76,195,138,.12);
+  --radius:16px;
+  --font-display:'Outfit',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#fff}
+.num{font-variant-numeric:tabular-nums}
+.rule{height:3px;background:var(--accent)}
+
+header{position:relative;overflow:hidden;padding:56px 24px 44px;background:
+  radial-gradient(ellipse at 92% 18%, rgba(235,105,39,.16), transparent 42%),
+  linear-gradient(180deg,#0B0B0B 0%,#070707 100%)}
+.hero{max-width:1180px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;flex-wrap:wrap}
+.eyebrow img{height:16px;width:auto;display:block}
+.eyebrow .sep{color:var(--muted-2);letter-spacing:0}
+h1{font-family:var(--font-display);font-size:clamp(30px,4.4vw,50px);font-weight:600;line-height:1.1;letter-spacing:-.02em;margin:0 0 12px;max-width:920px}
+.lead{font-size:16px;color:var(--muted);max-width:760px;margin:0 0 26px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 20px}
+.stat strong{display:block;font-family:var(--font-display);font-size:30px;white-space:nowrap;font-weight:600;letter-spacing:-.01em;margin-bottom:4px}
+.stat span{color:var(--muted);font-size:12.5px;line-height:1.4;display:block}
+.stat.hl{border-color:var(--accent-line);background:linear-gradient(160deg,rgba(235,105,39,.16),var(--panel) 70%)}
+.stat.hl strong{color:var(--accent)}
+.acum{display:flex;flex-wrap:wrap;gap:6px 22px;background:var(--panel-2);border:1px dashed var(--line);border-radius:14px;padding:12px 18px;font-size:12.5px;color:var(--muted)}
+.acum b{color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
+.acum .t{color:var(--muted-2);margin-right:2px}
+@media(max-width:900px){.hero-stats{grid-template-columns:repeat(2,1fr)}}
+
+nav.sticky{position:sticky;top:0;z-index:60;background:rgba(7,7,7,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 16px;display:flex;gap:6px;overflow-x:auto;justify-content:center;flex-wrap:wrap}
+nav.sticky a{color:var(--muted);text-decoration:none;font-weight:500;font-size:13.5px;padding:8px 16px;border-radius:999px;border:1px solid transparent;white-space:nowrap;transition:.18s}
+nav.sticky a:hover,nav.sticky a:focus-visible{color:var(--text);border-color:var(--line);background:var(--panel)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+section{padding:56px 24px}
+section.alt{background:var(--panel-2)}
+.container{max-width:1180px;margin:0 auto}
+.section-mark{display:inline-flex;align-items:center;gap:12px;margin-bottom:12px;color:var(--accent);font-size:13px;font-weight:600}
+.circ{width:34px;height:34px;border:1.5px solid var(--accent);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0;font-size:14px}
+h2{font-family:var(--font-display);font-size:clamp(24px,2.8vw,33px);font-weight:600;line-height:1.12;letter-spacing:-.015em;margin:0 0 8px}
+.section-intro{max-width:880px;margin-bottom:26px}
+.section-intro p{color:var(--muted);font-size:14.5px;margin:0}
+h3{font-family:var(--font-display);font-size:18px;font-weight:600;margin:0 0 8px}
+p{margin:0 0 12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.card .kicker{font-size:12px;font-weight:600;color:var(--accent);display:block;margin-bottom:8px}
+.card .body{color:var(--muted);font-size:13.5px}
+.card .body p:last-child{margin-bottom:0}
+.chart-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.chart-title{font-family:var(--font-display);font-size:17px;font-weight:600;margin:0 0 4px}
+.chart-sub{font-size:13px;color:var(--muted);margin:0 0 14px;line-height:1.5}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
+.legend span{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--muted);font-weight:500}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.legend i.ln{width:18px;height:0;border-top:2px dashed currentColor;border-radius:0;background:none!important}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:760px}
+thead th{background:var(--panel-3);color:var(--muted);font-size:11px;font-weight:600;padding:12px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+thead th:first-child{text-align:left}
+tbody td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--text)}
+tbody td:first-child{text-align:left;font-weight:500}
+tbody tr:hover{background:rgba(235,105,39,.05)}
+tbody tr:last-child td{border-bottom:none}
+tr.total td{background:var(--panel-3);font-weight:600;border-top:2px solid var(--line)}
+tr.hi td{background:rgba(235,105,39,.08)}
+td.dim,th.dim{color:var(--muted-2)}
+td.acc{color:var(--accent);font-weight:600}
+td.q,th.q{background:rgba(235,105,39,.06)}
+.badge{display:inline-block;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:999px}
+.badge.pos{background:var(--ok-soft);color:var(--ok)}
+.badge.acc{background:var(--accent-soft);color:var(--accent)}
+.badge.gold{background:var(--gold-soft);color:var(--gold)}
+.badge.mut{background:rgba(174,174,174,.12);color:var(--muted)}
+
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:4px 0 12px}
+.chips .lbl{font-size:12px;color:var(--muted-2);font-weight:600;margin-right:4px;min-width:72px}
+.chip{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-size:13.5px;font-weight:500;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:999px;padding:8px 18px;cursor:pointer;transition:.18s}
+.chip i{width:11px;height:11px;border-radius:3px;display:inline-block;background:var(--muted-2)}
+.chip.on{color:var(--text);border-color:var(--muted-2);background:var(--panel-3)}
+.chip:not(.on){opacity:.55}
+.chip:hover{border-color:var(--muted)}
+.chip.mode.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.wsvg{width:100%;height:auto;display:block}
+.tip{position:fixed;z-index:50;pointer-events:none;background:#0B0B0B;border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13px;line-height:1.55;color:var(--muted);box-shadow:0 8px 28px rgba(0,0,0,.6);opacity:0;transition:opacity .15s;max-width:280px}
+.tip b{color:var(--text);display:block;margin-bottom:2px;font-size:13.5px}
+.tip .tv{color:var(--text);font-weight:600}
+.tip .hl{color:var(--accent);font-weight:600}
+.chart-note{font-size:12px;color:var(--muted-2);margin-top:10px}
+
+.callout{border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 14px 14px 0;padding:14px 18px;margin-top:16px}
+.callout.gold{border-color:var(--gold);background:var(--gold-soft)}
+.callout.ok{border-color:var(--ok);background:var(--ok-soft)}
+.callout b{display:block;margin-bottom:4px;font-family:var(--font-display);font-weight:600;font-size:15px}
+.callout p{margin:0;font-size:13.5px;color:var(--muted)}
+.callout p b{display:inline;font-family:var(--font-body);font-size:inherit;color:var(--text)}
+
+/* fases */
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+@media(max-width:900px){.phases{grid-template-columns:repeat(2,1fr)}}
+.phase{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;border-top:3px solid var(--muted-2)}
+.phase.p1{border-top-color:#7A7A7A}
+.phase.p2{border-top-color:var(--accent)}
+.phase.p3{border-top-color:#5A2A12}
+.phase.p4{border-top-color:var(--gold)}
+.phase u{text-decoration:none;font-size:12px;font-weight:600;color:var(--text);display:block;margin-bottom:2px;font-family:var(--font-display)}
+.phase em{font-style:normal;font-size:11px;color:var(--muted-2);display:block;margin-bottom:8px}
+.phase .pr{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:2px 0}
+.phase .pr b{color:var(--text);font-variant-numeric:tabular-nums;font-weight:600}
+.phase.p4 .pr b.g{color:var(--gold)}
+
+/* comparativo campanhas */
+.duel{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:900px){.duel{grid-template-columns:1fr}}
+.dcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.dcard.t{border-color:var(--accent-line)}
+.dcard .dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.dcard .dh h3{margin:0}
+.dnums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.dnums div{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.dnums b{display:block;font-family:var(--font-display);font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.dcard.t .dnums b{color:var(--accent)}
+.dnums span{font-size:11px;color:var(--muted-2)}
+.dweek{border-top:1px dashed var(--line);padding-top:12px;font-size:13px;color:var(--muted)}
+.dweek b{color:var(--text)}
+
+/* recon strip */
+.recon{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+@media(max-width:700px){.recon{grid-template-columns:1fr}}
+.rstep{padding:20px 22px 16px;border:1px solid var(--line);background:var(--panel)}
+.rstep:first-child{border-radius:var(--radius) 0 0 var(--radius)}
+.rstep:last-child{border-radius:0 var(--radius) var(--radius) 0;border-color:var(--accent-line);background:linear-gradient(160deg,rgba(235,105,39,.14),var(--panel) 70%)}
+.rstep+.rstep{border-left:none}
+@media(max-width:700px){.rstep{border-radius:var(--radius)!important;border-left:1px solid var(--line)!important;margin:4px 0}}
+.rstep u{text-decoration:none;font-size:12px;color:var(--muted-2);font-weight:600;display:block;margin-bottom:6px}
+.rstep b{font-family:var(--font-display);font-size:32px;font-weight:600;display:block;line-height:1;margin-bottom:6px;font-variant-numeric:tabular-nums}
+.rstep:last-child b{color:var(--accent)}
+.rstep span{font-size:12px;color:var(--muted);display:block}
+
+.next{margin:0;padding:0;list-style:none;counter-reset:np}
+.next li{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:14px}
+.next li:last-child{border-bottom:none}
+.next li .circ{counter-increment:np;font-size:13px;font-weight:600;flex-shrink:0;width:30px;height:30px}
+.next li .circ::before{content:counter(np)}
+.next li b{color:var(--text);font-family:var(--font-display);font-weight:600;font-size:15px}
+
+footer{padding:56px 24px 50px;text-align:center;border-top:1px solid var(--line);background:linear-gradient(180deg,#0B0B0B,#070707)}
+footer h2{max-width:860px;margin:0 auto 12px}
+footer p{color:var(--muted);max-width:700px;margin:0 auto;font-size:14px}
+footer .brand{margin-top:28px;font-size:11.5px;color:var(--muted-2);letter-spacing:.14em;text-transform:uppercase}
+svg text{font-family:var(--font-body);font-variant-numeric:tabular-nums}
+
+.phases.five{grid-template-columns:repeat(5,1fr)}
+@media(max-width:1000px){.phases.five{grid-template-columns:repeat(2,1fr)}}
+.phase.p5{border-top-color:#FF9A5C;border-color:rgba(255,154,92,.45)}
+.phase.p5 .pr b.g{color:#FF9A5C}
+.phase .pr b{white-space:nowrap}
+.phase.p4 .pr b{color:var(--text)}
+.tiers{display:grid;gap:10px}
+.trow{display:grid;grid-template-columns:190px 1fr 118px;gap:12px;align-items:center;font-size:13px}
+@media(max-width:600px){.trow{grid-template-columns:1fr;gap:4px}}
+.trow .tl{color:var(--muted);line-height:1.3}
+.trow .tl em{display:block;font-style:normal;font-size:11px;color:var(--muted-2)}
+.trow .tb{height:14px;background:var(--panel-3);border-radius:999px;overflow:hidden;display:flex}
+.trow .tb i{display:block;height:100%}
+.trow .tb i.h{background:#6A4A38}
+.trow .tb i.n{background:var(--accent)}
+.trow .tv{text-align:right;font-variant-numeric:tabular-nums;color:var(--text);white-space:nowrap}
+.trow .tv small{display:block;color:var(--muted-2);font-size:11px}
+.trow.off .tb{background:transparent;height:auto;overflow:visible}
+.trow.off .tag{display:inline-block;font-size:11px;font-weight:600;color:var(--muted);border:1px dashed var(--muted-2);border-radius:999px;padding:2px 10px}
+.trow.off .tv{color:var(--muted-2);font-size:12px}
+.trow.legacy{border-top:1px dashed var(--line);padding-top:10px;margin-top:2px}
+.tierkpi{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.tierkpi div{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.tierkpi b{display:block;font-family:var(--font-display);font-size:19px;font-weight:600;color:var(--accent)}
+.tierkpi span{font-size:11px;color:var(--muted-2);line-height:1.35;display:block}
+.sla{display:grid;grid-template-columns:240px 1fr;gap:16px;align-items:stretch}
+@media(max-width:900px){.sla{grid-template-columns:1fr}}
+.slabig{background:linear-gradient(160deg,rgba(235,105,39,.2),var(--panel) 75%);border:1px solid var(--accent-line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;justify-content:center}
+.slabig b{font-family:var(--font-display);font-size:31px;font-weight:600;color:var(--accent);line-height:1.05;margin-bottom:8px;white-space:nowrap}
+.slabig span{font-size:13px;color:var(--muted)}
+.cad{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+@media(max-width:900px){.cad{grid-template-columns:repeat(2,1fr)}}
+.cstep{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;position:relative}
+.cstep.hot{border-color:var(--accent-line);background:linear-gradient(160deg,rgba(235,105,39,.12),var(--panel) 70%)}
+.cstep u{text-decoration:none;display:block;font-size:11px;font-weight:600;color:var(--accent);margin-bottom:6px}
+.cstep b{display:block;font-family:var(--font-display);font-size:15px;font-weight:600;margin-bottom:4px}
+.cstep span{font-size:12px;color:var(--muted);line-height:1.4;display:block}
+
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:1000px){.trio{grid-template-columns:1fr}}
+.dcard.f{border-color:rgba(243,227,211,.35)}
+.dcard.f .dnums b{color:#F3E3D3}
+.dcard .dnums{grid-template-columns:repeat(3,1fr)}
+.dcard .dnums b{font-size:15.5px;white-space:nowrap}
+.trio .dnums div{padding:10px 10px}
+</style>
+</head>
+<body>
+<div class="rule"></div>
+
+<!-- ===== HERO ===== -->
+<header>
+  <div class="hero">
+    <div class="eyebrow">
+      <img src="../assets/origami_symbol_orange.png" alt="" onerror="this.style.display='none'">
+      Origami Eventos <span class="sep">·</span> Edição semanal · S40 + S41 parcial · 27/09 a 05/10 <span class="sep">·</span> Festa de Fim de Ano 2026
+    </div>
+    <h1>O filtro de porte se provou: 8 leads desde o novo critério, todos qualificados e todos no tier-alvo.</h1>
+    <p class="lead">Três semanas depois da mudança de 14/09, o funil trabalha só com empresas de 100 colaboradores ou mais, e com qualificação de 100%. O fundo estreou em 24/09 e já gerou 3 leads; o testemunhal do Evandro voltou a liderar o topo na S40. O pipeline segue com 5 negociações abertas, e um dos leads da nova fase já chegou a oportunidade qualificada.</p>
+    <div class="hero-stats">
+      <div class="stat hl"><strong class="num">8 de 8</strong><span>leads da nova fase qualificados · todos com 100+ colaboradores</span></div>
+      <div class="stat"><strong class="num">3 leads</strong><span>na S40 · 3 qualificados · R$ 783,23 investidos</span></div>
+      <div class="stat hl"><strong class="num">3 leads</strong><span>do fundo nos primeiros 12 dias · 100% qualificados</span></div>
+      <div class="stat"><strong class="num">5 negociações</strong><span>abertas · 4 oportunidades qualificadas e 1 proposta</span></div>
+    </div>
+    <div class="acum">
+      <span><span class="t">Acumulado 26/07 a 05/10:</span></span>
+      <span><b>R$ 5.759,81</b> investidos</span>
+      <span><b>64</b> conversões</span>
+      <span><b>60</b> leads</span>
+      <span><b>49</b> qualificados · <b>81,7%</b></span>
+      <span>CPL <b>R$ 96,00</b></span>
+      <span>Custo/qualif. <b>R$ 117,55</b></span>
+      <span class="t">Extração 06/10 · dados até 05/10</span>
+    </div>
+  </div>
+</header>
+
+<nav class="sticky">
+  <a href="#momento">O momento</a>
+  <a href="#semanal">Semana a semana</a>
+  <a href="#tiers">Leitura por tier</a>
+  <a href="#campanhas">Topo × Meio × Fundo</a>
+  <a href="#criativos">Criativos</a>
+  <a href="#funil">Funil e CRM</a>
+  <a href="#comercial">Alavanca comercial</a>
+  <a href="#proximos">Próximos passos</a>
+</nav>
+
+<!-- ===== O MOMENTO ===== -->
+<section id="momento">
+  <div class="container">
+    <div class="section-mark"><span class="circ">1</span>O momento da conta</div>
+    <h2>Cinco fases em 72 dias. A quinta está entregando o lead que o comercial quer.</h2>
+    <div class="section-intro"><p>Investimento diário desde a ativação. Desde 14/09, o volume reflete o filtro de porte na origem; desde 24/09, o fundo trabalha os públicos de alta intenção construídos pelo topo e pelo meio.</p></div>
+
+    <div class="chart-card">
+      <div id="pwrap"></div>
+      <div class="tip" id="ptip"></div>
+      <div class="phases five">
+        <div class="phase p1"><u>1 · Construção</u><em>26/07 a 22/08 · aprendizado com verba controlada</em>
+          <div class="pr"><span>Investimento</span><b>R$ 1.467,63</b></div>
+          <div class="pr"><span>Leads</span><b>8</b></div>
+          <div class="pr"><span>Qualificados</span><b>2</b></div>
+        </div>
+        <div class="phase p2"><u>2 · Escala</u><em>23 a 31/08 · entrega concentrada no vencedor</em>
+          <div class="pr"><span>Investimento</span><b>R$ 1.848,57</b></div>
+          <div class="pr"><span>Leads</span><b>37</b></div>
+          <div class="pr"><span>Qualificados</span><b>32</b></div>
+        </div>
+        <div class="phase p3"><u>3 · Manutenção</u><em>01 a 08/09 · estrutura preservada entre verbas</em>
+          <div class="pr"><span>Investimento</span><b>R$ 166,83</b></div>
+          <div class="pr"><span>Leads</span><b>2</b></div>
+          <div class="pr"><span>Qualificados</span><b>2</b></div>
+        </div>
+        <div class="phase p4"><u>4 · Retomada gradual</u><em>09 a 13/09 · verba subindo por degraus</em>
+          <div class="pr"><span>Investimento</span><b>R$ 256,59</b></div>
+          <div class="pr"><span>Leads</span><b>5</b></div>
+          <div class="pr"><span>Qualificados</span><b>5</b></div>
+        </div>
+        <div class="phase p5"><u>5 · Qualificação por tier</u><em>14/09 a 05/10 · filtro de porte e fundo ativo</em>
+          <div class="pr"><span>Investimento</span><b class="g">R$ 2.020,19</b></div>
+          <div class="pr"><span>Leads</span><b class="g">8 · 100% no tier</b></div>
+          <div class="pr"><span>Qualificados</span><b class="g">8 · 100%</b></div>
+        </div>
+      </div>
+      <div class="callout ok" style="margin-top:16px">
+        <b>A leitura de 30 segundos</b>
+        <p>Na fase de volume, de cada 10 leads, 8 qualificavam. Na fase de tier, <b>todos os 8 leads qualificaram</b> e todos estão no porte de ticket maior: 5 de 100 a 199, 2 de 200 a 499 e 1 de 500 ou mais colaboradores. O filtro na origem fez o que foi desenhado para fazer: o comercial só recebe contato que vale atender.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEMANAL ===== -->
+<section id="semanal" class="alt">
+  <div class="container">
+    <div class="section-mark"><span class="circ">2</span>Semana a semana · domingo a sábado</div>
+    <h2>Volumetria, custo e taxa: escolha a lente.</h2>
+    <div class="section-intro"><p>A S40 (27/09 a 03/10) aparece fechada e a S41 (04 e 05/10) é parcial. O fundo entra na série a partir da S39. A marcação em 14/09 separa as semanas anteriores e posteriores ao novo critério de porte.</p></div>
+
+    <div class="chart-card">
+      <div class="chips" id="wmode">
+        <span class="lbl">Ver por</span>
+        <button class="chip mode on" data-mode="vol">Volumetria</button>
+        <button class="chip mode" data-mode="cost">Custo</button>
+        <button class="chip mode" data-mode="rate">Taxa</button>
+      </div>
+      <div class="chips" id="wseries">
+        <span class="lbl">Campanhas</span>
+        <button class="chip on" data-serie="T"><i style="background:#EB6927"></i>Topo</button>
+        <button class="chip on" data-serie="M"><i style="background:#F5C25B"></i>Meio</button>
+        <button class="chip on" data-serie="F"><i style="background:#F3E3D3"></i>Fundo</button>
+        <button class="chip" data-serie="ALL"><i style="background:#AEAEAE"></i>Total</button>
+      </div>
+      <div id="wwrap"></div>
+      <div class="legend" id="wlegend"></div>
+      <div class="tip" id="wtip"></div>
+      <div class="chart-note">* S41 parcial: 04 e 05/10 · Novo critério de porte desde 14/09 · Fundo ativo desde 24/09 · Volumetria: leads e qualificados · Custo: investimento, CPL e custo por qualificado · Taxa: qualificação em barras, CTR e clique → lead em linhas.</div>
+    </div>
+
+    <div class="tablewrap" style="margin-top:16px">
+      <table>
+        <thead><tr><th>Semana</th><th>Período</th><th>Investimento</th><th>Cliques</th><th>CTR</th><th class="q">Leads</th><th class="q">Qualificados</th><th class="q">Tx. qualif.</th><th>CPL</th><th>Custo/qualif.</th></tr></thead>
+        <tbody>
+          <tr><td>S37 · retomada</td><td class="dim">06 a 12/09</td><td>R$ 256,52</td><td>75</td><td>1,59%</td><td class="q">4</td><td class="q">4</td><td class="q">100%</td><td>R$ 64,13</td><td>R$ 64,13</td></tr>
+          <tr><td>S38 · novo critério</td><td class="dim">13 a 19/09</td><td>R$ 454,96</td><td>95</td><td>1,06%</td><td class="q">1</td><td class="q">1</td><td class="q">100%</td><td>R$ 454,96</td><td>R$ 454,96</td></tr>
+          <tr><td>S39 · fundo ativo</td><td class="dim">20 a 26/09</td><td>R$ 562,85</td><td>105</td><td>1,12%</td><td class="q">5</td><td class="q">5</td><td class="q">100%</td><td>R$ 112,57</td><td>R$ 112,57</td></tr>
+          <tr class="hi"><td><b>S40</b></td><td class="dim">27/09 a 03/10</td><td><b>R$ 783,23</b></td><td>150</td><td>1,36%</td><td class="q"><b>3</b></td><td class="q"><b>3</b></td><td class="q">100%</td><td>R$ 261,08</td><td>R$ 261,08</td></tr>
+          <tr class="hi"><td><b>S41 · parcial*</b></td><td class="dim">04 e 05/10</td><td>R$ 287,27</td><td>58</td><td>1,06%</td><td class="q">0</td><td class="q">0</td><td class="q dim">sem lead</td><td class="dim">sem lead</td><td class="dim">sem lead</td></tr>
+          <tr class="total"><td>Total da campanha</td><td class="dim">26/07 a 05/10</td><td>R$ 5.759,81</td><td>1.196</td><td>1,57%</td><td class="q">60</td><td class="q">49</td><td class="q">81,7%</td><td>R$ 96,00</td><td>R$ 117,55</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <b>O que apontar no gráfico</b>
+      <p>Em <b>Volumetria</b>: desde a S38, cada lead que chega já passou pelo filtro de porte, e S39 e S40 somam 8 leads, todos qualificados. Em <b>Custo</b>: o investimento acompanhou a entrada do fundo, e o custo passa a ser lido como custo por lead de ticket maior, com qualificação integral. Em <b>Taxa</b>: a qualificação está em 100% há quatro semanas seguidas, e o CTR do topo voltou a 2,38% na S40, puxado pelo testemunhal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIERS ===== -->
+<section id="tiers">
+  <div class="container">
+    <div class="section-mark"><span class="circ">3</span>Leitura por tier · novo parâmetro de porte</div>
+    <h2>A nova régua em números: 100 a 199 colaboradores lidera a nova fase.</h2>
+    <div class="section-intro"><p>Desde 14/09, o formulário separa as empresas em cinco tiers, e dois deles encerram o avanço ainda no formulário. Os leads anteriores foram captados com a faixa única de 50 a 199 colaboradores e permanecem no histórico como estão.</p></div>
+
+    <div class="grid2 tiergrid">
+      <div class="card">
+        <span class="kicker">Leads por tier · histórico e nova fase</span>
+        <h3 style="margin-bottom:16px">Onde cada lead está na nova régua.</h3>
+        <div class="tiers">
+          <div class="trow off"><span class="tl">1 a 49 colaboradores</span><span class="tb"><span class="tag">Encerra no formulário</span></span><span class="tv">fora do funil</span></div>
+          <div class="trow off"><span class="tl">50 a 99 colaboradores<em>desde 14/09</em></span><span class="tb"><span class="tag">Encerra no formulário</span></span><span class="tv">fora do funil</span></div>
+          <div class="trow"><span class="tl">100 a 199 colaboradores</span><span class="tb"><i class="h" style="width:3.1%"></i><i class="n" style="width:15.6%"></i></span><span class="tv">6 leads<small>6 qualif. · 100%</small></span></div>
+          <div class="trow"><span class="tl">200 a 499 colaboradores</span><span class="tb"><i class="h" style="width:31.3%"></i><i class="n" style="width:6.3%"></i></span><span class="tv">12 leads<small>9 qualif. · 75%</small></span></div>
+          <div class="trow"><span class="tl">500 ou mais colaboradores</span><span class="tb"><i class="h" style="width:28.1%"></i><i class="n" style="width:3.1%"></i></span><span class="tv">10 leads<small>5 qualif. · 50%</small></span></div>
+          <div class="trow legacy"><span class="tl">50 a 199 · faixa anterior<em>até 13/09</em></span><span class="tb"><i class="h" style="width:100%"></i></span><span class="tv">32 leads<small>29 qualif. · 91%</small></span></div>
+        </div>
+        <div class="legend" style="margin-top:14px"><span><i style="background:#6A4A38"></i>Histórico · até 13/09</span><span><i style="background:#EB6927"></i>Nova fase · desde 14/09</span></div>
+      </div>
+      <div class="card">
+        <span class="kicker">A nova fase por tier e por papel</span>
+        <h3 style="margin-bottom:12px">Quem está chegando desde 14/09.</h3>
+        <div class="tierkpi" style="margin-top:0;margin-bottom:14px">
+          <div><b class="num">5</b><span>leads de 100 a 199 · todos qualificados</span></div>
+          <div><b class="num">2</b><span>leads de 200 a 499 · todos qualificados</span></div>
+          <div><b class="num">1</b><span>lead de 500 ou mais · qualificado</span></div>
+        </div>
+        <div class="body">
+          <p><b style="color:var(--text)">O tier que abriu.</b> A faixa de 100 a 199 colaboradores, que nasceu com o novo formulário, já responde por 5 dos 8 leads da nova fase, com qualificação integral. É o ponto de equilíbrio entre volume e ticket.</p>
+          <p><b style="color:var(--text)">Quem decide.</b> Dos 8 leads, 4 são de marketing e comunicação interna, 3 de sócios e diretores e 1 de RH. O marketing, que já era o papel de maior aproveitamento no histórico, segue como a principal porta de entrada.</p>
+          <p><b style="color:var(--text)">O que fica.</b> Os 52 leads captados até 13/09 continuam no histórico e nas negociações em andamento, com a faixa de porte que tinham na conversão.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAMPANHAS ===== -->
+<section id="campanhas" class="alt">
+  <div class="container">
+    <div class="section-mark"><span class="circ">4</span>Performance por campanha</div>
+    <h2>Topo × Meio × Fundo: o funil completo em operação.</h2>
+    <div class="section-intro"><p>Pela primeira vez, as três etapas do plano rodam juntas. O topo construiu a base de leads da campanha, o meio mantém a marca presente para quem já assistiu, e o fundo, ativo desde 24/09, converte os públicos de alta intenção que as duas primeiras etapas formaram.</p></div>
+
+    <div class="trio">
+      <div class="dcard t">
+        <div class="dh"><h3>Topo · interesses</h3><span class="badge pos">Desde 26/07</span></div>
+        <div class="dnums">
+          <div><b class="num">47</b><span>leads · 78% do total</span></div>
+          <div><b class="num">40</b><span>qualificados · 85%</span></div>
+          <div><b class="num">R$ 64,53</b><span>CPL do período</span></div>
+        </div>
+        <div class="dnums">
+          <div><b class="num">1,95%</b><span>CTR</span></div>
+          <div><b class="num">R$ 3,73</b><span>CPC</span></div>
+          <div><b class="num">R$ 75,82</b><span>custo/qualif.</span></div>
+        </div>
+        <div class="dweek"><b>S40:</b> R$ 243,68 · 80 cliques · CTR <b>2,38%</b> · 2 leads, 2 qualificados (500 ou mais e 200 a 499 colaboradores), ambos pelo testemunhal.</div>
+      </div>
+      <div class="dcard">
+        <div class="dh"><h3>Meio · remarketing</h3><span class="badge mut">Desde 12/08</span></div>
+        <div class="dnums">
+          <div><b class="num">10</b><span>leads · 17% do total</span></div>
+          <div><b class="num">6</b><span>qualificados · 60%</span></div>
+          <div><b class="num">R$ 223,57</b><span>CPL do período</span></div>
+        </div>
+        <div class="dnums">
+          <div><b class="num">1,16%</b><span>CTR</span></div>
+          <div><b class="num">R$ 7,48</b><span>CPC</span></div>
+          <div><b class="num">R$ 372,62</b><span>custo/qualif.</span></div>
+        </div>
+        <div class="dweek"><b>Nova fase:</b> 3 leads, todos qualificados, um deles já em oportunidade qualificada · na S40, frequência sobre a base que alimenta o fundo.</div>
+      </div>
+      <div class="dcard f">
+        <div class="dh"><h3>Fundo · alta intenção</h3><span class="badge gold">Desde 24/09</span></div>
+        <div class="dnums">
+          <div><b class="num">3</b><span>leads · 12 dias</span></div>
+          <div><b class="num">3</b><span>qualificados · 100%</span></div>
+          <div><b class="num">R$ 163,78</b><span>CPL do período</span></div>
+        </div>
+        <div class="dnums">
+          <div><b class="num">0,97%</b><span>CTR</span></div>
+          <div><b class="num">R$ 5,78</b><span>CPC</span></div>
+          <div><b class="num">R$ 163,78</b><span>custo/qualif.</span></div>
+        </div>
+        <div class="dweek"><b>Estreia:</b> R$ 491,35 · 4 conversões · os 3 leads estão no tier-alvo e já em contato com o comercial.</div>
+      </div>
+    </div>
+
+    <div class="tablewrap" style="margin-top:16px">
+      <table>
+        <thead><tr><th>Campanha</th><th>Investimento</th><th>Particip.</th><th>Impressões</th><th>Cliques</th><th>CTR</th><th>CPC</th><th>Conversões</th><th class="q">Leads</th><th class="q">Qualificados</th><th class="q">Tx. qualif.</th><th>CPL</th><th>Custo/qualif.</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td><b>Topo</b></td><td>R$ 3.032,73</td><td>52,7%</td><td>41.641</td><td>812</td><td>1,95%</td><td>R$ 3,73</td><td>50</td><td class="q"><b>47</b></td><td class="q"><b>40</b></td><td class="q">85%</td><td class="acc">R$ 64,53</td><td class="acc">R$ 75,82</td></tr>
+          <tr><td><b>Meio</b></td><td>R$ 2.235,73</td><td>38,8%</td><td>25.692</td><td>299</td><td>1,16%</td><td>R$ 7,48</td><td>10</td><td class="q">10</td><td class="q">6</td><td class="q">60%</td><td>R$ 223,57</td><td>R$ 372,62</td></tr>
+          <tr><td><b>Fundo</b></td><td>R$ 491,35</td><td>8,5%</td><td>8.756</td><td>85</td><td>0,97%</td><td>R$ 5,78</td><td>4</td><td class="q">3</td><td class="q">3</td><td class="q">100%</td><td>R$ 163,78</td><td>R$ 163,78</td></tr>
+          <tr class="total"><td>Total · 26/07 a 05/10</td><td>R$ 5.759,81</td><td>100%</td><td>76.089</td><td>1.196</td><td>1,57%</td><td>R$ 4,82</td><td>64</td><td class="q">60</td><td class="q">49</td><td class="q">81,7%</td><td>R$ 96,00</td><td>R$ 117,55</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CRIATIVOS ===== -->
+<section id="criativos">
+  <div class="container">
+    <div class="section-mark"><span class="circ">5</span>Performance por criativo</div>
+    <h2>Nove vídeos em três etapas, e o testemunhal segue na frente.</h2>
+    <div class="section-intro"><p>Números do período inteiro, com os leads atribuídos ao anúncio de origem registrado no Meta. O testemunhal do Evandro no topo responde por 44 dos 60 leads e 39 dos 49 qualificados da campanha. No fundo, o F-A2 concentra a entrega e as conversões da estreia.</p></div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Criativo</th><th>Campanha</th><th>Formato</th><th>Investimento</th><th>CTR</th><th>CPC</th><th>Conversões</th><th class="q">Leads</th><th class="q">Qualificados</th><th class="q">Tx. qualif.</th><th>CPL</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td><b>T-A1</b></td><td class="dim">Topo</td><td>Testemunhal · Evandro</td><td>R$ 1.536,39</td><td><b>2,30%</b></td><td>R$ 2,61</td><td>45</td><td class="q"><b>44</b></td><td class="q"><b>39</b></td><td class="q"><b>89%</b></td><td class="acc">R$ 34,92</td></tr>
+          <tr><td><b>T-A2</b></td><td class="dim">Topo</td><td>Showreel</td><td>R$ 707,46</td><td>1,97%</td><td>R$ 7,07</td><td>4</td><td class="q">3</td><td class="q">1</td><td class="q">33%</td><td>R$ 235,82</td></tr>
+          <tr><td><b>T-A3</b></td><td class="dim">Topo</td><td>Lettering</td><td>R$ 788,88</td><td>1,13%</td><td>R$ 6,36</td><td>1</td><td class="q">0</td><td class="q">0</td><td class="q dim">0%</td><td class="dim">sem lead</td></tr>
+          <tr><td><b>M-A3</b></td><td class="dim">Meio</td><td>Lettering</td><td>R$ 1.728,29</td><td>1,21%</td><td>R$ 6,91</td><td>9</td><td class="q"><b>9</b></td><td class="q">6</td><td class="q">67%</td><td>R$ 192,03</td></tr>
+          <tr><td><b>M-A2</b></td><td class="dim">Meio</td><td>Showreel</td><td>R$ 312,71</td><td>1,03%</td><td>R$ 10,78</td><td>1</td><td class="q">1</td><td class="q">0</td><td class="q dim">0%</td><td>R$ 312,71</td></tr>
+          <tr><td><b>M-A1</b></td><td class="dim">Meio</td><td>Testemunhal · Evandro</td><td>R$ 194,73</td><td>0,89%</td><td>R$ 9,74</td><td>0</td><td class="q">0</td><td class="q">0</td><td class="q dim">0%</td><td class="dim">sem lead</td></tr>
+          <tr><td><b>F-A2</b></td><td class="dim">Fundo</td><td>Vídeo · fundo</td><td>R$ 399,97</td><td>1,01%</td><td>R$ 5,48</td><td>3</td><td class="q"><b>2</b></td><td class="q">2</td><td class="q">100%</td><td>R$ 199,99</td></tr>
+          <tr><td><b>F-A3</b></td><td class="dim">Fundo</td><td>Vídeo · fundo</td><td>R$ 81,09</td><td>0,67%</td><td>R$ 9,01</td><td>1</td><td class="q">0</td><td class="q">0</td><td class="q dim">0%</td><td class="dim">sem lead</td></tr>
+          <tr><td><b>F-A1</b></td><td class="dim">Fundo</td><td>Vídeo · fundo</td><td>R$ 10,29</td><td>1,38%</td><td>R$ 3,43</td><td>0</td><td class="q">0</td><td class="q">0</td><td class="q dim">0%</td><td class="dim">sem lead</td></tr>
+          <tr><td class="dim">Fundo · F-A2 ou F-A3</td><td class="dim">Fundo</td><td class="dim">lead de 24/09</td><td class="dim"></td><td class="dim"></td><td class="dim"></td><td class="dim"></td><td class="q">1</td><td class="q">1</td><td class="q">100%</td><td class="dim">atribuição em conciliação</td></tr>
+          <tr class="total"><td>Total</td><td class="dim">3 campanhas</td><td class="dim">9 criativos</td><td>R$ 5.759,81</td><td>1,57%</td><td>R$ 4,82</td><td>64</td><td class="q">60</td><td class="q">49</td><td class="q">81,7%</td><td>R$ 96,00</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <b>O que os criativos mostram nesta fase</b>
+      <p>O <b>T-A1</b> segue como o criativo de maior eficiência da campanha: CPC de R$ 2,61, 89% de qualificação e os 2 leads do topo na S40, ambos no tier-alvo. No meio, o <b>M-A3</b> foi a porta dos 3 leads da nova fase e já tem um deles em oportunidade qualificada. No fundo, o <b>F-A2</b> assumiu a liderança desde a estreia, com 3 das 4 conversões.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FUNIL E CRM ===== -->
+<section id="funil" class="alt">
+  <div class="container">
+    <div class="section-mark"><span class="circ">6</span>Funil e CRM · Meta, RD Marketing e CRM conciliados</div>
+    <h2>Pipeline de 5 negociações, e a nova fase já chegou nele.</h2>
+    <div class="section-intro"><p>Cada conversão do Meta tem destino conhecido nas três bases. Os 6 leads que entraram desde o último report já estão todos em contato com o comercial.</p></div>
+
+    <div class="recon">
+      <div class="rstep"><u>Conversões no Meta</u><b class="num">64</b><span>4 fora da base: 1 teste de rotina, 1 cadastro inválido e 2 em conciliação</span></div>
+      <div class="rstep"><u>Leads reais</u><b class="num">60</b><span>RD Station + CRM · 6 novos desde 24/09</span></div>
+      <div class="rstep"><u>Leads qualificados</u><b class="num">49</b><span>81,7% dos leads · R$ 117,55 por qualificado</span></div>
+    </div>
+
+    <div class="grid3" style="margin-top:16px">
+      <div class="card">
+        <span class="kicker">Pipeline comercial</span>
+        <h3>4 OQs e 1 proposta enviada</h3>
+        <div class="body"><p>São as <b style="color:var(--text)">5 negociações mais avançadas</b> da campanha, candidatas a fechamento na janela de decisão de outubro e novembro.</p></div>
+      </div>
+      <div class="card">
+        <span class="kicker">A nova fase no pipeline</span>
+        <h3>Primeira OQ do tier-alvo</h3>
+        <div class="body"><p>Um lead de 20/09, de uma empresa de 100 a 199 colaboradores que chegou pelo meio, <b style="color:var(--text)">avançou para oportunidade qualificada</b>. É o primeiro lead da nova régua a chegar nesta etapa.</p></div>
+      </div>
+      <div class="card">
+        <span class="kicker">Base em andamento</span>
+        <h3>47 leads ativos no funil</h3>
+        <div class="body"><p>42 em contato, 4 em oportunidade qualificada e 1 com proposta. Os 8 leads da nova fase estão todos nesse grupo, e são a prioridade da cadência comercial da próxima seção.</p></div>
+      </div>
+    </div>
+
+    <div class="callout gold">
+      <b>Estado do funil · 60 leads</b>
+      <p><b>47 em andamento</b> (42 em contato, 4 oportunidades qualificadas, 1 proposta enviada) · <b>11 encerrados</b> (9 fora de perfil, 2 sem budget, nenhum para concorrente) · <b>2 aguardando etapa</b> no CRM. Qualificação: etapa atual além da Caixa de Entrada, descontadas as perdas por fora de perfil.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ALAVANCA COMERCIAL ===== -->
+<section id="comercial">
+  <div class="container">
+    <div class="section-mark"><span class="circ">7</span>Alavanca comercial · recomendação</div>
+    <h2>Com 100% de lead qualificado, a velocidade do contato decide.</h2>
+    <div class="section-intro"><p>Empresas de 100 colaboradores ou mais costumam cotar com mais de um fornecedor ao mesmo tempo, e outubro é o mês em que essa decisão acontece. Quem responde primeiro pauta a conversa. A referência de mercado para leads com sinal forte de compra é <b style="color:var(--text)">primeiro contato em até 5 a 15 minutos</b> após a conversão, seguido de uma cadência ativa até a resposta.</p></div>
+
+    <div class="sla">
+      <div class="slabig"><b class="num">5 a 15 min</b><span>SLA de referência para o primeiro contato com leads de fundo de funil</span></div>
+      <div class="cad">
+        <div class="cstep hot"><u>Minuto 0 a 15</u><b>Ligação + WhatsApp</b><span>Contato imediato, enquanto o interesse está ativo</span></div>
+        <div class="cstep"><u>Dia 0</u><b>E-mail</b><span>Apresentação da Origami e convite para conversa</span></div>
+        <div class="cstep"><u>Dia 1</u><b>WhatsApp</b><span>Follow-up com um case do porte da empresa</span></div>
+        <div class="cstep"><u>Dia 3</u><b>Ligação</b><span>Nova tentativa, horário diferente do primeiro contato</span></div>
+        <div class="cstep"><u>Dia 7</u><b>E-mail + WhatsApp</b><span>Proposta de data para reunião ou visita</span></div>
+        <div class="cstep"><u>Dia 14</u><b>Último toque</b><span>Mensagem de encerramento, deixando a porta aberta</span></div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b>Perfil hunter: follow-up até a resposta</b>
+      <p>Com o volume menor e 100% qualificado da nova fase, cada lead merece atenção individual. A recomendação é uma rotina ativa com <b>três canais combinados</b> (WhatsApp, ligação e e-mail), <b>follow-ups com data marcada</b> e <b>registro de cada toque no CRM</b>, começando pelos 8 leads do tier-alvo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROXIMOS ===== -->
+<section id="proximos" class="alt">
+  <div class="container">
+    <div class="section-mark"><span class="circ">8</span>Próximos passos</div>
+    <h2>Cinco movimentos para a janela de outubro.</h2>
+    <div class="card">
+      <ol class="next">
+        <li><span class="circ"></span><div><b>Priorizar os 8 leads da nova fase.</b> Todos estão no tier-alvo e qualificados: são os contatos com maior potencial de ticket da carteira e devem abrir a cadência comercial.</div></li>
+        <li><span class="circ"></span><div><b>Converter as 4 OQs em proposta.</b> Incluindo a primeira oportunidade qualificada da nova régua, e acompanhar a proposta enviada até a decisão.</div></li>
+        <li><span class="circ"></span><div><b>Implantar a cadência comercial.</b> Primeiro contato em até 15 minutos e sequência de follow-ups em três canais, com cada toque registrado no CRM.</div></li>
+        <li><span class="circ"></span><div><b>Consolidar o fundo.</b> Acompanhar a curva de aprendizado da campanha nas próximas duas semanas, com foco no criativo que lidera as conversões da estreia.</div></li>
+        <li><span class="circ"></span><div><b>Manter o testemunhal na liderança do topo.</b> É o criativo mais eficiente da campanha e o responsável pelos leads do topo no tier-alvo na S40.</div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h2>Funil completo, régua nova, lead certo.</h2>
+  <p>As três etapas do plano estão em operação, o filtro de porte entrega 100% de qualificação e o fundo estreou gerando lead no tier-alvo. Com uma cadência comercial ágil sobre a carteira atual, a Origami entra na janela de decisão de outubro com o pipeline mais qualificado da campanha.</p>
+  <div class="brand">Origami Eventos × Braper · Edição semanal S40 + S41 parcial · 26/07 a 05/10/2026 · Extração 06/10/2026 · Meta Ads, RD Marketing e CRM</div>
+</footer>
+
+<script>
+(function(){
+  function br(v,dec){ return Number(v).toLocaleString('pt-BR',{minimumFractionDigits:dec,maximumFractionDigits:dec}); }
+  function svgEl(t,a){ var el=document.createElementNS('http://www.w3.org/2000/svg',t); for(var k in a) el.setAttribute(k,a[k]); return el; }
+  function niceMax(v){ if(v<=0) return 1; var p=Math.pow(10,Math.floor(Math.log10(v))); var n=v/p; var s=n<=1?1:n<=2?2:n<=3?3:n<=4?4:n<=5?5:n<=6?6:n<=8?8:10; return s*p; }
+
+  /* ===== Fases: investimento diário ===== */
+  var D=[
+    ['26/07',19.37,0,0],['27/07',30.62,0,0],['28/07',41.84,0,0],['29/07',37.75,0,0],['30/07',30.43,0,0],['31/07',29.42,0,0],['01/08',23.50,1,0],
+    ['02/08',50.97,0,0],['03/08',39.46,2,1],['04/08',35.83,0,0],['05/08',38.45,0,0],['06/08',40.01,0,0],['07/08',29.18,0,0],['08/08',10.49,0,0],
+    ['09/08',50.84,0,0],['10/08',28.17,0,0],['11/08',17.95,0,0],['12/08',86.85,0,0],['13/08',65.05,0,0],['14/08',83.83,1,0],['15/08',52.29,1,0],
+    ['16/08',92.22,0,0],['17/08',73.72,0,0],['18/08',113.66,0,0],['19/08',101.54,1,0],['20/08',65.09,0,0],['21/08',82.01,2,1],['22/08',97.09,0,0],
+    ['23/08',204.46,6,3],['24/08',166.29,2,2],['25/08',220.37,3,3],['26/08',255.91,2,2],['27/08',225.24,4,4],['28/08',215.56,10,10],['29/08',174.85,3,3],
+    ['30/08',278.56,6,4],['31/08',107.33,1,1],
+    ['01/09',19.05,0,0],['02/09',22.25,0,0],['03/09',25.53,1,1],['04/09',20.22,0,0],['05/09',11.73,1,1],['06/09',28.56,0,0],['07/09',16.68,0,0],['08/09',22.81,0,0],
+    ['09/09',67.18,0,0],['10/09',53.99,1,1],['11/09',44.28,0,0],['12/09',23.02,3,3],['13/09',68.12,1,1],
+    ['14/09',47.16,0,0],['15/09',83.67,0,0],['16/09',57.35,0,0],['17/09',77.21,0,0],['18/09',52.67,0,0],['19/09',68.78,0,0],['20/09',78.03,2,2],['21/09',75.91,0,0],['22/09',74.83,0,0],['23/09',70.58,0,0],
+    ['24/09',76.28,1,1],['25/09',96.73,0,0],['26/09',90.49,2,2],['27/09',142.17,1,1],['28/09',92.75,0,0],['29/09',113.34,1,1],['30/09',120.89,0,0],['01/10',102.76,0,0],['02/10',117.46,0,0],['03/10',93.86,1,1],['04/10',156.32,0,0],['05/10',130.95,0,0]
+  ];
+  var PH=[{a:0,b:27,c:'#7A7A7A',n:'Construção'},{a:28,b:36,c:'#EB6927',n:'Escala'},{a:37,b:44,c:'#5A2A12',n:'Manutenção'},{a:45,b:49,c:'#F5C25B',n:'Retomada'},{a:50,b:71,c:'#FF9A5C',n:'Qualificação por tier'}];
+  function phaseOf(i){ for(var k=0;k<PH.length;k++) if(i>=PH[k].a&&i<=PH[k].b) return PH[k]; }
+  (function(){
+    var VW=960,VH=240,L=44,R=10,T=34,B=26,plotW=VW-L-R,plotH=VH-T-B,MAX=300;
+    var svg=svgEl('svg',{viewBox:'0 0 '+VW+' '+VH,class:'wsvg',role:'img','aria-label':'Investimento diário por fase'});
+    [0,100,200,300].forEach(function(v){ var y=T+plotH-v/MAX*plotH;
+      svg.appendChild(svgEl('line',{x1:L,y1:y,x2:L+plotW,y2:y,stroke:v===0?'#232325':'#1A1A1A'}));
+      var t=svgEl('text',{x:L-6,y:y+4,'font-size':'11','fill':'#6F6F6F','text-anchor':'end'}); t.textContent='R$ '+v; svg.appendChild(t); });
+    var bw=plotW/D.length;
+    PH.forEach(function(p){
+      var x1=L+bw*p.a, x2=L+bw*(p.b+1);
+      svg.appendChild(svgEl('line',{x1:x1+2,y1:T-18,x2:x2-2,y2:T-18,stroke:p.c,'stroke-width':2}));
+      var t=svgEl('text',{x:(x1+x2)/2,y:T-24,'font-size':'11.5','fill':p.c,'text-anchor':'middle','font-weight':'600'}); t.textContent=p.n; svg.appendChild(t);
+    });
+    var tip=document.getElementById('ptip');
+    D.forEach(function(d,i){
+      var p=phaseOf(i); var h=Math.max(2,d[1]/MAX*plotH); var x=L+bw*i+1;
+      var r=svgEl('rect',{x:x,y:T+plotH-h,width:Math.max(2,bw-2),height:h,rx:2,fill:p.c,'fill-opacity':i>=50?1:.85,style:'cursor:pointer'});
+      r.addEventListener('mousemove',function(e){
+        tip.innerHTML='<b>'+d[0]+' · '+p.n+'</b>Investimento: <span class="tv">R$ '+br(d[1],2)+'</span><br>Leads: <span class="tv">'+d[2]+'</span> · Qualificados: <span class="tv">'+d[3]+'</span>';
+        tip.style.opacity='1'; tip.style.left=Math.min(e.clientX+16,window.innerWidth-260)+'px'; tip.style.top=(e.clientY-10)+'px';
+      });
+      r.addEventListener('mouseleave',function(){ tip.style.opacity='0'; });
+      svg.appendChild(r);
+      if(d[2]>0){ svg.appendChild(svgEl('circle',{cx:x+bw/2-1,cy:T+plotH-h-7,r:2.6,fill:'#fff','pointer-events':'none'})); }
+      if(i===0||i===14||i===28||i===37||i===45||i===50||i===60||i===71){ var t=svgEl('text',{x:x+bw/2,y:T+plotH+16,'font-size':'10.5','fill':i>=50?'#FF9A5C':(i>=45?'#F5C25B':'#AEAEAE'),'text-anchor':(i===71?'end':'middle'),'font-weight':'600'}); t.textContent=d[0]; svg.appendChild(t); }
+    });
+    var fx=L+bw*60; svg.appendChild(svgEl('line',{x1:fx,y1:T-4,x2:fx,y2:T+plotH,stroke:'#F3E3D3','stroke-width':1.2,'stroke-dasharray':'3 4',opacity:.7}));
+    var ft=svgEl('text',{x:fx+5,y:T+8,'font-size':'10.5','fill':'#F3E3D3','font-weight':'600'}); ft.textContent='Fundo ativo · 24/09'; svg.appendChild(ft);
+    document.getElementById('pwrap').appendChild(svg);
+    var nt=document.createElement('div'); nt.className='chart-note'; nt.textContent='● ponto branco: dia com lead'; document.getElementById('pwrap').appendChild(nt);
+  })();
+
+  /* ===== Semana a semana: 3 modos ===== */
+  var W=[
+    {id:'S31',n:'semana 1',per:'26/07 a 01/08',part:false,
+      T:{spend:212.93,imp:2077,clicks:41,conv:1,leads:1,mql:0},M:null,
+      ALL:{spend:212.93,imp:2077,clicks:41,conv:1,leads:1,mql:0}},
+    {id:'S32',n:'semana 2',per:'02/08 a 08/08',part:false,
+      T:{spend:244.39,imp:1783,clicks:35,conv:3,leads:2,mql:1},M:null,
+      ALL:{spend:244.39,imp:1783,clicks:35,conv:3,leads:2,mql:1}},
+    {id:'S33',n:'semana 3',per:'09/08 a 15/08',part:false,
+      T:{spend:308.74,imp:2211,clicks:44,conv:1,leads:1,mql:0},
+      M:{spend:76.24,imp:573,clicks:6,conv:1,leads:1,mql:0},
+      ALL:{spend:384.98,imp:2784,clicks:50,conv:2,leads:2,mql:0}},
+    {id:'S34',n:'semana 4',per:'16/08 a 22/08',part:false,
+      T:{spend:406.12,imp:2115,clicks:37,conv:2,leads:1,mql:1},
+      M:{spend:219.21,imp:1498,clicks:25,conv:2,leads:2,mql:0},
+      ALL:{spend:625.33,imp:3613,clicks:62,conv:4,leads:3,mql:1}},
+    {id:'S35',n:'semana 5 · escala',per:'23/08 a 29/08',part:false,
+      T:{spend:727.26,imp:11202,clicks:307,conv:27,leads:27,mql:25},
+      M:{spend:735.42,imp:6725,clicks:96,conv:3,leads:3,mql:2},
+      ALL:{spend:1462.68,imp:17927,clicks:403,conv:30,leads:30,mql:27}},
+    {id:'S36',n:'semana 6 · manutenção',per:'30/08 a 05/09',part:false,
+      T:{spend:214.95,imp:5218,clicks:93,conv:9,leads:8,mql:6},
+      M:{spend:269.72,imp:3123,clicks:29,conv:1,leads:1,mql:1},
+      ALL:{spend:484.67,imp:8341,clicks:122,conv:10,leads:9,mql:7}},
+    {id:'S37',n:'semana 7 · retomada',per:'06 a 12/09',part:false,
+      T:{spend:127.17,imp:2814,clicks:58,conv:4,leads:4,mql:4},
+      M:{spend:129.35,imp:1891,clicks:17,conv:0,leads:0,mql:0},
+      ALL:{spend:256.52,imp:4705,clicks:75,conv:4,leads:4,mql:4}},
+    {id:'S38',n:'semana 8 · novo critério',per:'13 a 19/09',part:false,
+      T:{spend:219.09,imp:5142,clicks:51,conv:1,leads:1,mql:1},
+      M:{spend:235.87,imp:3826,clicks:44,conv:0,leads:0,mql:0},
+      ALL:{spend:454.96,imp:8968,clicks:95,conv:1,leads:1,mql:1}},
+    {id:'S39',n:'semana 9 · fundo ativo',per:'20 a 26/09',part:false,
+      T:{spend:244.34,imp:4322,clicks:40,conv:0,leads:0,mql:0},
+      M:{spend:244.79,imp:3912,clicks:46,conv:3,leads:3,mql:3},
+      F:{spend:73.72,imp:1112,clicks:19,conv:3,leads:2,mql:2},
+      ALL:{spend:562.85,imp:9346,clicks:105,conv:6,leads:5,mql:5}},
+    {id:'S40',n:'semana 10',per:'27/09 a 03/10',part:false,
+      T:{spend:243.68,imp:3367,clicks:80,conv:2,leads:2,mql:2},
+      M:{spend:244.19,imp:2832,clicks:25,conv:0,leads:0,mql:0},
+      F:{spend:295.36,imp:4867,clicks:45,conv:1,leads:1,mql:1},
+      ALL:{spend:783.23,imp:11066,clicks:150,conv:3,leads:3,mql:3}},
+    {id:'S41*',n:'semana 11 · parcial',per:'04 e 05/10',part:true,
+      T:{spend:84.06,imp:1390,clicks:26,conv:0,leads:0,mql:0},
+      M:{spend:80.94,imp:1312,clicks:11,conv:0,leads:0,mql:0},
+      F:{spend:122.27,imp:2777,clicks:21,conv:0,leads:0,mql:0},
+      ALL:{spend:287.27,imp:5479,clicks:58,conv:0,leads:0,mql:0}}
+  ];
+  W.forEach(function(w){ ['T','M','F','ALL'].forEach(function(k){ var d=w[k]; if(!d) return;
+    d.ctr=d.imp?d.clicks/d.imp*100:0; d.cpc=d.clicks?d.spend/d.clicks:null; d.cpl=d.leads?d.spend/d.leads:null;
+    d.cpmql=d.mql?d.spend/d.mql:null; d.txmql=d.leads?d.mql/d.leads*100:null; d.txlead=d.clicks?d.leads/d.clicks*100:0; }); });
+
+  var CAMP={T:{c:'#EB6927',nome:'Topo'},M:{c:'#F5C25B',nome:'Meio'},F:{c:'#F3E3D3',nome:'Fundo'},ALL:{c:'#AEAEAE',nome:'Total'}};
+  var MET={
+    leads:{nome:'Leads',fmt:function(v){return String(v)}},
+    mql:{nome:'Qualificados',fmt:function(v){return String(v)}},
+    spend:{nome:'Investimento',fmt:function(v){return 'R$ '+br(v,0)}},
+    cpl:{nome:'CPL',fmt:function(v){return 'R$ '+br(v,0)}},
+    cpmql:{nome:'Custo por qualificado',fmt:function(v){return 'R$ '+br(v,0)}},
+    ctr:{nome:'CTR',fmt:function(v){return br(v,2)+'%'}},
+    txmql:{nome:'Tx. qualificação',fmt:function(v){return br(v,0)+'%'}},
+    txlead:{nome:'Clique → lead',fmt:function(v){return br(v,1)+'%'}}
+  };
+  var MODES={
+    vol:{bars:['leads','mql'],lines:[],axis:null},
+    cost:{bars:[],lines:['spend','cpl','cpmql'],axis:'cost'},
+    rate:{bars:['txmql'],lines:['ctr','txlead'],axis:'rate',barPct:true}
+  };
+  var BARSTYLE={leads:{op:1},mql:{op:.55},txmql:{op:.35}};
+  var LINEDASH={spend:'',cpl:'6 4',cpmql:'2 4',ctr:'',txmql:'6 4',txlead:'2 4'};
+  var mode='vol'; var selC={T:true,M:true,F:true,ALL:false};
+  var wrap=document.getElementById('wwrap'), tip=document.getElementById('wtip'), legend=document.getElementById('wlegend');
+  function tipHTML(w,k,m){
+    var d=w[k];
+    function f(x,dec,pre,suf){ return x===null||x===undefined?'sem dado':(pre||'')+br(x,dec)+(suf||''); }
+    return '<b>'+w.id.replace('*','')+' · '+w.n+' · '+CAMP[k].nome+'</b>'+
+      '<span class="hl">'+MET[m].nome+': '+MET[m].fmt(d[m]===null?0:d[m])+'</span><br>'+
+      w.per+'<br>Investimento: <span class="tv">R$ '+br(d.spend,2)+'</span> · CPC: <span class="tv">'+f(d.cpc,2,'R$ ')+'</span><br>'+
+      'Cliques: <span class="tv">'+d.clicks+'</span> · CTR: <span class="tv">'+br(d.ctr,2)+'%</span><br>'+
+      'Leads: <span class="tv">'+d.leads+'</span> · Qualif.: <span class="tv">'+d.mql+'</span> · Tx.: <span class="tv">'+f(d.txmql,0,'','%')+'</span><br>'+
+      'CPL: <span class="tv">'+f(d.cpl,2,'R$ ')+'</span> · Custo/qualif.: <span class="tv">'+f(d.cpmql,2,'R$ ')+'</span>';
+  }
+  function showTip(e,html){ tip.innerHTML=html; tip.style.opacity='1'; tip.style.left=Math.min(e.clientX+16,window.innerWidth-300)+'px'; tip.style.top=(e.clientY-10)+'px'; }
+  function hideTip(){ tip.style.opacity='0'; }
+
+  function render(){
+    var cfg=MODES[mode];
+    var camps=['T','M','F','ALL'].filter(function(c){return selC[c]});
+    var VW=960, VH=400, L=48, R=(cfg.lines.length?70:24), T=50, B=58;
+    var plotW=VW-L-R, plotH=VH-T-B;
+    var svg=svgEl('svg',{viewBox:'0 0 '+VW+' '+VH,class:'wsvg',role:'img','aria-label':'Evolução semanal'});
+    var bmax=0; W.forEach(function(w){ camps.forEach(function(c){ if(!w[c]) return; cfg.bars.forEach(function(m){ var v=w[c][m]||0; if(v>bmax) bmax=v; }); }); });
+    var BMAX=cfg.barPct?100:niceMax(bmax*1.15);
+    var lmax=0; W.forEach(function(w){ camps.forEach(function(c){ if(!w[c]) return; cfg.lines.forEach(function(m){ var v=w[c][m]; if(v!==null&&v>lmax) lmax=v; }); }); });
+    var LMAX=niceMax(lmax*1.15); if(cfg.axis==='rate'&&lmax<=100&&lmax>40) LMAX=100;
+    for(var i=0;i<=4;i++){
+      var y=T+plotH-plotH*i/4;
+      svg.appendChild(svgEl('line',{x1:L,y1:y,x2:L+plotW,y2:y,stroke:i===0?'#232325':'#1A1A1A'}));
+      if(cfg.bars.length){ var tx=svgEl('text',{x:L-8,y:y+4,'font-size':'12','fill':'#6F6F6F','text-anchor':'end'}); tx.textContent=br(BMAX*i/4,BMAX<10?1:0)+(cfg.barPct?'%':''); svg.appendChild(tx); }
+      if(cfg.lines.length){ var tr=svgEl('text',{x:L+plotW+8,y:y+4,'font-size':'12','fill':'#6F6F6F'}); tr.textContent=(cfg.axis==='cost'?'R$ ':'')+br(LMAX*i/4,LMAX<10?1:0)+(cfg.axis==='rate'?'%':''); svg.appendChild(tr); }
+    }
+    var gw=plotW/W.length;
+    var mx=L+gw*7; svg.appendChild(svgEl('line',{x1:mx,y1:T-34,x2:mx,y2:T+plotH,stroke:'#FF9A5C','stroke-width':1.5,'stroke-dasharray':'4 4',opacity:.8}));
+    var mt=svgEl('text',{x:mx-8,y:T-26,'font-size':'11','fill':'#FF9A5C','font-weight':'600','text-anchor':'end'}); mt.textContent='Novo critério de porte · 14/09'; svg.appendChild(mt);
+    var slots=[]; camps.forEach(function(c){ cfg.bars.forEach(function(m){ slots.push({c:c,m:m}); }); });
+    var slotW=Math.min(26,Math.max(7,(gw*0.72)/Math.max(1,slots.length)-4));
+    var groupWidth=slots.length*(slotW+4)-4;
+    W.forEach(function(w,wi){
+      var gx=L+gw*wi+gw/2;
+      slots.forEach(function(s,si){
+        if(!w[s.c]) return;
+        if(cfg.barPct&&(w[s.c][s.m]===null||w[s.c][s.m]===undefined)) return;
+        var v=w[s.c][s.m]||0; var h=Math.max(v>0?3:0,v/BMAX*plotH);
+        var x=gx-groupWidth/2+si*(slotW+4);
+        var attrs={x:x,y:T+plotH-h,width:slotW,height:h,rx:4,fill:CAMP[s.c].c,'fill-opacity':BARSTYLE[s.m].op,style:'cursor:pointer'};
+        if(w.part) attrs.opacity=.85;
+        var r=svgEl('rect',attrs);
+        r.addEventListener('mousemove',function(e){ showTip(e,tipHTML(w,s.c,s.m)); }); r.addEventListener('mouseleave',hideTip);
+        svg.appendChild(r);
+        var lab=svgEl('text',{x:x+slotW/2,y:T+plotH-h-6,'font-size':slots.length>4?'10':'12','fill':CAMP[s.c].c,'text-anchor':'middle','font-weight':'600'}); lab.textContent=cfg.barPct?MET[s.m].fmt(v):v; svg.appendChild(lab);
+      });
+      var l1=svgEl('text',{x:gx,y:T+plotH+22,'font-size':'13','fill':w.part?'#F5C25B':(w.id==='S40'?'#EB6927':'#AEAEAE'),'text-anchor':'middle','font-weight':'600'}); l1.textContent=w.id; svg.appendChild(l1);
+      var l2=svgEl('text',{x:gx,y:T+plotH+38,'font-size':'10.5','fill':'#6F6F6F','text-anchor':'middle'}); l2.textContent=w.per; svg.appendChild(l2);
+    });
+    cfg.lines.forEach(function(m){ camps.forEach(function(c){
+      var pts=[]; W.forEach(function(w,wi){ if(!w[c]||w[c][m]===null||w[c][m]===undefined) { pts.push(null); return; } pts.push({x:L+gw*wi+gw/2,y:T+plotH-(w[c][m]/LMAX)*plotH,w:w}); });
+      var d='',started=false; pts.forEach(function(p){ if(!p){started=false;return;} d+=(started?' L':' M')+p.x+' '+p.y; started=true; });
+      var path=svgEl('path',{d:d.trim(),fill:'none',stroke:CAMP[c].c,'stroke-width':2.5,'stroke-dasharray':LINEDASH[m],'stroke-linecap':'round','stroke-linejoin':'round',opacity:.95}); svg.appendChild(path);
+      pts.forEach(function(p){ if(!p) return; var ci=svgEl('circle',{cx:p.x,cy:p.y,r:5,fill:'#0B0B0B',stroke:CAMP[c].c,'stroke-width':2.5,style:'cursor:pointer'});
+        ci.addEventListener('mousemove',function(e){ showTip(e,tipHTML(p.w,c,m)); }); ci.addEventListener('mouseleave',hideTip); svg.appendChild(ci);
+        var lab=svgEl('text',{x:p.x,y:p.y-11,'font-size':'11','fill':CAMP[c].c,'text-anchor':'middle','font-weight':'600',stroke:'#0B0B0B','stroke-width':'3','paint-order':'stroke'}); lab.textContent=MET[m].fmt(p.w[c][m]); svg.appendChild(lab); });
+    }); });
+    wrap.innerHTML=''; wrap.appendChild(svg);
+    legend.innerHTML='';
+    camps.forEach(function(c){ cfg.bars.forEach(function(m){ var s=document.createElement('span'); var i=document.createElement('i'); i.style.background=CAMP[c].c; i.style.opacity=BARSTYLE[m].op; s.appendChild(i); s.appendChild(document.createTextNode(CAMP[c].nome+' · '+MET[m].nome)); legend.appendChild(s); }); });
+    camps.forEach(function(c){ cfg.lines.forEach(function(m){ var s=document.createElement('span'); var i=document.createElement('i'); i.className='ln'; i.style.color=CAMP[c].c; i.style.borderTopStyle=LINEDASH[m]?'dashed':'solid'; s.appendChild(i); s.appendChild(document.createTextNode(CAMP[c].nome+' · '+MET[m].nome)); legend.appendChild(s); }); });
+  }
+  document.querySelectorAll('#wmode .chip').forEach(function(ch){
+    ch.addEventListener('click',function(){
+      mode=ch.getAttribute('data-mode');
+      document.querySelectorAll('#wmode .chip').forEach(function(b){ b.classList.toggle('on',b===ch); });
+      render();
+    });
+  });
+  document.querySelectorAll('#wseries .chip').forEach(function(ch){
+    ch.addEventListener('click',function(){
+      var k=ch.getAttribute('data-serie');
+      var onCount=Object.keys(selC).filter(function(x){return selC[x]}).length;
+      if(selC[k]&&onCount===1) return;
+      selC[k]=!selC[k]; ch.classList.toggle('on',selC[k]); render();
+    });
+  });
+  render();
+})();
+</script>
+</body>
+</html>
